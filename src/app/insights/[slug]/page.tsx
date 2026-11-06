@@ -41,7 +41,11 @@ export const instant = false
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const post = postsBySlug[slug]
-  if (!post) return { title: "Insight not found — MSS Digital Solutions" }
+  if (!post) {
+    // Not a published article: render the branded not-found state and make
+    // sure search engines do not index the URL.
+    return { title: "Insight not found — MSS Digital Solutions", robots: { index: false, follow: false } }
+  }
   return {
     title: `${post.title} | MSS Insights`,
     description: post.body[0]?.slice(0, 155),
