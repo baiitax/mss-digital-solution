@@ -1,68 +1,19 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
-import { Eyebrow, Badge } from "@/components/ui/badge"
 import Link from "next/link"
-import { ArrowUpRight, Clock, Search } from "lucide-react"
+import { ArrowUpRight, BookOpen, Bell, Mail, FileText } from "lucide-react"
 
-export const metadata = { title: "Insights — MSS Digital Solutions" }
+export const metadata = { title: "Insights — Knowledge & Publications | MSS Digital Solutions" }
 
-const categories = ["All", "Digital Health", "Geospatial Intelligence", "Primary Healthcare", "Immunisation", "Public Health Data", "Healthcare Innovation", "Research and Policy", "Programme Implementation"]
-
-const posts = [
-  {
-    slug: "geospatial-microplanning-101",
-    title: "Geospatial Microplanning 101: Why Settlements — Not Catchments — Should Drive RI Plans",
-    excerpt: "Estimated catchments hide dispersed settlements. Here&apos;s how facility teams use settlement-level maps to build microplans that actually reach zero-dose communities.",
-    category: "Geospatial Intelligence",
-    date: "2024-11-10",
-    read: "7 min",
-    featured: true,
-  },
-  {
-    slug: "emid-optimisation-lessons",
-    title: "Lessons from Optimising Nigeria&apos;s EMID: What GAVI-Funded System Improvement Taught Us",
-    excerpt: "Improving the National Electronic Management of Immunization Data — workflows, data quality and facility adoption come first.",
-    category: "Digital Health",
-    date: "2024-09-15",
-    read: "6 min",
-    featured: true,
-  },
-  {
-    slug: "lomis-cold-chain-visibility",
-    title: "LoMIS and Last-Mile Visibility: Designing for Offline-First Logistics",
-    excerpt: "Award-winning LoMIS thinking: how to make commodity visibility survive intermittent connectivity and low-power facilities.",
-    category: "Healthcare Innovation",
-    date: "2024-08-02",
-    read: "5 min",
-    featured: false,
-  },
-  {
-    slug: "zero-dose-mapping-kano",
-    title: "Mapping Zero-Dose Persistence in Kano: Settlement Density vs. Session Density",
-    excerpt: "A conceptual exploration — how spatial mismatch between where children live and where sessions are planned perpetuates zero-dose clusters.",
-    category: "Immunisation",
-    date: "2024-10-20",
-    read: "8 min",
-    featured: false,
-  },
-  {
-    slug: "data-quality-scorecard",
-    title: "A Facility-Facing Data Quality Scorecard: Completeness, Timeliness, Consistency",
-    excerpt: "Programme dashboards only work when facility teams see their own data quality — and can act on it.",
-    category: "Public Health Data",
-    date: "2024-07-12",
-    read: "5 min",
-    featured: false,
-  },
-  {
-    slug: "co-design-principles",
-    title: "Co-Design, Not Procurement: Why the Best Tool Is the One the Nurse Opens Tomorrow",
-    excerpt: "Our operating philosophy in practice — designing alongside the people who will live with the system.",
-    category: "Programme Implementation",
-    date: "2024-11-01",
-    read: "4 min",
-    featured: false,
-  },
+const categories = [
+  { name: "Digital Health", desc: "Health information systems, EHR integration and frontline digital workflows." },
+  { name: "Geospatial Intelligence", desc: "Settlement mapping, catchment analysis and geospatial microplanning." },
+  { name: "Primary Healthcare", desc: "PHC readiness, workforce and service delivery at facility level." },
+  { name: "Immunisation", desc: "Routine immunisation planning, zero-dose identification and coverage." },
+  { name: "Public Health Data", desc: "Data quality, timeliness and routine reporting systems." },
+  { name: "Health Technology", desc: "Offline-first design, interoperability and adoption in low-resource settings." },
+  { name: "Programme Implementation", desc: "Field deployment, training, supervision and verification." },
+  { name: "Research and Policy", desc: "Evidence synthesis, investment cases and policy translation." },
 ]
 
 export default function InsightsPage() {
@@ -70,75 +21,107 @@ export default function InsightsPage() {
     <div className="min-h-screen bg-[#FAF9F7]">
       <Navbar />
       <main>
+        {/* Hero */}
         <section className="bg-[#343D46] text-white relative overflow-hidden">
-          <div className="absolute inset-0"><div className="absolute inset-0 bg-gradient-to-br from-[#701F3D]/12 via-transparent to-[#252B31]/55" /><div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" /></div>
-          <div className="relative container-mss py-10 sm:py-12">
-            <div className="eyebrow !text-[#E8A0B8] before:!bg-[#E8A0B8]">Insights & Knowledge Centre</div>
-            <h1 className="font-bold tracking-[-0.03em] leading-[0.95] mt-4 text-white" style={{ fontSize: "clamp(28px, 3.6vw, 46px)" }}>Evidence, implementation notes and research — <span className="text-[#E8A0B8]">curated for decision-makers.</span></h1>
-            <p className="text-white/60 leading-relaxed mt-4 max-w-3xl text-[15px]">Articles are published by authorised administrators via the MSS Admin dashboard. All sample content below is clearly identified as editorial placeholders until verified by MSS.</p>
-            
-            <div className="mt-8 flex flex-wrap items-center gap-2">
-              {categories.map(cat => (
-                <Link key={cat} href={`/insights${cat === "All" ? "" : `?cat=${encodeURIComponent(cat)}`}`} className={`px-4 py-2 rounded-full text-sm font-medium border ${cat === "All" ? "bg-[#252B31] text-white border-[#252B31]" : "bg-white text-[#343D46] border-[#E8EAEC] hover:border-[#701F3D]/30"}`}>
-                  {cat}
-                </Link>
-              ))}
-            </div>
-
-            <div className="mt-6 relative max-w-md">
-              <Search className="w-4 h-4 text-[#89929B] absolute left-3.5 top-1/2 -translate-y-1/2" />
-              <input placeholder="Search insights… (client filter, extensible to Supabase full-text)" className="w-full h-11 pl-10 pr-4 bg-[#FAF9F7] border border-[#E8EAEC] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#701F3D]/20 focus:border-[#701F3D]" />
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#701F3D]/16 via-transparent to-[#252B31]/60" />
+            <div className="absolute -top-28 -right-28 w-[55%] h-[78%] bg-[#701F3D]/[0.07] rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
+          </div>
+          <div className="relative container-mss py-14 sm:py-16 lg:py-20">
+            <div className="max-w-[880px]">
+              <div className="inline-flex items-center gap-2 bg-white/[0.06] border border-white/[0.10] rounded-full px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.14em] uppercase text-white/80">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E8A0B8] animate-pulse" /> Insights & Publications
+              </div>
+              <h1 className="font-bold tracking-[-0.03em] leading-[0.93] mt-5 text-white" style={{ fontSize: "clamp(32px, 4.2vw, 52px)" }}>
+                A knowledge platform for<br />
+                <span className="text-[#E8A0B8]">implementation-minded</span> decision-makers.
+              </h1>
+              <p className="text-white/65 leading-relaxed mt-5 max-w-[700px] text-[16px]">
+                MSS publishes notes from the field, technical perspectives and research on digital health, geospatial intelligence and primary healthcare delivery. This section is built and ready — articles appear once reviewed and approved for publication.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-2 text-[11px]">
+                <span className="px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.08] text-white/70">8 topic areas</span>
+                <span className="px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.08] text-white/70">Editorially reviewed</span>
+                <span className="px-3.5 py-1.5 rounded-full bg-[#701F3D] text-white font-medium">No placeholder articles published</span>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="section-y bg-[#FAF9F7]">
+        {/* Empty state — intentional, professional */}
+        <section className="section-y bg-white">
           <div className="container-mss">
-            {/* Featured */}
-            <div className="grid lg:grid-cols-2 gap-6">
-              {posts.filter(p => p.featured).map(p => (
-                <Link key={p.slug} href={`/insights/${p.slug}`} className="group bg-white border border-[#E8EAEC] rounded-[24px] overflow-hidden hover:shadow-xl hover:border-[#701F3D]/20 transition-all">
-                  <div className="h-48 bg-gradient-to-br from-[#252B31] via-[#343D46] to-[#701F3D] relative p-6 flex flex-col justify-end">
-                    <Badge variant="teal" className="absolute top-4 left-4">{p.category}</Badge>
-                    <div className="text-white font-display font-bold text-xl leading-tight group-hover:text-[#E8A0B8] transition-colors">{p.title}</div>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-sm text-[#343D46] leading-relaxed line-clamp-2">{p.excerpt}</p>
-                    <div className="mt-4 flex items-center gap-4 text-xs text-[#89929B]">
-                      <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> {p.read}</span>
-                      <span>{p.date}</span>
-                      <span className="px-2 py-1 rounded-full bg-[#FEF3C7] text-[#92400E] text-xs font-medium">Editorial placeholder</span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {posts.filter(p => !p.featured).map(p => (
-                <Link key={p.slug} href={`/insights/${p.slug}`} className="group bg-white border border-[#E8EAEC] rounded-2xl p-6 hover:shadow-lg hover:border-[#701F3D]/20 transition-all">
-                  <Badge variant="muted">{p.category}</Badge>
-                  <h3 className="font-display font-semibold text-[#252B31] mt-3 leading-tight group-hover:text-[#701F3D] transition-colors line-clamp-2">{p.title}</h3>
-                  <p className="text-sm text-[#343D46] mt-2 leading-relaxed line-clamp-2">{p.excerpt}</p>
-                  <div className="mt-4 flex items-center gap-3 text-xs text-[#89929B]">
-                    <span>{p.date}</span><span>•</span><span>{p.read}</span>
-                  </div>
-                  <div className="mt-4 inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#701F3D]">
-                    Read article <ArrowUpRight className="w-3.5 h-3.5" />
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            <div className="mt-10 bg-white border border-[#E8EAEC] rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
-              <div>
-                <h3 className="font-semibold text-[#252B31]">Publish with MSS Admin</h3>
-                <p className="text-sm text-[#343D46] mt-1">All articles support categories, featured flags, SEO metadata, draft/published states, author, reading time, search and related articles — no code changes needed.</p>
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="w-16 h-16 rounded-2xl bg-[#F9E9EE] flex items-center justify-center mx-auto">
+                <BookOpen className="w-7 h-7 text-[#701F3D]" />
               </div>
-              <Link href="/admin" className="shrink-0 bg-[#252B31] text-white px-6 h-11 rounded-full text-sm font-semibold inline-flex items-center gap-2">
-                Open Admin <ArrowUpRight className="w-4 h-4" />
-              </Link>
+              <h2 className="font-bold tracking-tight text-[#252B31] mt-6" style={{ fontSize: "clamp(24px, 2.8vw, 34px)" }}>
+                Publications are being prepared.
+              </h2>
+              <p className="text-[#343D46]/70 leading-relaxed mt-4">
+                We are finalising our first set of technical notes and field perspectives. Rather than publish invented articles to fill this page, MSS is preparing reviewed material for release here.
+              </p>
+              <p className="text-sm text-[#89929B] leading-relaxed mt-3">
+                The publishing architecture — categories, article templates, SEO metadata and administrative workflow — is already in place. New publications appear here as they are approved.
+              </p>
+
+              <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-[#701F3D] hover:bg-[#50152D] text-white px-7 h-11 rounded-full text-[13px] font-semibold tracking-wide uppercase transition-colors">
+                  Register Interest <ArrowUpRight className="w-4 h-4" />
+                </Link>
+                <Link href="/our-work/geo-st4r-kano" className="inline-flex items-center justify-center gap-2 bg-white border border-[#E8EAEC] hover:border-[#701F3D]/20 text-[#343D46] px-7 h-11 rounded-full text-[13px] font-semibold tracking-wide uppercase transition-colors">
+                  Read the Geo-ST4R Case Study
+                </Link>
+              </div>
             </div>
+          </div>
+        </section>
+
+        {/* Topic taxonomy */}
+        <section className="section-y bg-[#F0F1F2]">
+          <div className="container-mss">
+            <div className="max-w-2xl">
+              <div className="eyebrow">Topic Areas</div>
+              <h2 className="font-bold tracking-tight text-[#252B31] mt-4" style={{ fontSize: "clamp(24px, 2.8vw, 34px)" }}>What we write about.</h2>
+              <p className="text-[#59636D] mt-3 leading-relaxed">Eight editorial categories covering the technical and programmatic questions our partners bring to us.</p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+              {categories.map((c) => (
+                <div key={c.name} className="bg-white border border-[#E8EAEC] rounded-2xl p-5 hover:border-[#701F3D]/15 hover:shadow-[0_8px_24px_rgba(52,61,70,0.06)] transition-all">
+                  <div className="w-8 h-8 rounded-lg bg-[#F9E9EE] flex items-center justify-center">
+                    <FileText className="w-4 h-4 text-[#701F3D]" />
+                  </div>
+                  <h3 className="font-bold text-[13.5px] text-[#252B31] mt-3.5 leading-tight">{c.name}</h3>
+                  <p className="text-[12px] text-[#59636D] mt-1.5 leading-relaxed">{c.desc}</p>
+                  <div className="mt-3 text-[11px] font-semibold tracking-wide uppercase text-[#89929B]">Coming soon</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Subscribe / submission note */}
+        <section className="section-y bg-white border-t border-[#E8EAEC]">
+          <div className="container-mss">
+            <div className="bg-[#252B31] text-white rounded-[24px] p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+              <div className="max-w-xl">
+                <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.14em] uppercase text-[#E8A0B8]">
+                  <Bell className="w-3.5 h-3.5" /> Stay informed
+                </div>
+                <h3 className="font-bold text-xl mt-3">Be notified when the first publications go live.</h3>
+                <p className="text-white/60 text-sm mt-2 leading-relaxed">Send us a note with your areas of interest — we will share relevant material directly as it is published.</p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full lg:w-auto">
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-[#701F3D] hover:bg-[#50152D] text-white px-7 h-11 rounded-full text-[13px] font-semibold tracking-wide uppercase transition-colors">
+                  <Mail className="w-4 h-4" /> Contact the Team
+                </Link>
+              </div>
+            </div>
+            <p className="text-xs text-[#89929B] text-center mt-6 max-w-2xl mx-auto leading-relaxed">
+              MSS does not publish unverified research findings or statistics on this website. Publication is subject to internal editorial review and, where applicable, partner approval.
+            </p>
           </div>
         </section>
       </main>

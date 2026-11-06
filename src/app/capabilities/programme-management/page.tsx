@@ -1,93 +1,56 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
-import { Badge } from "@/components/ui/badge"
-import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
+import { CapabilityTemplate } from "@/components/sections/CapabilityTemplate"
 
-export const metadata = { title: "Programme & Project Management — MSS" }
+export const metadata = {
+  title: "Programme & Project Management — MSS Digital Solutions",
+  description:
+    "Programme coordination, stakeholder engagement, partner management, field deployment, training, implementation oversight, monitoring and evaluation, independent verification and project reporting.",
+}
 
-export default function PMPage() {
+export default function Page() {
   return (
     <div className="min-h-screen bg-[#FAF9F7]">
       <Navbar />
       <main>
-        <section className="bg-[#252B31] text-white">
-          <div className="container-mss py-12 lg:py-16">
-            <div className="text-xs flex items-center gap-2"><Link href="/capabilities" className="text-white/60">Capabilities</Link><span className="text-white/30">›</span><span>Programme & Project Management</span></div>
-            <Badge variant="teal" className="mt-6">Capability 04 — Programme & Project Management</Badge>
-            <h1 className="font-display text-4xl lg:text-5xl font-bold tracking-tight leading-[0.9] mt-4">From plan <span className="text-[#E8A0B8]">to verified adoption.</span></h1>
-            <p className="text-white/70 leading-relaxed mt-6 max-w-3xl">Programme design, implementation management, stakeholder coordination, field deployment, training, monitoring and independent verification — the connective tissue between technology and coverage.</p>
-          </div>
-        </section>
-
-        <section className="section-y bg-white">
-          <div className="container-mss">
-            <div className="grid lg:grid-cols-12 gap-10">
-              <div className="lg:col-span-8">
-                <div className="grid md:grid-cols-2 gap-5">
-                  {[
-                    { t: "Programme design", d: "Theory of change, workplans, KPIs and risk registers — built with government and partner stakeholders." },
-                    { t: "Implementation management", d: "Day-to-day coordination, field deployment, issue resolution and partner alignment." },
-                    { t: "Stakeholder coordination", d: "Federal, state, LGA and facility layers — plus development partners — moved in rhythm." },
-                    { t: "Partner engagement", d: "Joint planning, shared metrics and transparent reporting across consortia." },
-                  ].map(i => (
-                    <div key={i.t} className="bg-[#FAF9F7] border border-[#E8EAEC] rounded-2xl p-6">
-                      <h3 className="font-semibold text-[#252B31]">{i.t}</h3>
-                      <p className="text-sm text-[#343D46] mt-2 leading-relaxed">{i.d}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-8 grid md:grid-cols-2 gap-5">
-                  {[
-                    { t: "Field deployment", d: "Logistics, personnel, facility onboarding and supportive supervision at scale." },
-                    { t: "Training & capacity building", d: "Role-specific, competency-based training with post-training mentorship." },
-                    { t: "Monitoring & evaluation", d: "Routine monitoring, learning loops and adaptive management." },
-                    { t: "Independent verification", d: "Unbiased assessment of implementation fidelity and data quality." },
-                  ].map(i => (
-                    <div key={i.t} className="bg-[#FAF9F7] border border-[#E8EAEC] rounded-2xl p-6">
-                      <h3 className="font-semibold text-[#252B31]">{i.t}</h3>
-                      <p className="text-sm text-[#343D46] mt-2 leading-relaxed">{i.d}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-8 bg-[#252B31] text-white rounded-[24px] p-8">
-                  <h3 className="font-display font-bold text-lg">How we work — in practice</h3>
-                  <div className="mt-6 grid sm:grid-cols-4 gap-4 text-center">
-                    {[
-                      { n: "01", t: "Assess & Measure" },
-                      { n: "02", t: "Co-design & Build" },
-                      { n: "03", t: "Deploy & Strengthen" },
-                      { n: "04", t: "Monitor & Verify" },
-                    ].map(s => (
-                      <div key={s.n} className="bg-white/5 border border-white/10 rounded-2xl p-4">
-                        <div className="font-mono text-sm font-bold text-[#E8A0B8]">{s.n}</div>
-                        <div className="text-sm font-semibold mt-1">{s.t}</div>
-                      </div>
-                    ))}
-                  </div>
-                  <p className="text-sm text-white/60 mt-6 leading-relaxed">This four-stage methodology is applied consistently — from geospatial microplanning pilots to statewide digital system rollouts.</p>
-                </div>
-              </div>
-
-              <div className="lg:col-span-4">
-                <div className="bg-white border border-[#E8EAEC] rounded-[24px] p-6 sticky top-24">
-                  <h3 className="font-display font-bold text-[#252B31]">Why MSS for delivery?</h3>
-                  <ul className="mt-4 space-y-3 text-sm text-[#343D46]">
-                    <li>• Kano-based — proximity to field teams</li>
-                    <li>• Tech + PH informatics + programme delivery in one house</li>
-                    <li>• Proven partner network (Geo-ST4R)</li>
-                    <li>• Verification mindset — we check our own work</li>
-                  </ul>
-                  <Link href="/contact" className="mt-6 flex items-center justify-center gap-2 bg-[#252B31] text-white h-11 rounded-full text-sm font-semibold tracking-wide uppercase">
-                    Enquire — Delivery <ArrowUpRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CapabilityTemplate
+          num="04"
+          slug="programme-management"
+          name="Programme & Project Management"
+          heroTitle="Implementation is a discipline,"
+          heroHighlight="not an afterthought to development."
+          heroDescription="MSS coordinates programmes from design through field deployment to verified adoption — stakeholder alignment, partner management, training, oversight, monitoring and reporting. This is the work that separates a system that ships from a system that gets used."
+          heroChips={["Field deployment", "Partner coordination", "Independent verification"]}
+          challenge={{
+            problem: "Technology development and programme implementation are different disciplines. A well-built system without deployment coordination, training and supervision arrives at a facility with no one prepared to use it.",
+            approach: "Treat implementation as its own workstream with named owners, a coordination cadence and verification — planned from the start rather than added once the build is finished.",
+          }}
+          areasHeading="Nine programme delivery service areas."
+          areasIntro="The operating disciplines that carry a solution from plan to verified routine use."
+          areas={[
+            { title: "Programme Coordination", desc: "Workplans, dependencies, cadence and issue resolution across the full implementation period." },
+            { title: "Stakeholder Engagement", desc: "Engagement across federal, state, LGA and facility levels, with the reporting relationships between them respected." },
+            { title: "Partner Management", desc: "Joint planning, shared metrics and transparent reporting across consortia and implementing partners." },
+            { title: "Field Deployment", desc: "Facility onboarding, logistics, device readiness and supervision scheduling — deployment as a managed operation." },
+            { title: "Training & Capacity Building", desc: "Role-specific, competency-based training with post-training mentorship rather than a single workshop." },
+            { title: "Implementation Oversight", desc: "Fidelity checks, corrective action and escalation paths so drift is caught while it is still cheap to fix." },
+            { title: "Monitoring & Evaluation", desc: "Indicator frameworks, routine monitoring and learning loops that inform adaptive management." },
+            { title: "Independent Verification", desc: "Unbiased assessment of implementation fidelity and data quality, including verification of MSS's own work." },
+            { title: "Project Reporting", desc: "Structured reporting to funders, ministries and partners — progress, risks, decisions needed — with figures that trace to a source." },
+          ]}
+          practice={[
+            { title: "Verification includes us", desc: "Where verification is in scope, it covers MSS's delivery as well as the facility's — including findings we would rather not have." },
+            { title: "Named owners", desc: "Every workstream has a responsible person and a reporting date, at both partner and facility level." },
+            { title: "Escalation before failure", desc: "Issues escalate on a defined path so a supply delay or connectivity fault does not silently become a missed quarter." },
+            { title: "Handover as a milestone", desc: "Training, SOPs and ownership transfer are scheduled deliverables, not closing remarks." },
+          ]}
+          related={[
+            { label: "How We Work", href: "/how-we-work" },
+            { label: "Digital Health Systems", href: "/capabilities/digital-health-systems" },
+            { label: "Our Work", href: "/our-work" },
+          ]}
+          ctaLabel="Discuss Managed Delivery"
+        />
       </main>
       <Footer />
     </div>

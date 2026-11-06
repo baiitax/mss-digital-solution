@@ -1,95 +1,66 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
-import { Eyebrow, Badge } from "@/components/ui/badge"
-import Link from "next/link"
-import { ArrowUpRight, Check, Database, Tablet, Boxes, Workflow } from "lucide-react"
+import { CapabilityTemplate } from "@/components/sections/CapabilityTemplate"
 
-export const metadata = { title: "Digital Health Systems — MSS" }
+export const metadata = {
+  title: "Digital Health Systems — MSS Digital Solutions",
+  description:
+    "Digital healthcare delivery systems, health information systems, EHR integration, reporting and recording, immunisation information systems and logistics visibility — designed for facility-level deployment.",
+}
 
-export default function DigitalHealthPage() {
+export default function Page() {
   return (
     <div className="min-h-screen bg-[#FAF9F7]">
       <Navbar />
       <main>
-        <section className="bg-[#252B31] text-white">
-          <div className="container-mss py-12 lg:py-16">
-            <div className="flex items-center gap-2 text-xs">
-              <Link href="/capabilities" className="text-white/60 hover:text-white">Capabilities</Link><span className="text-white/30">›</span><span className="text-white">Digital Health Systems</span>
-            </div>
-            <div className="mt-6 grid lg:grid-cols-12 gap-10 items-start">
-              <div className="lg:col-span-7">
-                <Badge variant="teal">Capability 01 — Digital Health Systems</Badge>
-                <h1 className="font-display text-4xl lg:text-5xl font-bold tracking-tight leading-[0.9] mt-6">Digital systems <span className="text-[#E8A0B8]">health workers actually use.</span></h1>
-                <p className="text-white/70 leading-relaxed mt-6">We develop and deploy digital solutions supporting healthcare delivery, reporting, recording, ordering and reconciliation — designed for intermittent connectivity, low digital literacy thresholds, and facility-reality workflows.</p>
-              </div>
-              <div className="lg:col-span-5">
-                <div className="bg-white text-[#252B31] rounded-[24px] p-6">
-                  <h3 className="font-semibold text-sm">The challenge</h3>
-                  <p className="text-sm text-[#343D46] mt-2 leading-relaxed">Paper registers duplicate effort, delay reporting, and hide stock-outs and defaulters until it&apos;s too late. Systems procured without co-design become shelfware.</p>
-                  <h3 className="font-semibold text-sm mt-6">MSS approach</h3>
-                  <p className="text-sm text-[#343D46] mt-2 leading-relaxed">Co-design with frontline teams, build for offline-first, and support adoption with training and supervision — so data quality improves and workflows get <em>easier</em>, not heavier.</p>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    <span className="px-3 py-1.5 rounded-full bg-[#F9E9EE] text-[#701F3D] text-xs font-medium">Offline-capable</span>
-                    <span className="px-3 py-1.5 rounded-full bg-[#F0F1F2] text-[#343D46] text-xs font-medium">Facility-tested</span>
-                    <span className="px-3 py-1.5 rounded-full bg-[#252B31] text-white text-xs font-medium">Co-designed</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section-y bg-white">
-          <div className="container-mss">
-            <div className="grid lg:grid-cols-12 gap-10">
-              <div className="lg:col-span-8">
-                <h2 className="font-display text-2xl font-bold text-[#252B31]">What we deliver</h2>
-                <div className="mt-6 grid md:grid-cols-2 gap-6">
-                  {[
-                    { icon: Database, t: "Electronic Health Information Systems", d: "Capture, store and report clinical and programme data with validation and reconciliation." },
-                    { icon: Tablet, t: "Digital Healthcare Delivery Platforms", d: "Outreach planning, session management, defaulter tracking and referral workflows." },
-                    { icon: Boxes, t: "Immunisation Information Systems", d: "RI registers, microplan integration, coverage tracking — building on EMID optimisation experience." },
-                    { icon: Workflow, t: "Logistics & Commodity Visibility", d: "Stock monitoring, cold-chain oversight and last-mile distribution — inspired by LoMIS Suite." },
-                  ].map(item => (
-                    <div key={item.t} className="bg-[#FAF9F7] border border-[#E8EAEC] rounded-2xl p-6">
-                      <item.icon className="w-6 h-6 text-[#701F3D]" />
-                      <h3 className="font-semibold text-[#252B31] mt-3">{item.t}</h3>
-                      <p className="text-sm text-[#343D46] mt-2 leading-relaxed">{item.d}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <h3 className="font-display font-bold text-lg text-[#252B31] mt-10">Additional service areas</h3>
-                <ul className="mt-4 grid md:grid-cols-2 gap-3">
-                  {["Data collection & reconciliation", "Digital workflow optimisation", "Facility-level technology deployment", "Healthcare recording & reporting systems", "Data quality assurance", "Training, SOPs & supportive supervision"].map(f => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-[#343D46] bg-[#FAF9F7] border border-[#E8EAEC] rounded-full px-4 py-2.5"><Check className="w-4 h-4 text-[#701F3D]" /> {f}</li>
-                  ))}
-                </ul>
-
-                <div className="mt-8 bg-[#FFF7ED] border border-[#F59E0B]/20 rounded-2xl p-6">
-                  <h4 className="font-semibold text-sm text-[#9A3412]">Demonstrated experience — distinguished from capability</h4>
-                  <p className="text-sm text-[#7C2D12] mt-2 leading-relaxed"><strong>Demonstrated:</strong> LoMIS Suite (WFP Innovation Accelerator Award 2022/2023), GAVI-funded optimisation of National EMID, BISKIT in South Africa, SPRING trials. <strong>Capability:</strong> We can extend similar architectures to new programmes — but we do not claim every listed service has been deployed at scale unless explicitly documented as a case study.</p>
-                </div>
-              </div>
-
-              <div className="lg:col-span-4">
-                <div className="bg-[#252B31] text-white rounded-[24px] p-6 sticky top-24">
-                  <h3 className="font-display font-bold">Practical applications</h3>
-                  <ul className="mt-4 space-y-3 text-sm text-white/80">
-                    <li>• Digitise paper RI registers with offline capture</li>
-                    <li>• Integrate microplans with session scheduling</li>
-                    <li>• Reconcile facility reports vs. commodity consumption</li>
-                    <li>• Dashboards for LGA & state programme managers</li>
-                  </ul>
-                  <Link href="/contact" className="mt-6 flex items-center justify-center gap-2 bg-[#701F3D] hover:bg-[#E8A0B8] text-white h-11 rounded-full text-sm font-semibold tracking-wide uppercase">
-                    Enquire — Digital Health <ArrowUpRight className="w-4 h-4" />
-                  </Link>
-                  <p className="text-xs text-white/50 mt-3 text-center">Replies via admin-tracked enquiries (Supabase)</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CapabilityTemplate
+          num="01"
+          slug="digital-health-systems"
+          name="Digital Health Systems"
+          heroTitle="Digital systems that health workers actually use,"
+          heroHighlight="inside the facility they work in."
+          heroDescription="MSS designs and deploys digital health systems for service delivery, recording, reporting, ordering and reconciliation — built for intermittent connectivity, low digital literacy thresholds and the real rhythm of a primary healthcare facility."
+          heroChips={["Facility-level deployment", "Offline-first design", "Co-designed with users"]}
+          challenge={{
+            problem: "Paper registers duplicate effort, delay reporting and conceal stock-outs and defaulters until the reporting window has closed. Systems bought without the user in the room become shelfware.",
+            approach: "Co-design with the teams who will operate the system, build for offline and low bandwidth, and support adoption through training and supervision until the workflow is routine.",
+          }}
+          areasHeading="Nine areas of digital health delivery."
+          areasIntro="From healthcare delivery platforms to the adoption work that determines whether a system survives its first quarter."
+          areas={[
+            { title: "Digital Healthcare Delivery Systems", desc: "Platforms supporting service delivery — outreach planning, session management, client follow-up and referral movement between levels of care." },
+            { title: "Healthcare Information Systems", desc: "Structured capture of facility, programme and administrative data with validation at entry and reconciliation against source registers." },
+            { title: "EHR Integration Experience", desc: "Working with existing electronic health record environments where records already exist — aligning identifiers, workflows and reporting rather than replacing what is in use." },
+            { title: "Digital Reporting & Recording", desc: "Digitising routine registers and reporting flows so that the facility's daily record becomes the reporting dataset, rather than a second, parallel task." },
+            { title: "Immunisation Information Systems", desc: "Routine immunisation registers, session data and microplan linkage — informed by National EMID optimisation experience and Geo-ST4R field deployment." },
+            { title: "Logistics & Commodity Visibility", desc: "Stock visibility, ordering, consumption and cold-chain oversight so that supply decisions are made from current data, not the last physical count." },
+            { title: "Healthcare Workflow Optimisation", desc: "Redesign of the steps around a system: who records, when, on what, and what is removed so the worker's day gets lighter rather than heavier." },
+            { title: "Facility-Level Deployment", desc: "Onboarding, device readiness, connectivity planning and supportive supervision — deployment treated as an operational activity, not an installation." },
+            { title: "Technology Adoption & Capacity Building", desc: "Role-based training, SOPs, mentoring and handover so government and facility teams own the system and its maintenance." },
+          ]}
+          practice={[
+            { title: "One record, one entry", desc: "The register entry the health worker already writes becomes the reported figure — removing duplicate transcription at month end." },
+            { title: "Connectivity-aware", desc: "Capture works offline and synchronises when connectivity returns, so a dropped signal does not become a lost session." },
+            { title: "Validation where it happens", desc: "Obvious errors are caught at the point of entry, before they travel up the reporting chain and become someone else's correction task." },
+            { title: "Supervision over enforcement", desc: "Adoption is supported through routine supervision and targeted mentoring rather than compliance reminders." },
+          ]}
+          documented={{
+            demonstrated: [
+              "LoMIS Suite — logistics management information system; WFP Digital Health Innovation Accelerator Award, 2022/2023",
+              "GAVI-funded optimisation of the National Electronic Management of Immunization Data (EMID)",
+              "BISKIT — Blood Information System for Crisis Intervention and Management (South Africa)",
+              "SPRING and SPRING II clinical research data systems via Vanderbilt Center for Global Health",
+            ],
+            capability:
+              "MSS is able to extend comparable architectures to new programmes and facilities. We do not claim that every service area listed above has been deployed at scale; those with documented implementation experience are named specifically, and the rest represent our current service capability.",
+          }}
+          related={[
+            { label: "Geospatial Intelligence", href: "/capabilities/geospatial-intelligence" },
+            { label: "Data Analytics", href: "/capabilities/data-analytics" },
+            { label: "Geo-ST4R Case Study", href: "/our-work/geo-st4r-kano" },
+          ]}
+          ctaLabel="Discuss a Digital Health System"
+        />
       </main>
       <Footer />
     </div>
