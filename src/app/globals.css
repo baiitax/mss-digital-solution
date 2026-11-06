@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FDFCF7;
+  --foreground: #0B1930;
+  --midnight: #0B1930;
+  --midnight-2: #0F2540;
+  --teal: #0E7C7B;
+  --teal-light: #E6F3F3;
+  --cyan: #06B6D4;
+  --muted: #64748B;
+  --border: #E2E8F0;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #0E7C7B #F1F5F9;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #0E7C7B;
+  border-radius: 4px;
+}
+
+.leaflet-container {
+  font-family: var(--font-inter) !important;
+  z-index: 1;
+}
+
+:focus-visible {
+  outline: 2px solid #06B6D4;
+  outline-offset: 2px;
+}
+
+::selection {
+  background: #0E7C7B;
+  color: white;
+}
