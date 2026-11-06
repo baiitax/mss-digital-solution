@@ -6,14 +6,14 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   size?: "sm" | "md" | "lg"
 }
 
-const base = "inline-flex items-center justify-center gap-2 font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#06B6D4] focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none"
+const base = "inline-flex items-center justify-center gap-2 font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#48BFC2] focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none"
 
 const variants = {
-  primary: "bg-[#0E7C7B] text-white hover:bg-[#0A5F5E] shadow-sm hover:shadow-md",
-  navy: "bg-[#0B1930] text-white hover:bg-[#132A4C] shadow-sm hover:shadow-md",
-  secondary: "bg-white text-[#0B1930] border border-[#E2E8F0] hover:bg-[#F8FAFC] hover:border-[#0E7C7B]/30",
-  outline: "border border-[#0B1930] text-[#0B1930] hover:bg-[#0B1930] hover:text-white",
-  ghost: "text-[#0B1930] hover:bg-[#0E7C7B]/10",
+  primary: "bg-[#087F83] text-white hover:bg-[#0A6E72] shadow-sm hover:shadow-md",
+  navy: "bg-[#10283F] text-white hover:bg-[#0A1D30] shadow-sm hover:shadow-md",
+  secondary: "bg-white text-[#10283F] border border-[#E6EBED] hover:bg-[#FAFBF9] hover:border-[#087F83]/30",
+  outline: "border border-[#10283F] text-[#10283F] hover:bg-[#10283F] hover:text-white",
+  ghost: "text-[#10283F] hover:bg-[#087F83]/10",
 }
 
 const sizes = {

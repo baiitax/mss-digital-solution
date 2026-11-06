@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
-import { Inter, Manrope, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Manrope, Inter, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400","500","600","700","800"],
+});
 
 const inter = Inter({
   variable: "--font-inter",
@@ -8,14 +15,8 @@ const inter = Inter({
   display: "swap",
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
+const dmSans = DM_Sans({
+  variable: "--font-dm",
   subsets: ["latin"],
   display: "swap",
 });
@@ -52,31 +53,20 @@ export const metadata: Metadata = {
     locale: "en_NG",
     siteName: "MSS Digital Solutions",
     title: "MSS Digital Solutions Ltd — Digital Health Systems & Geospatial Intelligence",
-    description:
-      "Bridging healthcare delivery, geospatial intelligence and data. We help governments and partners reach underserved communities.",
+    description: "Bridging healthcare delivery, geospatial intelligence and data. We help governments and partners reach underserved communities.",
   },
   twitter: {
     card: "summary_large_image",
     title: "MSS Digital Solutions Ltd",
     description: "Digital health systems, geospatial intelligence and data analytics.",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${manrope.variable} ${jakarta.variable} ${mono.variable} antialiased`}
-    >
-      <body className="min-h-screen bg-[#FDFCF7] text-[#0B1930] flex flex-col">
+    <html lang="en" className={`${manrope.variable} ${inter.variable} ${dmSans.variable} ${mono.variable} antialiased`}>
+      <body className="min-h-screen bg-[#FAFBF9] text-[#273744] flex flex-col">
         {children}
       </body>
     </html>

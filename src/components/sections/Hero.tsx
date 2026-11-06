@@ -2,162 +2,166 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowUpRight, Play, MapPinned, Database, ShieldCheck } from "lucide-react"
+import { ArrowUpRight, MapPinned } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#FDFCF7]">
+    <section className="relative bg-[#FAFBF9] overflow-hidden">
+      {/* subtle background depth */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#E6F3F3]/40 via-[#FDFCF7] to-[#EFF6FF]/30" />
-        <div className="absolute top-0 right-0 w-[70%] h-[70%] bg-gradient-to-bl from-[#0E7C7B]/[0.05] to-transparent rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#E6F5F6]/35 via-transparent to-[#F0F3F4]/40" />
+        <div className="absolute -top-20 -right-20 w-[60%] h-[70%] bg-[#087F83]/[0.03] rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 py-8 sm:py-10 lg:py-16 items-center">
-          {/* Left */}
-          <div className="lg:col-span-7 min-w-0">
+      <div className="relative container-mss">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 py-10 sm:py-14 lg:py-16 items-center">
+          {/* Left — editorial */}
+          <div className="lg:col-span-6 min-w-0">
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex flex-wrap items-center gap-2 bg-white border border-[#E2E8F0] rounded-full px-3.5 py-2 shadow-sm max-w-full"
+              className="eyebrow"
             >
-              <span className="w-2 h-2 rounded-full bg-[#0E7C7B] animate-pulse shrink-0" />
-              <span className="text-[11px] sm:text-xs font-semibold tracking-wide uppercase text-[#0B1930]">Kano-based • Implementation Partner • RC 7341058</span>
-              <span className="hidden sm:inline-flex items-center gap-1 text-xs text-[#64748B] ml-1"><ShieldCheck className="w-3.5 h-3.5" /> Verified</span>
+              Kano-based Implementation Partner • RC 7341058
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-display font-bold tracking-[-0.03em] leading-[0.92] text-[#0B1930] mt-5 sm:mt-6 text-[32px] sm:text-[42px] lg:text-[58px] xl:text-[64px]"
+              transition={{ duration: 0.7, delay: 0.08 }}
+              className="font-bold tracking-[-0.03em] leading-[0.92] text-[#10283F] mt-5"
+              style={{ fontSize: "clamp(34px, 5vw, 62px)" }}
             >
               Bridging Healthcare<br />
-              Delivery, <span className="text-[#0E7C7B]">Geospatial</span><br />
-              Intelligence <span className="font-light italic text-[#334155]">and</span> Data.
+              Delivery, <span className="text-[#087F83]">Geospatial</span><br />
+              Intelligence <span className="font-light italic text-[#273744]">and</span> Data.
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-[#475569] leading-relaxed mt-5 sm:mt-6 max-w-2xl text-[15px] sm:text-base lg:text-lg"
+              transition={{ duration: 0.6, delay: 0.16 }}
+              className="text-[#273744]/80 leading-relaxed mt-6 max-w-[560px] text-[15px] sm:text-[17px]"
             >
-              We build digital health systems and geospatial solutions that help governments and development partners reach underserved communities, strengthen primary healthcare and make <span className="font-semibold text-[#0B1930]">evidence-driven decisions</span> — settlement by settlement.
+              We build digital health systems and geospatial solutions that help governments and development partners reach underserved communities and strengthen healthcare delivery — settlement by settlement.
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 mt-7 sm:mt-8"
+              transition={{ duration: 0.6, delay: 0.24 }}
+              className="flex flex-col sm:flex-row gap-3 mt-8"
             >
-              <Link href="/capabilities" className="inline-flex items-center justify-center gap-2 bg-[#0B1930] hover:bg-[#132A4C] text-white px-6 sm:px-7 h-[50px] rounded-full text-[13px] font-semibold tracking-wide uppercase shadow-lg shadow-[#0B1930]/10 transition-colors">
-                Explore Our Capabilities <ArrowUpRight className="w-4 h-4 shrink-0" />
+              <Link href="/capabilities" className="inline-flex items-center justify-center gap-2 bg-[#10283F] hover:bg-[#0A1D30] text-white px-7 h-12 rounded-full text-[13px] font-semibold tracking-[0.06em] uppercase shadow-[0_8px_24px_rgba(16,40,63,0.15)] transition-colors">
+                Explore Our Capabilities <ArrowUpRight className="w-4 h-4" />
               </Link>
-              <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#F8FAFC] text-[#0B1930] border border-[#E2E8F0] px-6 sm:px-7 h-[50px] rounded-full text-[13px] font-semibold tracking-wide uppercase transition-colors">
-                <Play className="w-4 h-4 shrink-0" /> Discuss a Partnership
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#F0F3F4] text-[#10283F] border border-[#E6EBED] px-7 h-12 rounded-full text-[13px] font-semibold tracking-[0.06em] uppercase transition-colors">
+                Partner With Us
               </Link>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              className="mt-7 sm:mt-8 flex flex-wrap gap-3 sm:gap-6 text-[12px] sm:text-xs text-[#64748B]"
+              transition={{ delay: 0.4 }}
+              className="mt-8 flex flex-wrap gap-2.5"
             >
-              <span className="inline-flex items-center gap-2 bg-white border border-[#E2E8F0] rounded-full px-3 py-1.5"><MapPinned className="w-3.5 h-3.5 text-[#0E7C7B] shrink-0" /> Settlement-level microplanning</span>
-              <span className="inline-flex items-center gap-2 bg-white border border-[#E2E8F0] rounded-full px-3 py-1.5"><Database className="w-3.5 h-3.5 text-[#0E7C7B] shrink-0" /> Facility-level deployment</span>
-              <span className="hidden sm:inline-flex items-center gap-2 bg-white border border-[#E2E8F0] rounded-full px-3 py-1.5"><ShieldCheck className="w-3.5 h-3.5 text-[#0E7C7B] shrink-0" /> Implementation-verified</span>
+              {[
+                "Settlement-level microplanning",
+                "Facility-level deployment",
+                "Implementation-verified",
+              ].map(t => (
+                <span key={t} className="inline-flex items-center gap-2 bg-white border border-[#E6EBED] rounded-full px-3.5 py-1.5 text-xs text-[#273744]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#087F83]" /> {t}
+                </span>
+              ))}
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-              className="mt-6 sm:mt-8 border-l-[3px] border-[#0E7C7B] pl-4 sm:pl-5 py-2 bg-white/60 backdrop-blur rounded-r-2xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+              className="mt-8 border-l-[3px] border-[#087F83] pl-5 py-1"
             >
-              <p className="font-display italic text-[#0B1930] text-[13px] sm:text-sm leading-relaxed">&ldquo;A tool that a facility cannot use is not a solution. It is a procurement.&rdquo;</p>
-              <p className="text-[10px] sm:text-xs tracking-widest uppercase font-semibold text-[#64748B] mt-1">Our operating philosophy — co-design, always</p>
+              <p className="font-medium italic text-[#10283F] text-sm leading-relaxed">&ldquo;A tool that a facility cannot use is not a solution. It is a procurement.&rdquo;</p>
+              <p className="text-xs tracking-[0.08em] uppercase font-semibold text-[#71808B] mt-1">Operating philosophy — co-design, always</p>
             </motion.div>
           </div>
 
-          {/* Right - Editorial composition */}
-          <div className="lg:col-span-5 min-w-0">
-            <div className="relative">
-              <div className="relative bg-white rounded-2xl sm:rounded-[28px] overflow-hidden shadow-[0_16px_48px_rgba(11,25,48,0.12)] border border-[#E2E8F0]">
-                <div className="aspect-[4/3.1] relative bg-gradient-to-br from-[#0B1930] via-[#0F2540] to-[#0E7C7B] overflow-hidden">
+          {/* Right — premium editorial image with geospatial overlay */}
+          <div className="lg:col-span-6 min-w-0">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative bg-white rounded-[20px] lg:rounded-[28px] overflow-hidden shadow-[0_20px_60px_rgba(16,40,63,0.12)] border border-[#E6EBED] p-3">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[14px] lg:rounded-[20px] bg-[#0A1D30]">
                   <img
-                    src="https://images.unsplash.com/photo-1586776802477-3680284eda45?q=80&w=1200&auto=format&fit=crop"
-                    alt="African healthcare worker using digital tablet for community outreach"
-                    className="absolute inset-0 w-full h-full object-cover opacity-90"
+                    src="https://images.unsplash.com/photo-1586776802477-3680284eda45?q=80&w=1400&auto=format&fit=crop"
+                    alt="Community health worker using tablet in Nigerian primary healthcare"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B1930]/85 via-[#0B1930]/15 to-transparent" />
-                  
-                  <div className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-auto bg-white/95 backdrop-blur rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2.5 sm:py-3 shadow-lg sm:max-w-[260px]">
-                    <div className="text-[10px] tracking-widest uppercase font-bold text-[#64748B]">Programme</div>
-                    <div className="font-display font-bold text-[#0B1930] text-[13px] sm:text-sm leading-tight mt-1">Geo-ST4R — Kano State</div>
-                    <div className="text-xs text-[#0E7C7B] font-medium mt-1">Geospatial Microplanning Toolkit</div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1D30]/75 via-[#10283F]/10 to-transparent" />
+                  {/* Geospatial overlay lines */}
+                  <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 400 300" fill="none">
+                    <path d="M40 80 L120 60 L180 90 L260 70 L340 110" stroke="#48BFC2" strokeWidth="1.2" strokeDasharray="6 6" />
+                    <circle cx="120" cy="60" r="4" fill="#48BFC2" stroke="white" strokeWidth="1.5" />
+                    <circle cx="260" cy="70" r="4" fill="#48BFC2" stroke="white" strokeWidth="1.5" />
+                    <circle cx="180" cy="90" r="3" fill="white" />
+                  </svg>
+
+                  {/* Top label */}
+                  <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/95 backdrop-blur rounded-xl sm:rounded-2xl px-3 sm:px-4 py-2.5 shadow-lg">
+                    <div className="text-[10px] tracking-[0.12em] uppercase font-bold text-[#71808B]">Programme</div>
+                    <div className="font-bold text-[#10283F] text-sm leading-tight">Geo-ST4R — Kano State</div>
+                    <div className="text-xs text-[#087F83] font-medium">Geospatial Microplanning Toolkit</div>
                   </div>
 
-                  <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 bg-[#0B1930]/90 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4">
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="min-w-0">
-                        <div className="text-white font-semibold text-[13px] sm:text-sm leading-tight">Settlement-level mapping</div>
-                        <div className="text-white/60 text-xs mt-1 leading-tight">Every community visible. No child invisible.</div>
+                  {/* Bottom panel */}
+                  <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-[#0A1D30]/85 backdrop-blur-xl border border-white/10 rounded-xl sm:rounded-2xl p-3 sm:p-4">
+                    <div className="flex items-start justify-between gap-3">
+                      <div>
+                        <div className="text-white font-semibold text-sm">Settlement-level mapping</div>
+                        <div className="text-white/60 text-xs mt-1">Every community visible. No child invisible.</div>
                       </div>
-                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#0E7C7B] flex items-center justify-center shrink-0">
-                        <MapPinned className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                      <div className="w-9 h-9 rounded-xl bg-[#087F83] flex items-center justify-center shrink-0">
+                        <MapPinned className="w-4 h-4 text-white" />
                       </div>
                     </div>
-                    <div className="mt-3 flex flex-wrap items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs">
-                      <span className="px-2 sm:px-2.5 py-1 rounded-full bg-white/10 text-white border border-white/10">GMT</span>
-                      <span className="px-2 sm:px-2.5 py-1 rounded-full bg-[#0E7C7B] text-white">Illustrative data</span>
-                      <span className="ml-auto text-white/50 hidden sm:inline">Kano • Nigeria</span>
+                    <div className="mt-3 flex flex-wrap gap-1.5">
+                      <span className="px-2.5 py-1 rounded-full bg-white/10 text-white text-[11px] border border-white/10">GMT</span>
+                      <span className="px-2.5 py-1 rounded-full bg-[#087F83] text-white text-[11px]">Illustrative data</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="p-4 sm:p-5 grid grid-cols-3 gap-3 sm:gap-4">
+                <div className="grid grid-cols-3 gap-4 px-2 pt-4 pb-2">
                   <div>
-                    <div className="text-[10px] tracking-widest uppercase font-bold text-[#94A3B8]">Partners</div>
-                    <div className="text-[11px] sm:text-xs font-medium text-[#0B1930] mt-1 leading-tight">Natview • DSN • Pathfinder</div>
+                    <div className="text-[10px] tracking-[0.12em] uppercase font-bold text-[#71808B]">Partners</div>
+                    <div className="text-xs font-medium text-[#10283F] mt-1 leading-tight">Natview • DSN • Pathfinder</div>
                   </div>
-                  <div className="border-l border-[#E2E8F0] pl-3 sm:pl-4">
-                    <div className="text-[10px] tracking-widest uppercase font-bold text-[#94A3B8]">Focus</div>
-                    <div className="text-[11px] sm:text-xs font-medium text-[#0B1930] mt-1">PHC • RI • Zero-Dose</div>
+                  <div className="border-l border-[#E6EBED] pl-4">
+                    <div className="text-[10px] tracking-[0.12em] uppercase font-bold text-[#71808B]">Focus</div>
+                    <div className="text-xs font-medium text-[#10283F] mt-1">PHC • RI • Zero-Dose</div>
                   </div>
-                  <div className="border-l border-[#E2E8F0] pl-3 sm:pl-4">
-                    <div className="text-[10px] tracking-widest uppercase font-bold text-[#94A3B8]">Approach</div>
-                    <div className="text-[11px] sm:text-xs font-medium text-[#0E7C7B] mt-1">Co-design → Deploy → Verify</div>
+                  <div className="border-l border-[#E6EBED] pl-4">
+                    <div className="text-[10px] tracking-[0.12em] uppercase font-bold text-[#71808B]">Approach</div>
+                    <div className="text-xs font-medium text-[#087F83] mt-1">Co-design → Deploy → Verify</div>
                   </div>
                 </div>
               </div>
 
-              <div className="hidden lg:block absolute -right-4 top-8 bg-white rounded-2xl shadow-xl border border-[#E2E8F0] p-4 w-52">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-lg bg-[#E6F3F3] flex items-center justify-center text-[#0E7C7B] shrink-0">
-                    <Database className="w-4 h-4" />
-                  </div>
-                  <div className="min-w-0">
-                    <div className="text-xs font-bold text-[#0B1930] leading-tight">Data to Decision</div>
-                    <div className="text-[11px] text-[#64748B]">Coverage dashboards</div>
-                  </div>
-                </div>
-                <div className="mt-3 h-1.5 bg-[#F1F5F9] rounded-full overflow-hidden">
-                  <div className="h-full w-[72%] bg-[#0E7C7B] rounded-full" />
-                </div>
+              {/* Floating accent — desktop only */}
+              <div className="hidden xl:block absolute -left-6 -bottom-6 bg-white rounded-2xl shadow-[0_12px_32px_rgba(16,40,63,0.10)] border border-[#E6EBED] p-4 w-[220px]">
+                <div className="text-xs font-bold text-[#10283F]">Data to Decision</div>
+                <div className="text-xs text-[#71808B]">Coverage dashboards</div>
+                <div className="mt-3 h-1.5 bg-[#F0F3F4] rounded-full overflow-hidden"><div className="h-full w-[72%] bg-[#087F83] rounded-full" /></div>
+                <div className="mt-2 text-[11px] text-[#71808B]">72% settlement visibility</div>
               </div>
-
-              <div className="hidden lg:flex absolute -left-4 bottom-12 bg-[#0B1930] rounded-2xl shadow-xl p-3.5 items-center gap-3">
-                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=100&auto=format&fit=crop" alt="Health worker" className="w-10 h-10 rounded-xl object-cover shrink-0" />
-                <div className="min-w-0">
-                  <div className="text-white text-xs font-semibold leading-tight">Frontline-trained teams</div>
-                  <div className="text-white/60 text-xs">Facility-level implementation</div>
-                </div>
-              </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

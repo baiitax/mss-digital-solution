@@ -2,83 +2,87 @@
 
 import Link from "next/link"
 import { ArrowUpRight, Database, MapPinned, LineChart, UsersRound, ShieldCheck, Building2, Syringe, Building, Truck, Activity, Wallet, Map as MapIcon, Check } from "lucide-react"
-import { Eyebrow, Badge } from "@/components/ui/badge"
-import { GeospatialDemo } from "@/components/maps/GeospatialDemo"
+import { Eyebrow } from "@/components/ui/badge"
 
+// Credibility
 export function CredibilityStrip() {
   return (
-    <section className="bg-[#0B1930] relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0E7C7B]/10 to-transparent" />
-      <div className="relative max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-8 py-5 sm:py-6">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 text-white">
-          <div className="space-y-1">
-            <div className="text-[10px] tracking-[0.14em] uppercase text-white/50 font-bold">Registered</div>
-            <div className="font-semibold text-sm leading-tight">RC 7341058 • CAC Nigeria</div>
+    <section className="bg-[#0A1D30] relative">
+      <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20h40M20 0v40' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E")` }} />
+      <div className="relative container-mss py-7 sm:py-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-white">
+          <div>
+            <div className="text-[11px] tracking-[0.12em] uppercase font-bold text-white/40">Registered</div>
+            <div className="font-semibold text-sm mt-1">RC 7341058 • CAC Nigeria</div>
+            <div className="text-xs text-white/40 mt-1">Corporate Affairs Commission</div>
           </div>
-          <div className="space-y-1">
-            <div className="text-[10px] tracking-[0.14em] uppercase text-white/50 font-bold">Incorporated</div>
-            <div className="font-semibold text-sm">9 February 2024</div>
+          <div>
+            <div className="text-[11px] tracking-[0.12em] uppercase font-bold text-white/40">Incorporated</div>
+            <div className="font-semibold text-sm mt-1">9 February 2024</div>
+            <div className="text-xs text-white/40 mt-1">Kano, Nigeria</div>
           </div>
-          <div className="space-y-1">
-            <div className="text-[10px] tracking-[0.14em] uppercase text-white/50 font-bold">Headquarters</div>
-            <div className="font-semibold text-sm leading-tight">Kano, Nigeria • Gwale LGA</div>
+          <div>
+            <div className="text-[11px] tracking-[0.12em] uppercase font-bold text-white/40">Headquarters</div>
+            <div className="font-semibold text-sm mt-1">Gwale LGA, Kano State</div>
+            <div className="text-xs text-white/40 mt-1">No. 7 Alexandria Street</div>
           </div>
-          <div className="space-y-1">
-            <div className="text-[10px] tracking-[0.14em] uppercase text-white/50 font-bold">Focus</div>
-            <div className="font-semibold text-sm leading-tight">PHC • Immunisation • Zero-Dose</div>
+          <div>
+            <div className="text-[11px] tracking-[0.12em] uppercase font-bold text-white/40">Focus</div>
+            <div className="font-semibold text-sm mt-1">Digital Health & Geospatial</div>
+            <div className="text-xs text-white/40 mt-1">PHC • RI • Zero-Dose</div>
           </div>
-        </div>
-        <div className="mt-5 pt-5 border-t border-white/10 flex flex-wrap gap-2">
-          <span className="px-3 py-1.5 rounded-full bg-white/10 border border-white/15 text-xs font-medium text-white">Digital Health Systems</span>
-          <span className="px-3 py-1.5 rounded-full bg-[#0E7C7B] text-white text-xs font-medium">Geospatial Intelligence</span>
-          <span className="hidden sm:inline-flex px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-white/70">Trusted by Gov • INGOs • Donors</span>
         </div>
       </div>
     </section>
   )
 }
 
+// Purpose — editorial asymmetric with documentary image
 export function PurposeSection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-white">
-      <div className="max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+    <section className="section-y bg-[#FAFBF9]">
+      <div className="container-mss">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           <div className="lg:col-span-5">
-            <Eyebrow>Our Purpose</Eyebrow>
-            <h2 className="font-display text-[28px] sm:text-3xl lg:text-[42px] font-bold tracking-tight leading-[0.95] text-[#0B1930] mt-4">
+            <div className="eyebrow">Our Purpose</div>
+            <h2 className="font-bold tracking-[-0.02em] leading-[0.96] text-[#10283F] mt-5" style={{ fontSize: "clamp(30px, 4vw, 44px)" }}>
               Technology That<br />
-              <span className="text-[#0E7C7B]">Reaches Beyond</span><br />
+              <span className="text-[#087F83]">Reaches Beyond</span><br />
               the Facility Walls.
             </h2>
-            <div className="mt-6 p-5 bg-[#F8FAFC] rounded-2xl border border-[#E2E8F0]">
-              <p className="font-display italic text-[#0B1930] leading-relaxed text-sm sm:text-base">
-                &ldquo;A tool that a facility cannot use is not a solution. It is a procurement.&rdquo;
-              </p>
-              <p className="text-xs text-[#64748B] mt-2">— MSS Operating Philosophy</p>
+            <div className="mt-8 rounded-2xl overflow-hidden border border-[#E6EBED] bg-white">
+              <img src="https://images.unsplash.com/photo-1532187863486-abf28ad4d967?q=80&w=800&auto=format&fit=crop" alt="Nigerian primary healthcare facility documentary" className="w-full h-48 object-cover" />
+              <div className="p-5">
+                <p className="font-medium italic text-[#10283F] text-sm leading-relaxed">&ldquo;A tool that a facility cannot use is not a solution. It is a procurement.&rdquo;</p>
+                <p className="text-xs text-[#71808B] mt-2">— MSS Operating Philosophy</p>
+              </div>
             </div>
           </div>
 
-          <div className="lg:col-span-7 space-y-5 sm:space-y-6">
-            <p className="text-[#334155] leading-relaxed text-sm sm:text-base">
-              In many Nigerian communities, health planning still relies on estimated catchment populations — not actual human geography. Settlements are dispersed, roads are seasonal, facility catchments overlap or leave vast gaps, and data arrives late, incomplete or duplicated across paper registers.
+          <div className="lg:col-span-7">
+            <p className="text-[#273744] leading-relaxed text-[17px]">
+              In many Nigerian communities, health planning still relies on estimated catchment populations — not actual human geography. Settlements are dispersed, roads are seasonal, facility catchments overlap or leave vast gaps, and data arrives late or duplicated across paper registers.
             </p>
-            <p className="text-[#334155] leading-relaxed text-sm sm:text-base">
-              The result: children missed for routine immunisation, outreach sessions planned for places that don&apos;t exist on paper — and missed for places that do — and decision-makers planning without a true picture of where people live.
+            <p className="text-[#273744]/80 leading-relaxed mt-5">
+              The result: children missed for routine immunisation, outreach sessions planned for places that don&apos;t exist — and missed for places that do — and decision-makers planning without a true picture of where people live.
             </p>
-            <div className="grid sm:grid-cols-3 gap-3 sm:gap-4 pt-1">
+
+            <div className="mt-8 grid sm:grid-cols-3 gap-4">
               {[
-                { title: "Incomplete coverage", desc: "Estimated populations mask real settlement distribution." },
-                { title: "Dispersed settlements", desc: "Rural clusters beyond 5km radii remain invisible." },
-                { title: "Insufficient data", desc: "Paper systems delay insight until after the decision window." },
-              ].map(item => (
-                <div key={item.title} className="bg-[#FDFCF7] border border-[#E2E8F0] rounded-2xl p-4">
-                  <h4 className="font-semibold text-sm text-[#0B1930] leading-tight">{item.title}</h4>
-                  <p className="text-xs sm:text-xs text-[#64748B] mt-2 leading-relaxed">{item.desc}</p>
+                { n: "01", t: "Incomplete coverage", d: "Estimated populations mask real settlement distribution." },
+                { n: "02", t: "Dispersed settlements", d: "Rural clusters beyond 5km radii remain invisible." },
+                { n: "03", t: "Insufficient data", d: "Paper systems delay insight past the decision window." },
+              ].map(i => (
+                <div key={i.t} className="bg-white border border-[#E6EBED] rounded-2xl p-5">
+                  <div className="text-xs font-mono font-bold text-[#087F83]">{i.n}</div>
+                  <h4 className="font-semibold text-sm text-[#10283F] mt-2 leading-tight">{i.t}</h4>
+                  <p className="text-xs text-[#71808B] mt-2 leading-relaxed">{i.d}</p>
                 </div>
               ))}
             </div>
-            <p className="text-[#0B1930] font-medium leading-relaxed text-sm sm:text-base">
-              MSS connects <span className="text-[#0E7C7B]">geospatial intelligence</span>, <span className="text-[#0E7C7B]">healthcare technology</span> and <span className="text-[#0E7C7B]">implementation expertise</span> — so plans reflect real geography, tools fit frontline workflows, and evidence reaches decision tables before budgets are fixed.
+
+            <p className="text-[#10283F] font-medium leading-relaxed mt-8 border-l-2 border-[#087F83] pl-5">
+              MSS connects <span className="text-[#087F83]">geospatial intelligence</span>, <span className="text-[#087F83]">healthcare technology</span> and <span className="text-[#087F83]">implementation expertise</span> — so plans reflect real geography and evidence reaches decision tables before budgets are fixed.
             </p>
           </div>
         </div>
@@ -87,76 +91,79 @@ export function PurposeSection() {
   )
 }
 
+// Core Competencies — image-led, numbered
 export function CoreCompetencies() {
   const items = [
     {
       k: "01",
       icon: Database,
       title: "Digital Health Systems",
-      desc: "We develop and deploy digital solutions that support healthcare delivery, reporting, recording, ordering and reconciliation — from facility registers to logistics visibility.",
-      points: ["Electronic health information systems", "Immunisation information systems", "Logistics & commodity visibility", "Facility-level deployment"],
-      color: "bg-[#0B1930]",
+      desc: "Electronic health records, immunisation platforms, logistics visibility and facility deployment — built for offline, low-bandwidth frontline use.",
+      img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600&auto=format&fit=crop",
+      points: ["EHR & health information systems", "Immunisation information systems", "Logistics & commodity visibility"],
       href: "/capabilities/digital-health"
     },
     {
       k: "02",
       icon: MapPinned,
       title: "Geospatial Intelligence",
-      desc: "Settlement mapping, health facility mapping, accessibility analysis and microplanning — so teams identify underserved populations with precision, not approximation.",
-      points: ["Settlement & facility mapping", "Catchment-area & proximity analysis", "Geospatial microplanning", "Geographic coverage analysis"],
-      color: "bg-[#0E7C7B]",
+      desc: "Settlement & facility mapping, accessibility analysis and microplanning — identifying underserved populations with precision.",
+      img: "https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=600&auto=format&fit=crop",
+      points: ["Settlement & facility mapping", "Catchment & proximity analysis", "Geospatial microplanning"],
       href: "/capabilities/geospatial"
     },
     {
       k: "03",
       icon: LineChart,
       title: "Data Analytics & Intelligence",
-      desc: "We transform routine and survey data into actionable insights for programme monitoring, resource allocation and evidence-based decisions.",
-      points: ["Routine & survey data analysis", "Data quality assessment", "Programme performance dashboards", "Coverage gap identification"],
-      color: "bg-[#0EA5E9]",
+      desc: "Transform routine and survey data into actionable insights for monitoring, resource allocation and evidence-based decisions.",
+      img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop",
+      points: ["Routine & survey analysis", "Data quality assessment", "Programme performance dashboards"],
       href: "/capabilities/analytics"
     },
     {
       k: "04",
       icon: UsersRound,
       title: "Programme & Project Management",
-      desc: "End-to-end coordination: design, partner management, field deployment, training, implementation oversight, monitoring and independent verification.",
-      points: ["Programme design & implementation", "Stakeholder & partner coordination", "Training & capacity building", "Monitoring, evaluation & verification"],
-      color: "bg-[#334155]",
+      desc: "End-to-end coordination: design, partner management, field deployment, training, M&E and independent verification.",
+      img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop",
+      points: ["Programme design & delivery", "Training & capacity building", "M&E & verification"],
       href: "/capabilities/programme-management"
     },
   ]
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-[#F1F5F9]">
-      <div className="max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-8">
+    <section className="section-y bg-[#F0F3F4]">
+      <div className="container-mss">
         <div className="max-w-3xl">
-          <Eyebrow>Core Competencies</Eyebrow>
-          <h2 className="font-display text-[26px] sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0B1930] mt-4">Four capabilities. One implementation mindset.</h2>
-          <p className="text-[#475569] mt-4 leading-relaxed text-sm sm:text-base">We don&apos;t sell software in isolation. We partner to assess, co-design, deploy and verify — so systems are actually used, and gaps actually close.</p>
+          <div className="eyebrow">Core Competencies</div>
+          <h2 className="font-bold tracking-tight text-[#10283F] mt-4" style={{ fontSize: "clamp(30px, 4vw, 44px)" }}>Four capabilities. One implementation mindset.</h2>
+          <p className="text-[#273744]/70 mt-4 leading-relaxed">We don&apos;t sell software in isolation. We partner to assess, co-design, deploy and verify — so systems are actually used.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-10">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mt-10">
           {items.map(item => (
-            <div key={item.title} className="group bg-white rounded-[20px] sm:rounded-[24px] border border-[#E2E8F0] p-6 sm:p-7 lg:p-8 hover:shadow-[0_12px_40px_rgba(11,25,48,0.08)] hover:border-[#0E7C7B]/20 transition-all flex flex-col">
-              <div className="flex items-start justify-between gap-3">
-                <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl ${item.color} flex items-center justify-center text-white shrink-0`}>
-                  <item.icon className="w-5 h-5 sm:w-6 sm:h-6" />
+            <Link key={item.title} href={item.href} className="group bg-white rounded-[20px] border border-[#E6EBED] overflow-hidden hover:shadow-[0_16px_48px_rgba(16,40,63,0.08)] hover:border-[#087F83]/15 transition-all flex flex-col">
+              <div className="relative h-48 overflow-hidden">
+                <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1D30]/70 via-[#0A1D30]/10 to-transparent" />
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur rounded-full px-3 py-1 text-xs font-mono font-bold text-[#10283F]">{item.k}</div>
+                <div className="absolute bottom-4 left-4 w-10 h-10 rounded-xl bg-white flex items-center justify-center text-[#10283F] shadow">
+                  <item.icon className="w-5 h-5" />
                 </div>
-                <span className="text-[10px] sm:text-xs font-mono tracking-widest text-[#94A3B8] text-right">{item.k} — CAPABILITY</span>
               </div>
-              <h3 className="font-display font-bold text-lg sm:text-xl text-[#0B1930] mt-5 sm:mt-6">{item.title}</h3>
-              <p className="text-sm leading-relaxed text-[#475569] mt-3 flex-1">{item.desc}</p>
-              <ul className="mt-5 space-y-2 list-none p-0 m-0">
-                {item.points.map(p => (
-                  <li key={p} className="flex items-start gap-2.5 text-sm text-[#334155] leading-snug">
-                    <Check className="w-4 h-4 mt-0.5 text-[#0E7C7B] shrink-0" /> <span>{p}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link href={item.href} className="mt-6 inline-flex items-center gap-2 text-[13px] font-semibold tracking-wide uppercase text-[#0E7C7B] group-hover:gap-3 transition-all">
-                Explore capability <ArrowUpRight className="w-4 h-4 shrink-0" />
-              </Link>
-            </div>
+              <div className="p-6 sm:p-8 flex flex-col flex-1">
+                <h3 className="font-bold text-lg text-[#10283F] group-hover:text-[#087F83] transition-colors">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-[#273744]/70 mt-2 flex-1">{item.desc}</p>
+                <ul className="mt-5 space-y-2">
+                  {item.points.map(p => (
+                    <li key={p} className="flex gap-2 text-sm text-[#273744]"><Check className="w-4 h-4 mt-0.5 text-[#087F83] shrink-0" />{p}</li>
+                  ))}
+                </ul>
+                <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold tracking-wide uppercase text-[#087F83] group-hover:gap-3 transition-all">
+                  Explore capability <ArrowUpRight className="w-4 h-4" />
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -168,32 +175,32 @@ export function ImpactGrid() {
   const areas = [
     { icon: Syringe, title: "Routine Immunisation", desc: "Microplanning, session allocation and defaulter tracking for equitable RI." },
     { icon: ShieldCheck, title: "Zero-Dose Reduction", desc: "Identify and reach children missed by routine services." },
-    { icon: Building, title: "Primary Healthcare", desc: "Facility readiness, workforce mapping and service integration." },
+    { icon: Building, title: "Primary Healthcare Strengthening", desc: "Facility readiness, workforce mapping and integration." },
     { icon: MapIcon, title: "Facility & Workforce Mapping", desc: "Geospatial registries and HR distribution analysis." },
     { icon: Truck, title: "Logistics & Commodity Visibility", desc: "Cold chain, stock visibility and last-mile intelligence." },
-    { icon: Activity, title: "Disease Surveillance & Response", desc: "Timely data for detection, targeting and response." },
+    { icon: Activity, title: "Disease Surveillance & Response", desc: "Timely data for detection and geographic targeting." },
     { icon: Wallet, title: "Health Financing", desc: "Evidence for resource allocation and investment cases." },
-    { icon: Building2, title: "State-Level Planning", desc: "Planning that reflects actual population geography." },
+    { icon: Building2, title: "State-Level Health Planning", desc: "Planning that reflects actual population geography." },
   ]
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-white">
-      <div className="max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 sm:gap-6">
-          <div className="min-w-0">
-            <Eyebrow>Where We Create Impact</Eyebrow>
-            <h2 className="font-display text-[26px] sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0B1930] mt-4">Applied where it changes coverage.</h2>
+    <section className="section-y bg-white">
+      <div className="container-mss">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+          <div>
+            <div className="eyebrow">Where We Create Impact</div>
+            <h2 className="font-bold tracking-tight text-[#10283F] mt-4" style={{ fontSize: "clamp(28px, 3.5vw, 40px)" }}>Applied where it changes coverage.</h2>
           </div>
-          <p className="text-[#475569] max-w-xl leading-relaxed text-sm sm:text-base">MSS capabilities are deployed across the health system — from settlement-level microplans to state-level investment decisions.</p>
+          <p className="text-[#273744]/60 max-w-xl leading-relaxed text-sm sm:text-base">MSS capabilities are deployed across the health system — from settlement microplans to state investment decisions.</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mt-8 sm:mt-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
           {areas.map(a => (
-            <div key={a.title} className="group bg-[#FDFCF7] border border-[#E2E8F0] rounded-2xl p-5 sm:p-6 hover:bg-[#0B1930] hover:text-white hover:border-[#0B1930] transition-colors">
-              <div className="w-10 h-10 rounded-xl bg-[#E6F3F3] group-hover:bg-white/10 flex items-center justify-center text-[#0E7C7B] group-hover:text-white transition-colors shrink-0">
+            <div key={a.title} className="group bg-[#FAFBF9] border border-[#E6EBED] rounded-2xl p-6 hover:bg-[#10283F] hover:text-white hover:border-[#10283F] transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-[#E6F5F6] group-hover:bg-white/10 flex items-center justify-center text-[#087F83] group-hover:text-white transition-colors">
                 <a.icon className="w-5 h-5" />
               </div>
               <h3 className="font-semibold text-sm mt-4 leading-tight">{a.title}</h3>
-              <p className="text-xs sm:text-xs leading-relaxed mt-2 opacity-70 group-hover:opacity-80">{a.desc}</p>
+              <p className="text-xs leading-relaxed mt-2 opacity-60 group-hover:opacity-80">{a.desc}</p>
             </div>
           ))}
         </div>
@@ -202,38 +209,39 @@ export function ImpactGrid() {
   )
 }
 
+// Methodology — horizontal timeline with connecting line
 export function HowWeWork() {
   const steps = [
-    { n: "01", title: "Assess & Measure", desc: "Understand actual community geography, facilities, coverage gaps and data quality. No assumptions.", color: "bg-[#0B1930]" },
-    { n: "02", title: "Co-design & Build", desc: "Develop practical solutions alongside the teams that will use them.", color: "bg-[#0E7C7B]" },
-    { n: "03", title: "Deploy & Strengthen", desc: "Implement systems, train teams, coordinate stakeholders and support adoption until it sticks.", color: "bg-[#0EA5E9]" },
-    { n: "04", title: "Monitor & Verify", desc: "Evaluate implementation, identify gaps and translate evidence into findings.", color: "bg-[#475569]" },
+    { n: "01", title: "Assess & Measure", desc: "Understand actual community geography, facilities, coverage gaps and data quality." },
+    { n: "02", title: "Co-design & Build", desc: "Develop practical solutions alongside the teams that will use them." },
+    { n: "03", title: "Deploy & Strengthen", desc: "Implement systems, train teams and support adoption until it sticks." },
+    { n: "04", title: "Monitor & Verify", desc: "Evaluate implementation, identify gaps and translate evidence." },
   ]
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-[#0B1930] text-white relative overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.06]">
-        <div className="w-full h-full" style={{ backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`, backgroundSize: "28px 28px" }} />
-      </div>
-      <div className="relative max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-8">
+    <section className="section-y bg-[#0A1D30] text-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`, backgroundSize: "28px 28px" }} />
+      <div className="relative container-mss">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-[#14B8A6]">
-            <span className="w-8 h-px bg-[#14B8A6]" /> How We Work
+          <div className="inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.14em] uppercase text-[#48BFC2]">
+            <span className="w-7 h-px bg-[#48BFC2]" /> How We Work
           </div>
-          <h2 className="font-display text-[26px] sm:text-3xl lg:text-4xl font-bold tracking-tight mt-4">An implementation methodology built for field reality.</h2>
-          <p className="text-white/70 mt-4 leading-relaxed text-sm sm:text-base">We work in four stages — from understanding real geography to verifying that systems are used and gaps close.</p>
+          <h2 className="font-bold tracking-tight mt-4 text-white" style={{ fontSize: "clamp(28px, 3.5vw, 40px)" }}>An implementation methodology built for field reality.</h2>
+          <p className="text-white/60 mt-4 leading-relaxed">We work in four stages — from understanding real geography to verifying that systems are used.</p>
         </div>
 
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {steps.map(s => (
-            <div key={s.n} className="relative bg-white/[0.06] backdrop-blur border border-white/10 rounded-[20px] sm:rounded-[24px] p-6 sm:p-7 hover:bg-white/[0.08] transition-colors">
-              <div className={`w-11 h-11 rounded-xl ${s.color} flex items-center justify-center text-white font-mono text-sm font-bold shrink-0`}>{s.n}</div>
-              <h3 className="font-display font-semibold text-base sm:text-lg mt-5 leading-tight">{s.title}</h3>
-              <p className="text-sm leading-relaxed text-white/70 mt-2">{s.desc}</p>
-            </div>
-          ))}
+        <div className="relative mt-12">
+          <div className="hidden lg:block absolute top-[44px] left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {steps.map(s => (
+              <div key={s.n} className="relative bg-white/[0.06] backdrop-blur border border-white/10 rounded-[20px] p-7">
+                <div className="w-10 h-10 rounded-xl bg-[#087F83] flex items-center justify-center text-white font-mono text-sm font-bold">{s.n}</div>
+                <div className="w-6 h-6 rounded-full bg-[#0A1D30] border-2 border-white/20 absolute -top-3 left-8 hidden lg:flex items-center justify-center"><div className="w-2 h-2 rounded-full bg-[#48BFC2]" /></div>
+                <h3 className="font-semibold text-white mt-5">{s.title}</h3>
+                <p className="text-sm leading-relaxed text-white/60 mt-2">{s.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
-
-        <div className="hidden lg:block mt-10 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
       </div>
     </section>
   )
@@ -241,34 +249,32 @@ export function HowWeWork() {
 
 export function EngagementModels() {
   const models = [
-    { title: "Assessment & Advisory", price: "Discovery → Recommendation", desc: "Rapid diagnostics of coverage, data quality and geospatial readiness — ending in a prioritised roadmap.", features: ["Coverage gap assessment", "Data quality review", "Microplanning readiness audit", "Investment case & roadmap"], cta: "Request Assessment" },
-    { title: "Co-design & Build", price: "Design → Prototype → Pilot", desc: "We co-create fit-for-purpose digital and geospatial solutions with your teams — built for the facility.", features: ["Human-centred design sprints", "Digital system development", "Geospatial microplanning toolkit", "Pilot with feedback loops"], cta: "Discuss Co-Design", featured: true },
-    { title: "Managed Delivery", price: "Deploy → Train → Verify", desc: "End-to-end delivery: deployment, training, coordination, monitoring and independent verification.", features: ["Field deployment & training", "Partner coordination", "Implementation monitoring", "Independent verification"], cta: "Enquire About Delivery" },
+    { title: "Assessment & Advisory", kicker: "Discovery → Recommendation", desc: "Rapid diagnostics of coverage, data quality and geospatial readiness — ending in a prioritised roadmap.", features: ["Coverage gap assessment", "Data quality review", "Readiness audit", "Investment case"], cta: "Request Assessment" },
+    { title: "Co-design & Build", kicker: "Design → Prototype → Pilot", desc: "We co-create fit-for-purpose digital and geospatial solutions with your teams — built for the facility.", features: ["Human-centred sprints", "Digital system development", "Geospatial toolkit", "Pilot with feedback loops"], cta: "Discuss Co-Design", featured: true },
+    { title: "Managed Delivery", kicker: "Deploy → Train → Verify", desc: "End-to-end delivery: deployment, training, coordination, monitoring and independent verification.", features: ["Field deployment & training", "Partner coordination", "Implementation monitoring", "Independent verification"], cta: "Enquire About Delivery" },
   ]
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-[#F8FAFC]">
-      <div className="max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-8">
+    <section className="section-y bg-[#F0F3F4]">
+      <div className="container-mss">
         <div className="text-center max-w-3xl mx-auto">
-          <Eyebrow>Engagement Models</Eyebrow>
-          <h2 className="font-display text-[26px] sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#0B1930] mt-4">How partners engage MSS.</h2>
-          <p className="text-[#475569] mt-4 leading-relaxed text-sm sm:text-base">From rapid assessment to managed delivery — flexible models that match your programme maturity.</p>
+          <div className="eyebrow justify-center">Engagement Models</div>
+          <h2 className="font-bold tracking-tight text-[#10283F] mt-4" style={{ fontSize: "clamp(28px, 3.5vw, 40px)" }}>How partners engage MSS.</h2>
+          <p className="text-[#273744]/60 mt-4 leading-relaxed">From rapid assessment to managed delivery — flexible models that match your programme maturity.</p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 mt-8 sm:mt-10">
+        <div className="grid lg:grid-cols-3 gap-6 mt-10">
           {models.map(m => (
-            <div key={m.title} className={`rounded-[20px] sm:rounded-[24px] border p-6 sm:p-8 flex flex-col ${m.featured ? "bg-[#0B1930] text-white border-[#0B1930] shadow-[0_16px_48px_rgba(11,25,48,0.2)] lg:scale-[1.02]" : "bg-white border-[#E2E8F0]"}`}>
-              <Badge variant={m.featured ? "teal" : "muted"}>{m.price}</Badge>
-              <h3 className="font-display font-bold text-lg sm:text-xl mt-4">{m.title}</h3>
-              <p className={`text-sm leading-relaxed mt-3 ${m.featured ? "text-white/70" : "text-[#475569]"}`}>{m.desc}</p>
-              <ul className="mt-6 space-y-3 flex-1 list-none p-0 m-0">
+            <div key={m.title} className={`rounded-[20px] border p-7 sm:p-8 flex flex-col ${m.featured ? "bg-[#10283F] text-white border-[#10283F] shadow-[0_16px_48px_rgba(16,40,63,0.18)] lg:scale-[1.02]" : "bg-white border-[#E6EBED]"}`}>
+              <div className={`inline-flex px-3 py-1 rounded-full text-[11px] font-bold tracking-wide uppercase w-fit ${m.featured ? "bg-white text-[#10283F]" : "bg-[#F0F3F4] text-[#273744] border border-[#E6EBED]"}`}>{m.kicker}</div>
+              <h3 className="font-bold text-xl mt-4">{m.title}</h3>
+              <p className={`text-sm leading-relaxed mt-3 ${m.featured ? "text-white/60" : "text-[#273744]/60"}`}>{m.desc}</p>
+              <ul className="mt-6 space-y-3 flex-1">
                 {m.features.map(f => (
-                  <li key={f} className={`flex items-start gap-2.5 text-sm leading-snug ${m.featured ? "text-white/90" : "text-[#334155]"}`}>
-                    <Check className={`w-4 h-4 mt-0.5 shrink-0 ${m.featured ? "text-[#14B8A6]" : "text-[#0E7C7B]"}`} /> <span>{f}</span>
-                  </li>
+                  <li key={f} className={`flex gap-2.5 text-sm ${m.featured ? "text-white/85" : "text-[#273744]"}`}><Check className={`w-4 h-4 mt-0.5 shrink-0 ${m.featured ? "text-[#48BFC2]" : "text-[#087F83]"}`} />{f}</li>
                 ))}
               </ul>
-              <Link href="/contact" className={`mt-8 inline-flex items-center justify-center gap-2 h-11 rounded-full text-[13px] font-semibold tracking-wide uppercase ${m.featured ? "bg-white text-[#0B1930] hover:bg-[#F1F5F9]" : "bg-[#0B1930] text-white hover:bg-[#132A4C]"}`}>
-                {m.cta} <ArrowUpRight className="w-4 h-4 shrink-0" />
+              <Link href="/contact" className={`mt-8 inline-flex items-center justify-center gap-2 h-11 rounded-full text-sm font-semibold tracking-wide uppercase ${m.featured ? "bg-white text-[#10283F] hover:bg-[#F0F3F4]" : "bg-[#10283F] text-white hover:bg-[#0A1D30]"}`}>
+                {m.cta} <ArrowUpRight className="w-4 h-4" />
               </Link>
             </div>
           ))}
