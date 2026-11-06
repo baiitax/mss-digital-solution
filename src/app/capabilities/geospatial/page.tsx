@@ -13,7 +13,7 @@ export default function GeospatialPage() {
       <Navbar />
       <main>
         <section className="bg-[#10283F] text-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8 py-12 lg:py-16">
+          <div className="container-mss py-12 lg:py-16">
             <div className="flex items-center gap-2 text-xs"><Link href="/capabilities" className="text-white/60 hover:text-white">Capabilities</Link><span className="text-white/30">›</span><span className="text-white">Geospatial Intelligence</span></div>
             <Badge variant="teal" className="mt-6">Capability 02 — Geospatial Intelligence</Badge>
             <h1 className="font-display text-4xl lg:text-5xl font-bold tracking-tight leading-[0.9] mt-4">If it&apos;s not on the map, <span className="text-[#48BFC2]">it&apos;s not in the plan.</span></h1>
@@ -21,8 +21,8 @@ export default function GeospatialPage() {
           </div>
         </section>
 
-        <section className="py-12 bg-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+        <section className="section-y bg-white">
+          <div className="container-mss">
             <div className="grid lg:grid-cols-12 gap-10">
               <div className="lg:col-span-7">
                 <h2 className="font-display text-2xl font-bold text-[#10283F]">What we deliver</h2>
@@ -78,8 +78,8 @@ export default function GeospatialPage() {
           </div>
         </section>
 
-        <section className="py-12 bg-[#FAFBF9] border-y border-[#E6EBED]">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+        <section className="section-y bg-[#FAFBF9] border-y border-[#E6EBED]">
+          <div className="container-mss">
             <h2 className="font-display text-2xl font-bold text-[#10283F]">Interactive demonstration — illustrative data</h2>
             <p className="text-sm text-[#273744] mt-2">All layers below are synthetic and labelled as illustrative. No confidential government, patient or programme dataset is displayed.</p>
             <div className="mt-6">
@@ -88,8 +88,8 @@ export default function GeospatialPage() {
           </div>
         </section>
 
-        <section className="py-12 bg-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+        <section className="section-y bg-white">
+          <div className="container-mss">
             <div className="bg-[#FAFBF9] border border-[#E6EBED] rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
                 <h3 className="font-display font-bold text-[#10283F]">Ready to map your programme&apos;s gaps?</h3>

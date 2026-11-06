@@ -15,7 +15,7 @@ export default function GeoST4RPage() {
         {/* Hero */}
         <section className="bg-[#10283F] text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-[#087F83]/25 via-transparent to-[#48BFC2]/10" />
-          <div className="relative max-w-[1440px] mx-auto px-6 lg:px-8 py-12 lg:py-20">
+          <div className="relative container-mss py-12 lg:py-20">
             <div className="max-w-4xl">
               <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 rounded-full px-4 py-2 text-xs font-semibold tracking-widest uppercase">
                 <MapPinned className="w-4 h-4 text-[#48BFC2]" /> Flagship Programme • Kano State
@@ -55,7 +55,7 @@ export default function GeoST4RPage() {
 
         {/* Story */}
         <section className="py-12 lg:py-16 bg-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+          <div className="container-mss">
             <div className="grid lg:grid-cols-12 gap-10">
               <div className="lg:col-span-7 space-y-10">
                 <div>
@@ -154,7 +154,7 @@ export default function GeoST4RPage() {
 
         {/* Interactive map */}
         <section className="py-12 bg-[#F0F3F4] border-y border-[#E6EBED]">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+          <div className="container-mss">
             <Eyebrow>Interactive — Illustrative Kano Settlement & Facility Layers</Eyebrow>
             <h2 className="font-display text-2xl font-bold text-[#10283F] mt-4">Explore how GMT thinking reveals gaps.</h2>
             <p className="text-sm text-[#273744] mt-2">Toggle layers, hover points — experience settlement-level microplanning. All data synthetic and labelled.</p>
@@ -166,7 +166,7 @@ export default function GeoST4RPage() {
 
         {/* Outcomes & partners */}
         <section className="py-12 bg-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+          <div className="container-mss">
             <div className="grid lg:grid-cols-12 gap-8">
               <div className="lg:col-span-7">
                 <h2 className="font-display text-2xl font-bold text-[#10283F]">Outcomes & Programme Contribution</h2>

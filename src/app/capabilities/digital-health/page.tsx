@@ -12,7 +12,7 @@ export default function DigitalHealthPage() {
       <Navbar />
       <main>
         <section className="bg-[#10283F] text-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8 py-12 lg:py-16">
+          <div className="container-mss py-12 lg:py-16">
             <div className="flex items-center gap-2 text-xs">
               <Link href="/capabilities" className="text-white/60 hover:text-white">Capabilities</Link><span className="text-white/30">›</span><span className="text-white">Digital Health Systems</span>
             </div>
@@ -39,8 +39,8 @@ export default function DigitalHealthPage() {
           </div>
         </section>
 
-        <section className="py-12 bg-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+        <section className="section-y bg-white">
+          <div className="container-mss">
             <div className="grid lg:grid-cols-12 gap-10">
               <div className="lg:col-span-8">
                 <h2 className="font-display text-2xl font-bold text-[#10283F]">What we deliver</h2>

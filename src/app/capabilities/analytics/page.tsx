@@ -12,7 +12,7 @@ export default function AnalyticsPage() {
       <Navbar />
       <main>
         <section className="bg-[#10283F] text-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8 py-12 lg:py-16">
+          <div className="container-mss py-12 lg:py-16">
             <div className="text-xs flex items-center gap-2"><Link href="/capabilities" className="text-white/60">Capabilities</Link><span className="text-white/30">›</span><span>Data Analytics</span></div>
             <Badge variant="teal" className="mt-6">Capability 03 — Data Analytics & Intelligence</Badge>
             <h1 className="font-display text-4xl lg:text-5xl font-bold tracking-tight leading-[0.9] mt-4">Turn routine data <span className="text-[#48BFC2]">into decisions.</span></h1>
@@ -20,8 +20,8 @@ export default function AnalyticsPage() {
           </div>
         </section>
 
-        <section className="py-12 bg-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+        <section className="section-y bg-white">
+          <div className="container-mss">
             <div className="grid lg:grid-cols-12 gap-10">
               <div className="lg:col-span-8">
                 <div className="grid md:grid-cols-2 gap-5">

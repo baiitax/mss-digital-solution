@@ -84,16 +84,26 @@ export default function ContactPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-[#10283F] text-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8 py-12 lg:py-16">
-            <Eyebrow className="text-[#48BFC2]">Contact & Partnership Enquiries</Eyebrow>
-            <h1 className="font-display text-4xl lg:text-5xl font-bold tracking-tight mt-4">Let&apos;s discuss <span className="text-[#48BFC2]">your</span> communities.</h1>
-            <p className="text-white/60 mt-4 max-w-2xl leading-relaxed">Whether you&apos;re a state government, development partner, facility network or investor — start a conversation. All enquiries are tracked via a secure, admin-managed system.</p>
+        <section className="bg-[#0A1D30] text-white relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#087F83]/12 via-transparent to-[#10283F]/60" />
+            <div className="absolute -top-20 -right-20 w-[50%] h-[70%] bg-[#48BFC2]/[0.05] rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
+          </div>
+          <div className="relative container-mss py-12 sm:py-14 lg:py-16">
+            <div className="eyebrow !text-[#48BFC2] before:!bg-[#48BFC2]">Contact & Partnership Enquiries</div>
+            <h1 className="font-bold tracking-[-0.03em] leading-[0.95] mt-4 text-white" style={{ fontSize: "clamp(30px, 4vw, 52px)" }}>Let&apos;s discuss <span className="text-[#48BFC2]">your</span> communities.</h1>
+            <p className="text-white/60 mt-4 max-w-2xl leading-relaxed text-[15px] sm:text-[16px]">Whether you&apos;re a state government, development partner, facility network or investor — start a conversation. All enquiries are tracked via a secure, admin-managed system.</p>
+            <div className="mt-5 inline-flex flex-wrap gap-2 text-[11px]">
+              <span className="px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.08] text-white/70">Secure enquiry system</span>
+              <span className="px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.08] text-white/70">NDPA-aware</span>
+              <span className="px-3 py-1.5 rounded-full bg-[#087F83] text-white font-medium">Response within 2 working days</span>
+            </div>
           </div>
         </section>
 
-        <section className="py-12 bg-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+        <section className="section-y bg-white">
+          <div className="container-mss">
             <div className="grid lg:grid-cols-12 gap-10">
               {/* Contact info + map */}
               <div className="lg:col-span-4 space-y-6">

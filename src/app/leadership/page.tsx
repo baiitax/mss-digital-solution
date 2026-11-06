@@ -1,8 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import Link from "next/link"
-import { Badge, Eyebrow } from "@/components/ui/badge"
-import { Award, GraduationCap, Building2, BookOpen, Mail, ArrowUpRight } from "lucide-react"
+import { Award, GraduationCap, Building2, BookOpen, ArrowUpRight, Quote, MapPin, Shield } from "lucide-react"
 
 export const metadata = { title: "Leadership — Jamil Aliyu Galadanci | MSS Digital Solutions" }
 
@@ -11,161 +10,146 @@ export default function LeadershipPage() {
     <div className="min-h-screen bg-[#FAFBF9]">
       <Navbar />
       <main>
-        {/* Hero */}
-        <section className="bg-[#10283F] text-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8 py-12 lg:py-16">
-            <Eyebrow className="text-[#48BFC2]">Leadership</Eyebrow>
-            <h1 className="font-display text-4xl lg:text-5xl font-bold tracking-tight mt-4">Led by implementation experience.</h1>
-            <p className="text-white/60 mt-4 max-w-2xl leading-relaxed">Executive leadership that bridges software engineering, public health informatics and programme delivery — so strategy survives contact with the facility.</p>
+        <section className="bg-[#0A1D30] text-white relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#087F83]/12 via-transparent to-[#10283F]/60" />
+            <div className="absolute -top-24 -right-24 w-[48%] h-[70%] bg-[#48BFC2]/[0.06] rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
+          </div>
+          <div className="relative container-mss py-12 sm:py-16">
+            <div className="max-w-[880px]">
+              <div className="eyebrow !text-[#48BFC2] before:!bg-[#48BFC2]">Leadership • Implementation experience</div>
+              <h1 className="font-bold tracking-[-0.03em] leading-[0.95] mt-4 text-white" style={{ fontSize: "clamp(30px, 4vw, 52px)" }}>Led by implementation<br />experience, not slideware.</h1>
+              <p className="text-white/60 mt-4 max-w-2xl leading-relaxed text-[15px] sm:text-[16px]">Executive leadership that bridges software engineering, public health informatics and programme delivery — so strategy survives contact with the facility.</p>
+              <div className="mt-5 inline-flex items-center gap-2 text-[11px] tracking-[0.1em] uppercase font-semibold text-white/60">
+                <MapPin className="w-3.5 h-3.5 text-[#48BFC2]" /> Kano • Global Health Informatics • Software Engineering
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Profile */}
-        <section className="py-12 lg:py-16 bg-white">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
-            <div className="grid lg:grid-cols-12 gap-10">
-              {/* Photo + quick facts */}
+        <section className="section-y bg-white">
+          <div className="container-mss">
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
               <div className="lg:col-span-4">
-                <div className="bg-[#FAFBF9] border border-[#E6EBED] rounded-[32px] p-6 lg:p-8 sticky top-24">
-                  <div className="aspect-[4/5] rounded-[24px] overflow-hidden bg-[#10283F] relative">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" alt="Jamil Aliyu Galadanci — Executive Director, MSS Digital Solutions Ltd. Portrait placeholder until approved photograph is provided." className="w-full h-full object-cover" />
-                    <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#10283F] to-transparent p-5">
-                      <p className="text-white font-semibold text-sm">Executive Director</p>
-                      <p className="text-white/70 text-xs">Portrait placeholder — approved photo pending</p>
+                <div className="bg-[#FAFBF9] border border-[#E6EBED] rounded-[20px] p-5 sm:p-6 lg:sticky lg:top-[88px]">
+                  <div className="aspect-[4/5] rounded-[16px] overflow-hidden bg-[#10283F] relative shadow-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" alt="Jamil Aliyu Galadanci — Executive Director, MSS Digital Solutions Ltd." className="w-full h-full object-cover" />
+                    <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0A1D30] via-[#0A1D30]/60 to-transparent p-5">
+                      <p className="text-white font-semibold text-[13px]">Executive Director</p>
+                      <p className="text-white/60 text-[11px]">Portrait placeholder — approved photo pending</p>
                     </div>
                   </div>
-
-                  <h2 className="font-display font-bold text-2xl text-[#10283F] mt-6">Jamil Aliyu Galadanci</h2>
-                  <p className="text-sm font-semibold text-[#087F83] mt-1">COREN-registered Software Engineer | Public Health Informatics</p>
-                  
-                  <div className="mt-6 space-y-3">
-                    <div className="flex items-center gap-3 text-sm text-[#273744] bg-white border border-[#E6EBED] rounded-full px-4 py-2.5">
-                      <Building2 className="w-4 h-4 text-[#087F83]" /> MSS Digital Solutions Ltd • Kano
+                  <h2 className="font-bold text-[22px] tracking-tight text-[#10283F] mt-5">Jamil Aliyu Galadanci</h2>
+                  <p className="text-[12px] font-semibold text-[#087F83] mt-1 leading-snug">COREN-registered Software Engineer • Public Health Informatics</p>
+                  <div className="mt-5 space-y-2.5">
+                    <div className="flex items-center gap-3 text-[12.5px] text-[#273744] bg-white border border-[#E6EBED] rounded-full px-4 py-2.5">
+                      <Building2 className="w-4 h-4 text-[#087F83] shrink-0" /> MSS Digital Solutions Ltd • Kano
                     </div>
-                    <div className="flex items-center gap-3 text-sm text-[#273744] bg-white border border-[#E6EBED] rounded-full px-4 py-2.5">
-                      <GraduationCap className="w-4 h-4 text-[#087F83]" /> MSc Bristol (UK) • B.Eng BUK (First Class)
+                    <div className="flex items-center gap-3 text-[12.5px] text-[#273744] bg-white border border-[#E6EBED] rounded-full px-4 py-2.5">
+                      <GraduationCap className="w-4 h-4 text-[#087F83] shrink-0" /> MSc Bristol (UK) • B.Eng BUK (First Class)
                     </div>
-                    <div className="flex items-center gap-3 text-sm text-[#273744] bg-white border border-[#E6EBED] rounded-full px-4 py-2.5">
-                      <Award className="w-4 h-4 text-[#087F83]" /> PRINCE2 • ISTQB • COREN
+                    <div className="flex items-center gap-3 text-[12.5px] text-[#273744] bg-white border border-[#E6EBED] rounded-full px-4 py-2.5">
+                      <Award className="w-4 h-4 text-[#087F83] shrink-0" /> PRINCE2 • ISTQB • COREN
                     </div>
                   </div>
-
-                  <div className="mt-6 flex gap-2">
-                    <span className="px-3 py-1.5 rounded-full bg-[#10283F] text-white text-xs font-medium">Public Health Informatics</span>
-                    <span className="px-3 py-1.5 rounded-full bg-[#E6F5F6] text-[#087F83] text-xs font-medium">Software Engineering</span>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    <span className="px-3 py-1.5 rounded-full bg-[#10283F] text-white text-[11px] font-medium">Public Health Informatics</span>
+                    <span className="px-3 py-1.5 rounded-full bg-[#E6F5F6] border border-[#087F83]/15 text-[#087F83] text-[11px] font-medium">Software Engineering</span>
                   </div>
-                  <p className="text-xs text-[#71808B] mt-4">LinkedIn and contact details displayed only when verified and approved by MSS.</p>
+                  <p className="text-[11px] text-[#71808B] mt-4 leading-relaxed">LinkedIn and contact details displayed only when verified and approved by MSS.</p>
                 </div>
               </div>
 
-              {/* Bio */}
-              <div className="lg:col-span-8 space-y-8">
-                <div className="bg-white border border-[#E6EBED] rounded-[24px] p-8">
-                  <h3 className="font-display font-bold text-xl text-[#10283F]">Executive Biography</h3>
-                  <div className="mt-4 space-y-4 text-[#273744] leading-relaxed">
-                    <p>
-                      <strong className="text-[#10283F]">Jamil Aliyu Galadanci</strong> is the Executive Director of MSS Digital Solutions Ltd and a <strong>COREN-registered Software Engineer</strong> specialising in <strong>Public Health Informatics</strong>. He brings a rare, implementation-grounded blend of technology strategy, health data infrastructure and global health programme management — from facility-level deployment to national systems optimisation.
-                    </p>
+              <div className="lg:col-span-8 space-y-6">
+                <div className="bg-white border border-[#E6EBED] rounded-[20px] p-6 sm:p-8 shadow-card">
+                  <div className="eyebrow">Executive Biography</div>
+                  <div className="mt-4 space-y-4 text-[#273744] leading-relaxed text-[14px]">
+                    <p><strong className="text-[#10283F]">Jamil Aliyu Galadanci</strong> is the Executive Director of MSS Digital Solutions Ltd and a <strong>COREN-registered Software Engineer</strong> specialising in <strong>Public Health Informatics</strong>. He brings a rare, implementation-grounded blend of technology strategy, health data infrastructure and global health programme management.</p>
                     <p>His work focuses on building digital health systems that frontline teams actually use, geospatial intelligence that makes underserved settlements visible, and data analytics that translate evidence into resource decisions.</p>
-                    <p>He is guided by the principle that <em className="text-[#10283F] font-medium">&ldquo;A tool that a facility cannot use is not a solution. It is a procurement.&rdquo;</em> — co-designing with the organisations and health workers who will own the system.</p>
+                    <div className="bg-[#FAFBF9] border border-[#E6EBED] rounded-2xl p-5 flex gap-3">
+                      <Quote className="w-5 h-5 text-[#087F83]/50 shrink-0 mt-0.5" />
+                      <p className="font-medium italic text-[#10283F] text-[14px] leading-relaxed">&ldquo;A tool that a facility cannot use is not a solution. It is a procurement.&rdquo; — co-designing with the organisations and health workers who will own the system.</p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Experience */}
-                <div className="bg-[#FAFBF9] border border-[#E6EBED] rounded-[24px] p-8">
-                  <h3 className="font-display font-bold text-xl text-[#10283F]">Professional Experience</h3>
-                  <div className="mt-6 space-y-5">
+                <div className="bg-[#FAFBF9] border border-[#E6EBED] rounded-[20px] p-6 sm:p-8">
+                  <h3 className="font-bold text-[#10283F] text-[16px]">Professional Experience</h3>
+                  <div className="mt-6 space-y-3">
                     {[
                       { role: "Chief Technology Officer", org: "Rednoxx Ltd", desc: "Technology leadership and strategy for digital health and enterprise systems." },
                       { role: "Senior Manager, Global Health Informatics", org: "eHealth Africa", desc: "Leadership of health informatics programmes across large-scale public health deployments." },
-                      { role: "Technical Project Manager — LoMIS Suite", org: "eHealth Africa", desc: "Technical leadership for LoMIS logistics management suite — later recognised by the WFP Digital Health Innovation Accelerator Award (2022/2023)." },
+                      { role: "Technical Project Manager — LoMIS Suite", org: "eHealth Africa", desc: "LoMIS logistics management suite — recipient of WFP Digital Health Innovation Accelerator Award (2022/2023)." },
                       { role: "Research Project & Data Manager", org: "Vanderbilt Center for Global Health", desc: "Oversight of research operations, data management and implementation for global health trials." },
-                      { role: "Lecturer & Programme Coordinator", org: "Bayero University, Kano (BUK)", desc: "Teaching and academic programme coordination in computer engineering / health informatics domains." },
+                      { role: "Lecturer & Programme Coordinator", org: "Bayero University, Kano (BUK)", desc: "Teaching and academic programme coordination in computer engineering / health informatics." },
                     ].map(item => (
-                      <div key={item.role} className="bg-white border border-[#E6EBED] rounded-2xl p-5 flex gap-4">
-                        <div className="w-10 h-10 rounded-xl bg-[#10283F] flex items-center justify-center shrink-0 text-white">
-                          <Building2 className="w-5 h-5" />
-                        </div>
+                      <div key={item.role} className="bg-white border border-[#E6EBED] rounded-2xl p-5 flex gap-4 hover:border-[#087F83]/20 transition-colors">
+                        <div className="w-10 h-10 rounded-xl bg-[#10283F] flex items-center justify-center shrink-0 text-white"><Building2 className="w-4 h-4" /></div>
                         <div>
-                          <div className="font-semibold text-[#10283F]">{item.role}</div>
-                          <div className="text-sm font-medium text-[#087F83]">{item.org}</div>
-                          <div className="text-sm text-[#273744] mt-1 leading-relaxed">{item.desc}</div>
+                          <div className="font-bold text-[#10283F] text-[13px]">{item.role}</div>
+                          <div className="text-[12px] font-semibold text-[#087F83]">{item.org}</div>
+                          <div className="text-[12.5px] text-[#273744]/70 mt-1 leading-relaxed">{item.desc}</div>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Contributions */}
-                <div className="bg-white border border-[#E6EBED] rounded-[24px] p-8">
-                  <h3 className="font-display font-bold text-xl text-[#10283F] flex items-center gap-2"><Award className="w-5 h-5 text-[#087F83]" /> Major Professional Contributions</h3>
-                  <div className="mt-6 grid md:grid-cols-2 gap-4">
+                <div className="bg-white border border-[#E6EBED] rounded-[20px] p-6 sm:p-8">
+                  <h3 className="font-bold text-[#10283F] flex items-center gap-2 text-[16px]"><Award className="w-5 h-5 text-[#087F83]" /> Major Contributions</h3>
+                  <div className="mt-6 grid sm:grid-cols-2 gap-3">
                     <div className="bg-[#F0FDFA] border border-[#087F83]/15 rounded-2xl p-5">
-                      <h4 className="font-semibold text-[#10283F] text-sm">LoMIS Suite</h4>
-                      <p className="text-sm text-[#273744] mt-2 leading-relaxed">Logistics management suite — recipient of the <strong>2022/2023 WFP Digital Health Innovation Accelerator Award</strong>.</p>
+                      <h4 className="font-bold text-[#10283F] text-[13px]">LoMIS Suite</h4>
+                      <p className="text-[12.5px] text-[#273744]/70 mt-2 leading-relaxed"><strong>WFP Digital Health Innovation Accelerator Award</strong> 2022/2023.</p>
                     </div>
                     <div className="bg-[#F0F3F4] border border-[#48BFC2]/20 rounded-2xl p-5">
-                      <h4 className="font-semibold text-[#10283F] text-sm">National EMID Optimisation</h4>
-                      <p className="text-sm text-[#273744] mt-2 leading-relaxed"><strong>GAVI-funded</strong> optimisation of the National Electronic Management of Immunization Data (EMID) system.</p>
+                      <h4 className="font-bold text-[#10283F] text-[13px]">National EMID Optimisation</h4>
+                      <p className="text-[12.5px] text-[#273744]/70 mt-2 leading-relaxed"><strong>GAVI-funded</strong> optimisation of National EMID system.</p>
                     </div>
-                    <div className="bg-[#FEF2F2] border border-[#DC2626]/15 rounded-2xl p-5">
-                      <h4 className="font-semibold text-[#10283F] text-sm">BISKIT — South Africa</h4>
-                      <p className="text-sm text-[#273744] mt-2 leading-relaxed">Blood Information System for Crisis Intervention and Management (BISKIT) — improving crisis blood operations.</p>
+                    <div className="bg-[#FFF7ED] border border-[#F59E0B]/15 rounded-2xl p-5">
+                      <h4 className="font-bold text-[#10283F] text-[13px]">BISKIT — South Africa</h4>
+                      <p className="text-[12.5px] text-[#273744]/70 mt-2 leading-relaxed">Blood Information System for Crisis Intervention and Management.</p>
                     </div>
                     <div className="bg-white border border-[#E6EBED] rounded-2xl p-5">
-                      <h4 className="font-semibold text-[#10283F] text-sm">SPRING & SPRING II</h4>
-                      <p className="text-sm text-[#273744] mt-2 leading-relaxed">Contributions to SPRING and SPRING II clinical research trials via Vanderbilt Center for Global Health.</p>
+                      <h4 className="font-bold text-[#10283F] text-[13px]">SPRING & SPRING II</h4>
+                      <p className="text-[12.5px] text-[#273744]/70 mt-2 leading-relaxed">Clinical research trials via Vanderbilt Center for Global Health.</p>
                     </div>
                   </div>
-                  <div className="mt-6 bg-[#10283F] text-white rounded-2xl p-5">
-                    <h4 className="font-semibold text-sm">Policy Contribution — Kano State</h4>
-                    <p className="text-sm text-white/70 mt-2 leading-relaxed">Contributions to the <strong className="text-white">Kano State hydroxyurea policy</strong> — translating research into state health policy for improved outcomes.</p>
+                  <div className="mt-4 bg-[#10283F] text-white rounded-2xl p-5 flex gap-3">
+                    <Shield className="w-5 h-5 text-[#48BFC2] shrink-0" />
+                    <p className="text-[12.5px] text-white/70 leading-relaxed"><strong className="text-white">Kano State hydroxyurea policy</strong> — translating research into state health policy for improved outcomes.</p>
                   </div>
                 </div>
 
-                {/* Education */}
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-[#FAFBF9] border border-[#E6EBED] rounded-[24px] p-6">
-                    <h3 className="font-display font-bold text-[#10283F] flex items-center gap-2"><GraduationCap className="w-5 h-5 text-[#087F83]" /> Education</h3>
-                    <ul className="mt-4 space-y-3 text-sm">
-                      <li className="bg-white border border-[#E6EBED] rounded-xl p-4">
-                        <div className="font-semibold text-[#10283F]">MSc Computer Science with Merit</div>
-                        <div className="text-[#087F83] font-medium">University of Bristol, UK</div>
-                      </li>
-                      <li className="bg-white border border-[#E6EBED] rounded-xl p-4">
-                        <div className="font-semibold text-[#10283F]">B.Eng. Computer Engineering — First Class</div>
-                        <div className="text-[#087F83] font-medium">Bayero University, Kano</div>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-white border border-[#E6EBED] rounded-[24px] p-6">
-                    <h3 className="font-display font-bold text-[#10283F] flex items-center gap-2"><Award className="w-5 h-5 text-[#087F83]" /> Certifications</h3>
-                    <ul className="mt-4 space-y-2 text-sm">
-                      <li className="flex items-center justify-between bg-[#FAFBF9] border border-[#E6EBED] rounded-xl px-4 py-3"><span className="font-medium text-[#10283F]">PRINCE2 Certified Project Manager</span><span className="text-xs bg-[#10283F] text-white px-2 py-1 rounded-full">Certified</span></li>
-                      <li className="flex items-center justify-between bg-[#FAFBF9] border border-[#E6EBED] rounded-xl px-4 py-3"><span className="font-medium text-[#10283F]">ISTQB Certified QA Engineer</span><span className="text-xs bg-[#087F83] text-white px-2 py-1 rounded-full">Certified</span></li>
-                      <li className="flex items-center justify-between bg-[#FAFBF9] border border-[#E6EBED] rounded-xl px-4 py-3"><span className="font-medium text-[#10283F]">Global Health Epidemiology</span><span className="text-xs text-[#273744]">Johns Hopkins Univ.</span></li>
-                      <li className="flex items-center justify-between bg-[#FAFBF9] border border-[#E6EBED] rounded-xl px-4 py-3"><span className="font-medium text-[#10283F]">Leadership & Management</span><span className="text-xs text-[#273744]">Univ. of Washington</span></li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Governance */}
-                <div className="bg-[#FAFBF9] border border-[#E6EBED] rounded-[24px] p-8">
-                  <h3 className="font-display font-bold text-lg text-[#10283F] flex items-center gap-2"><BookOpen className="w-5 h-5 text-[#087F83]" /> Governance & Research</h3>
-                  <p className="text-sm text-[#273744] mt-3 leading-relaxed">Board positions and peer-reviewed research contributions are documented in the official MSS Digital Solutions Company Profile. Detailed publication lists and governance roles are published only upon verification and approval — no publications, awards or additional employment history have been invented for this page.</p>
-                  <div className="mt-6 bg-white border border-[#E6EBED] rounded-2xl p-5 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <div>
-                      <div className="font-semibold text-[#10283F] text-sm">Invite Jamil to speak or advise?</div>
-                      <div className="text-sm text-[#273744] mt-1">Digital health, geospatial microplanning, PH informatics and implementation science.</div>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="bg-[#FAFBF9] border border-[#E6EBED] rounded-[20px] p-6">
+                    <h3 className="font-bold text-[#10283F] flex items-center gap-2 text-[14px]"><GraduationCap className="w-4 h-4 text-[#087F83]" /> Education</h3>
+                    <div className="mt-4 space-y-3">
+                      <div className="bg-white border border-[#E6EBED] rounded-xl p-4"><div className="font-bold text-[#10283F] text-[13px]">MSc Computer Science with Merit</div><div className="text-[#087F83] font-medium text-[12px]">University of Bristol, UK</div></div>
+                      <div className="bg-white border border-[#E6EBED] rounded-xl p-4"><div className="font-bold text-[#10283F] text-[13px]">B.Eng. Computer Engineering — First Class</div><div className="text-[#087F83] font-medium text-[12px]">Bayero University, Kano</div></div>
                     </div>
-                    <Link href="/contact" className="shrink-0 inline-flex items-center gap-2 bg-[#10283F] text-white px-6 h-11 rounded-full text-sm font-semibold tracking-wide uppercase">
-                      Make Enquiry <ArrowUpRight className="w-4 h-4" />
-                    </Link>
+                  </div>
+                  <div className="bg-white border border-[#E6EBED] rounded-[20px] p-6">
+                    <h3 className="font-bold text-[#10283F] flex items-center gap-2 text-[14px]"><Award className="w-4 h-4 text-[#087F83]" /> Certifications</h3>
+                    <div className="mt-4 space-y-2">
+                      <div className="flex items-center justify-between bg-[#FAFBF9] border border-[#E6EBED] rounded-xl px-4 py-3"><span className="font-medium text-[#10283F] text-[12.5px]">PRINCE2 Certified</span><span className="text-[11px] bg-[#10283F] text-white px-2 py-1 rounded-full">Certified</span></div>
+                      <div className="flex items-center justify-between bg-[#FAFBF9] border border-[#E6EBED] rounded-xl px-4 py-3"><span className="font-medium text-[#10283F] text-[12.5px]">ISTQB QA Engineer</span><span className="text-[11px] bg-[#087F83] text-white px-2 py-1 rounded-full">Certified</span></div>
+                      <div className="flex items-center justify-between bg-[#FAFBF9] border border-[#E6EBED] rounded-xl px-4 py-3"><span className="font-medium text-[#10283F] text-[12.5px]">Global Health Epidemiology</span><span className="text-[11px] text-[#71808B]">Johns Hopkins</span></div>
+                      <div className="flex items-center justify-between bg-[#FAFBF9] border border-[#E6EBED] rounded-xl px-4 py-3"><span className="font-medium text-[#10283F] text-[12.5px]">Leadership & Management</span><span className="text-[11px] text-[#71808B]">U. of Washington</span></div>
+                    </div>
                   </div>
                 </div>
 
-                <p className="text-xs text-[#71808B] text-center">All biographical information on this page is taken verbatim from the supplied MSS Digital Solutions Company Profile. No LinkedIn URLs, publications or credentials have been added beyond that source.</p>
+                <div className="bg-[#FAFBF9] border border-[#E6EBED] rounded-[20px] p-6 sm:p-7">
+                  <h3 className="font-bold text-[#10283F] flex items-center gap-2 text-[15px]"><BookOpen className="w-4 h-4 text-[#087F83]" /> Governance & Research</h3>
+                  <p className="text-[13px] text-[#273744]/70 mt-3 leading-relaxed">Board positions and peer-reviewed research contributions are documented in the official MSS Company Profile. Publication lists and governance roles are published only upon verification — no publications, awards or employment history have been invented.</p>
+                  <div className="mt-6 bg-white border border-[#E6EBED] rounded-2xl p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div><div className="font-bold text-[#10283F] text-[13px]">Invite Jamil to speak or advise</div><div className="text-[12px] text-[#273744]/60 mt-1">Digital health, geospatial microplanning, PH informatics.</div></div>
+                    <Link href="/contact" className="shrink-0 inline-flex items-center gap-2 bg-[#10283F] text-white px-6 h-10 rounded-full text-[12px] font-semibold tracking-[0.06em] uppercase hover:bg-[#0A1D30] transition-colors">Make Enquiry <ArrowUpRight className="w-4 h-4" /></Link>
+                  </div>
+                </div>
+                <p className="text-[11px] text-[#71808B] text-center">All biographical information is taken verbatim from the supplied MSS Company Profile.</p>
               </div>
             </div>
           </div>

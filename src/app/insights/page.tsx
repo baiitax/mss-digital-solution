@@ -70,11 +70,12 @@ export default function InsightsPage() {
     <div className="min-h-screen bg-[#FAFBF9]">
       <Navbar />
       <main>
-        <section className="bg-white border-b border-[#E6EBED]">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8 py-12">
-            <Eyebrow>Insights & Knowledge Centre</Eyebrow>
-            <h1 className="font-display text-4xl font-bold tracking-tight text-[#10283F] mt-4">Evidence, implementation notes and research — <span className="text-[#087F83]">curated for decision-makers.</span></h1>
-            <p className="text-[#273744] leading-relaxed mt-4 max-w-3xl">Articles are published by authorised administrators via the MSS Admin dashboard. All sample content below is clearly identified as editorial placeholders until verified by MSS.</p>
+        <section className="bg-[#0A1D30] text-white relative overflow-hidden">
+          <div className="absolute inset-0"><div className="absolute inset-0 bg-gradient-to-br from-[#087F83]/12 via-transparent to-[#10283F]/55" /><div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" /></div>
+          <div className="relative container-mss py-10 sm:py-12">
+            <div className="eyebrow !text-[#48BFC2] before:!bg-[#48BFC2]">Insights & Knowledge Centre</div>
+            <h1 className="font-bold tracking-[-0.03em] leading-[0.95] mt-4 text-white" style={{ fontSize: "clamp(28px, 3.6vw, 46px)" }}>Evidence, implementation notes and research — <span className="text-[#48BFC2]">curated for decision-makers.</span></h1>
+            <p className="text-white/60 leading-relaxed mt-4 max-w-3xl text-[15px]">Articles are published by authorised administrators via the MSS Admin dashboard. All sample content below is clearly identified as editorial placeholders until verified by MSS.</p>
             
             <div className="mt-8 flex flex-wrap items-center gap-2">
               {categories.map(cat => (
@@ -91,8 +92,8 @@ export default function InsightsPage() {
           </div>
         </section>
 
-        <section className="py-10 bg-[#FAFBF9]">
-          <div className="max-w-[1440px] mx-auto px-6 lg:px-8">
+        <section className="section-y bg-[#FAFBF9]">
+          <div className="container-mss">
             {/* Featured */}
             <div className="grid lg:grid-cols-2 gap-6">
               {posts.filter(p => p.featured).map(p => (
