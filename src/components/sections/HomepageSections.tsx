@@ -51,7 +51,7 @@ export function PurposeSection() {
               the Facility Walls.
             </h2>
             <div className="mt-8 rounded-2xl overflow-hidden border border-[#E6EBED] bg-white">
-              <img src="https://images.unsplash.com/photo-1532187863486-abf28ad4d967?q=80&w=800&auto=format&fit=crop" alt="Nigerian primary healthcare facility documentary" className="w-full h-48 object-cover" />
+              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop" alt="Nigerian primary healthcare facility documentary" className="w-full h-48 object-cover" />
               <div className="p-5">
                 <p className="font-medium italic text-[#10283F] text-sm leading-relaxed">&ldquo;A tool that a facility cannot use is not a solution. It is a procurement.&rdquo;</p>
                 <p className="text-xs text-[#71808B] mt-2">— MSS Operating Philosophy</p>

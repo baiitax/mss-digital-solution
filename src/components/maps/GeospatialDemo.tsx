@@ -1,20 +1,34 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Layers, MapPin, Users, Crosshair, Eye, EyeOff } from "lucide-react"
 
 type Settlement = { id: number; x: number; y: number; type: "settlement"; reached: boolean; name: string }
 type Facility = { id: number; x: number; y: number; type: "facility"; name: string }
 
-const settlements: Settlement[] = Array.from({ length: 84 }, (_, i) => ({
-  id: i,
-  x: 8 + Math.random() * 84,
-  y: 10 + Math.random() * 78,
-  type: "settlement",
-  reached: Math.random() > 0.32,
-  name: `Settlement ${String(i+1).padStart(3, "0")}`
-}))
+// Deterministic seeded RNG to avoid hydration mismatch (no Math.random on server)
+function seededRandom(seed: number) {
+  let s = seed
+  return () => {
+    s = (s * 9301 + 49297) % 233280
+    return s / 233280
+  }
+}
+
+function generateSettlements(): Settlement[] {
+  const rng = seededRandom(7341058) // RC 7341058 as seed — deterministic
+  return Array.from({ length: 61 }, (_, i) => ({
+    id: i,
+    x: 8 + rng() * 84,
+    y: 10 + rng() * 78,
+    type: "settlement" as const,
+    reached: rng() > 0.32,
+    name: `Settlement ${String(i + 1).padStart(3, "0")}`,
+  }))
+}
+
+const settlementsStatic = generateSettlements()
 
 const facilities: Facility[] = [
   { id: 1, x: 22, y: 28, type: "facility", name: "Gwale PHC" },
@@ -32,9 +46,12 @@ export function GeospatialDemo({ compact = false }: { compact?: boolean }) {
   const [showCatchments, setShowCatchments] = useState(true)
   const [hovered, setHovered] = useState<Settlement | Facility | null>(null)
 
+  const [settlements, setSettlements] = useState<Settlement[]>(settlementsStatic)
   const reachedCount = settlements.filter(s => s.reached).length
   const unreachedCount = settlements.filter(s => !s.reached).length
   const facilityCount = facilities.length
+
+  // Keep deterministic on both server/client; no effect needed — seed ensures same output
 
   return (
     <div className="bg-white rounded-2xl sm:rounded-[24px] border border-[#E6EBED] overflow-hidden shadow-[0_8px_40px_rgba(11,25,48,0.06)]">
@@ -67,8 +84,8 @@ export function GeospatialDemo({ compact = false }: { compact?: boolean }) {
 
       <div className="grid lg:grid-cols-[1fr_320px] gap-0">
         {/* Map */}
-        <div className={`relative bg-[#FAFBF9] p-3 sm:p-4 lg:p-6 ${compact ? "min-h-[420px]" : "min-h-[480px] sm:min-h-[520px]"}`}>
-          <div className="relative w-full h-full min-h-[380px] sm:min-h-[440px] bg-[#E8EEF5] rounded-xl sm:rounded-2xl overflow-hidden border border-[#E6EBED]">
+        <div className={`relative bg-[#FAFBF9] p-3 sm:p-4 lg:p-6 ${compact ? "min-h-[360px]" : "min-h-[380px] sm:min-h-[420px]"}`}>
+          <div className="relative w-full h-full min-h-[320px] sm:min-h-[360px] bg-[#E8EEF5] rounded-xl sm:rounded-2xl overflow-hidden border border-[#E6EBED]">
             {/* Grid */}
             <div className="absolute inset-0 opacity-30" style={{
               backgroundImage: `linear-gradient(#CBD5E1 1px, transparent 1px), linear-gradient(90deg, #CBD5E1 1px, transparent 1px)`,
@@ -76,10 +93,10 @@ export function GeospatialDemo({ compact = false }: { compact?: boolean }) {
             }} />
             <div className="absolute inset-0 bg-gradient-to-br from-[#F0F3F4]/60 via-transparent to-[#F0FDF4]/40" />
 
-            <svg className="absolute inset-0 w-full h-full pointer-events-none">
-              <path d="M 20% 15% L 55% 10% L 85% 25% L 80% 80% L 30% 85% L 12% 55% Z" fill="none" stroke="#71808B" strokeWidth="1.5" strokeDasharray="8 6" opacity="0.5" />
-              <path d="M 20% 15% L 45% 40% L 30% 85%" fill="none" stroke="#71808B" strokeWidth="1" strokeDasharray="4 4" opacity="0.3" />
-              <text x="50%" y="12%" textAnchor="middle" fontSize="9" fill="#71808B" fontWeight="600">KANO STATE — ILLUSTRATIVE EXTENT</text>
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+              <path d="M 20 15 L 55 10 L 85 25 L 80 80 L 30 85 L 12 55 Z" fill="none" stroke="#71808B" strokeWidth="0.4" strokeDasharray="2 1.5" opacity="0.5" />
+              <path d="M 20 15 L 45 40 L 30 85" fill="none" stroke="#71808B" strokeWidth="0.3" strokeDasharray="1 1" opacity="0.3" />
+              <text x="50" y="9" textAnchor="middle" fontSize="2.2" fill="#71808B" fontWeight="600">KANO STATE — ILLUSTRATIVE EXTENT</text>
             </svg>
 
             {showCatchments && showFacilities && facilities.map(f => (

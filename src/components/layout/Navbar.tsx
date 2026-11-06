@@ -31,7 +31,10 @@ export function Navbar() {
     return () => { document.body.style.overflow = "" }
   }, [open])
 
-  useEffect(() => { setOpen(false) }, [pathname])
+  useEffect(() => {
+    // Close mobile menu on route change without cascading render
+    if (open) setOpen(false)
+  }, [pathname, open])
 
   return (
     <>

@@ -100,7 +100,7 @@ export function Hero() {
               <div className="relative bg-white rounded-[20px] lg:rounded-[28px] overflow-hidden shadow-[0_20px_60px_rgba(16,40,63,0.12)] border border-[#E6EBED] p-3">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[14px] lg:rounded-[20px] bg-[#0A1D30]">
                   <img
-                    src="https://images.unsplash.com/photo-1586776802477-3680284eda45?q=80&w=1400&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1400&auto=format&fit=crop"
                     alt="Community health worker using tablet in Nigerian primary healthcare"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
@@ -154,12 +154,12 @@ export function Hero() {
                 </div>
               </div>
 
-              {/* Floating accent — desktop only */}
+              {/* Floating accent — desktop only — illustrative */}
               <div className="hidden xl:block absolute -left-6 -bottom-6 bg-white rounded-2xl shadow-[0_12px_32px_rgba(16,40,63,0.10)] border border-[#E6EBED] p-4 w-[220px]">
                 <div className="text-xs font-bold text-[#10283F]">Data to Decision</div>
-                <div className="text-xs text-[#71808B]">Coverage dashboards</div>
+                <div className="text-xs text-[#71808B]">Settlement-level mapping</div>
                 <div className="mt-3 h-1.5 bg-[#F0F3F4] rounded-full overflow-hidden"><div className="h-full w-[72%] bg-[#087F83] rounded-full" /></div>
-                <div className="mt-2 text-[11px] text-[#71808B]">72% settlement visibility</div>
+                <div className="mt-2 text-[11px] text-[#71808B]">Illustrative • GMT approach</div>
               </div>
             </motion.div>
           </div>

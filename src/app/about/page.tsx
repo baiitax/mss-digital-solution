@@ -77,7 +77,7 @@ export default function AboutPage() {
                 </div>
                 {/* Documentary image */}
                 <div className="mt-6 rounded-2xl overflow-hidden border border-[#E6EBED] shadow-card hidden lg:block">
-                  <img src="https://images.unsplash.com/photo-1586776802477-3680284eda45?q=80&w=800&auto=format&fit=crop" alt="Kano field coordination" className="w-full h-[260px] object-cover" loading="lazy" />
+                  <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop" alt="Kano field coordination" className="w-full h-[260px] object-cover" loading="lazy" />
                   <div className="px-4 py-3 flex items-center justify-between bg-white">
                     <span className="text-[11px] tracking-[0.08em] uppercase font-semibold text-[#71808B]">Kano • Field coordination</span>
                     <span className="w-2 h-2 rounded-full bg-[#087F83]" />
@@ -158,7 +158,7 @@ export default function AboutPage() {
                   ))}
                 </div>
                 <div className="mt-6 rounded-2xl overflow-hidden border border-[#E6EBED] hidden lg:block">
-                  <img src="https://images.unsplash.com/photo-1532187863486-abf28ad4d967?q=80&w=800&auto=format&fit=crop" alt="Settlement outreach" className="w-full h-[220px] object-cover" loading="lazy" />
+                  <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop" alt="Settlement outreach" className="w-full h-[220px] object-cover" loading="lazy" />
                 </div>
               </div>
               <div className="lg:col-span-7">

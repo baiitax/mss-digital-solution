@@ -23,10 +23,10 @@
   --nav-bg: rgba(255,255,255,0.92);
   --nav-border: rgba(16,40,63,0.06);
 
-  /* Spacing tokens */
-  --section-y-desktop: 128px;
-  --section-y-tablet: 96px;
-  --section-y-mobile: 72px;
+  /* Spacing tokens — spec: desktop 88-120, mobile 52-76 */
+  --section-y-desktop: 96px;
+  --section-y-tablet: 72px;
+  --section-y-mobile: 56px;
 
   /* Radius */
   --radius-sm: 8px;
@@ -93,10 +93,10 @@ ul, ol { padding-left: 0; list-style: none; }
 @media (min-width: 1024px) { .container-mss { padding-left: 64px; padding-right: 64px; } }
 @media (min-width: 1440px) { .container-mss { padding-left: 80px; padding-right: 80px; } }
 
-/* Section spacing */
-.section-y { padding-top: 72px; padding-bottom: 72px; }
-@media (min-width: 768px) { .section-y { padding-top: 96px; padding-bottom: 96px; } }
-@media (min-width: 1024px) { .section-y { padding-top: 128px; padding-bottom: 128px; } }
+/* Section spacing — 56→72→96 responsive within spec */
+.section-y { padding-top: 56px; padding-bottom: 56px; }
+@media (min-width: 768px) { .section-y { padding-top: 72px; padding-bottom: 72px; } }
+@media (min-width: 1024px) { .section-y { padding-top: 96px; padding-bottom: 96px; } }
 
 /* ── Utilities ── */
 .eyebrow {
