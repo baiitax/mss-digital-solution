@@ -3,10 +3,10 @@ import { test, expect } from "@playwright/test";
 // Fast smoke test for the burgundy mobile drawer (run before the full audit).
 test("drawer opens and closes @375", async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 });
-  await page.goto("https://mss-digital.vercel.app/", { waitUntil: "domcontentloaded" });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(900);
 
-  const toggle = page.locator('button[aria-label="Toggle menu"]').first();
+  const toggle = page.getByRole("button", { name: /(open|close) menu/i }).first();
   await expect(toggle).toBeVisible();
   await expect(toggle).toHaveAttribute("aria-expanded", "false");
 

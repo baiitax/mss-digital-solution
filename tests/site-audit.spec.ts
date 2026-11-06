@@ -138,7 +138,7 @@ test("mobile drawer opens, expands capabilities and dismisses @375", async ({ pa
   await page.goto(`${BASE}/`, { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(900);
 
-  const toggle = page.locator('button[aria-label="Toggle menu"]').first();
+  const toggle = page.getByRole("button", { name: /(open|close) menu/i }).first();
   await expect(toggle).toHaveAttribute("aria-expanded", "false");
 
   await toggle.click();
@@ -150,7 +150,7 @@ test("mobile drawer opens, expands capabilities and dismisses @375", async ({ pa
   expect(await page.evaluate(() => document.body.style.overflow)).toBe("hidden");
 
   // capabilities accordion exposes the four capability routes
-  await page.locator('button[aria-label="Toggle capabilities"]').first().click();
+  await page.getByRole("button", { name: /(expand|collapse) capabilities/i }).first().click();
   await page.waitForTimeout(400);
   await expect(drawer.locator('a[href="/capabilities/geospatial-intelligence"]').first()).toBeVisible();
 
