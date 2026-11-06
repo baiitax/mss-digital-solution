@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Inter, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Manrope, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -11,12 +11,6 @@ const manrope = Manrope({
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  variable: "--font-dm",
   subsets: ["latin"],
   display: "swap",
 });
@@ -34,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | MSS Digital Solutions",
   },
   description:
-    "Digital health systems, geospatial intelligence and data analytics — built to reach the communities that services have not yet reached. Kano-based implementation partner for governments and development partners.",
+    "Digital health systems, geospatial intelligence and data analytics — built to reach the communities that services have not yet reached. A Kano-based implementation partner for governments, development partners and healthcare institutions.",
   keywords: [
     "digital health Nigeria",
     "geospatial intelligence",
@@ -65,8 +59,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${inter.variable} ${dmSans.variable} ${mono.variable} antialiased`}>
-      <body className="min-h-screen bg-[#FAFBF9] text-[#273744] flex flex-col">
+    <html lang="en" className={`${manrope.variable} ${inter.variable} ${mono.variable}`}>
+      <body className="min-h-screen bg-[#FAF9F7] text-[#252B31] flex flex-col antialiased">
         {children}
       </body>
     </html>
