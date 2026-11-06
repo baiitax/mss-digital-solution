@@ -78,7 +78,7 @@ export function Navbar() {
         </div>
 
         <div className="container-mss">
-          <div className={cn("flex items-center justify-between gap-6 transition-all", scrolled ? "h-[68px]" : "h-[84px]")}>
+          <div className={cn("flex items-center justify-between gap-3 xl:gap-6 transition-all", scrolled ? "h-[68px]" : "h-[84px]")}>
             <Link href="/" className="flex items-center gap-3 shrink-0 group">
               <div className="w-10 h-10 rounded-[10px] bg-[#701F3D] flex items-center justify-center text-white font-extrabold text-[13px] tracking-tight group-hover:bg-[#50152D] transition-colors">MSS</div>
               <div className="hidden sm:block leading-none">
@@ -96,7 +96,7 @@ export function Navbar() {
                       <Link
                         href={l.href}
                         className={cn(
-                          "inline-flex items-center gap-1.5 px-3.5 py-2 text-[13.5px] font-medium tracking-wide rounded-full whitespace-nowrap transition-colors",
+                          "inline-flex items-center gap-1.5 px-2.5 xl:px-3.5 py-2 text-[12.5px] xl:text-[13.5px] font-medium tracking-wide rounded-full whitespace-nowrap transition-colors",
                           active ? "text-[#701F3D] bg-[#F9E9EE]" : "text-[#343D46] hover:text-[#252B31] hover:bg-[#FAF9F7]"
                         )}
                       >
@@ -125,7 +125,7 @@ export function Navbar() {
                     key={l.label}
                     href={l.href}
                     className={cn(
-                      "px-3.5 py-2 text-[13.5px] font-medium tracking-wide rounded-full whitespace-nowrap transition-colors",
+                      "px-2.5 xl:px-3.5 py-2 text-[12.5px] xl:text-[13.5px] font-medium tracking-wide rounded-full whitespace-nowrap transition-colors",
                       active ? "text-[#701F3D] bg-[#F9E9EE]" : "text-[#343D46] hover:text-[#252B31] hover:bg-[#FAF9F7]"
                     )}
                   >
@@ -136,7 +136,7 @@ export function Navbar() {
             </nav>
 
             <div className="flex items-center gap-3">
-              <Link href="/contact" className="hidden md:inline-flex items-center gap-2 bg-[#701F3D] hover:bg-[#50152D] text-white text-[12.5px] font-semibold tracking-[0.06em] uppercase px-6 h-10 rounded-full transition-colors">
+              <Link href="/contact" className="hidden md:inline-flex items-center gap-1.5 bg-[#701F3D] hover:bg-[#50152D] text-white text-[11.5px] xl:text-[12.5px] font-semibold tracking-[0.05em] xl:tracking-[0.06em] uppercase px-4 xl:px-6 h-10 rounded-full whitespace-nowrap transition-colors">
                 Partner With Us <ArrowUpRight className="w-3.5 h-3.5" />
               </Link>
               <button
