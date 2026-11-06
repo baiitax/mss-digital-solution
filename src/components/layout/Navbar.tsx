@@ -89,7 +89,7 @@ export function Navbar() {
                       <Link
                         href={l.href}
                         className={cn(
-                          "inline-flex items-center gap-1.5 px-4 py-2 text-[13.5px] font-medium tracking-wide rounded-full transition-colors",
+                          "inline-flex items-center gap-1.5 px-3.5 py-2 text-[13.5px] font-medium tracking-wide rounded-full whitespace-nowrap transition-colors",
                           active ? "text-[#701F3D] bg-[#F9E9EE]" : "text-[#343D46] hover:text-[#252B31] hover:bg-[#FAF9F7]"
                         )}
                       >
@@ -118,7 +118,7 @@ export function Navbar() {
                     key={l.label}
                     href={l.href}
                     className={cn(
-                      "px-4 py-2 text-[13.5px] font-medium tracking-wide rounded-full transition-colors",
+                      "px-3.5 py-2 text-[13.5px] font-medium tracking-wide rounded-full whitespace-nowrap transition-colors",
                       active ? "text-[#701F3D] bg-[#F9E9EE]" : "text-[#343D46] hover:text-[#252B31] hover:bg-[#FAF9F7]"
                     )}
                   >
@@ -126,9 +126,6 @@ export function Navbar() {
                   </Link>
                 )
               })}
-              <Link href="/our-work/geo-st4r-kano" className={cn("ml-1 px-4 py-2 rounded-full text-[13px] font-semibold tracking-wide transition-colors", pathname === "/our-work/geo-st4r-kano" ? "bg-[#701F3D] text-white" : "bg-[#701F3D]/10 text-[#701F3D] hover:bg-[#701F3D] hover:text-white")}>
-                Geo-ST4R
-              </Link>
             </nav>
 
             <div className="flex items-center gap-3">

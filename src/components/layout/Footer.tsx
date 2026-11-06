@@ -4,17 +4,7 @@ import { MapPin, Mail, Building2 } from "lucide-react"
 export function Footer() {
   return (
     <footer className="bg-[#343D46] text-white">
-      <div className="border-b border-white/[0.07] bg-white/[0.02]">
-        <div className="container-mss py-8 sm:py-10 flex flex-col lg:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="font-semibold text-lg sm:text-xl tracking-tight">Let’s Build Health Systems That Reach Everyone.</h3>
-            <p className="text-white/55 text-sm mt-2 max-w-2xl leading-relaxed">We collaborate with governments, development partners, academia, facilities and investors to deploy solutions that work in the field — not just the proposal.</p>
-          </div>
-          <Link href="/contact" className="shrink-0 inline-flex items-center gap-2 bg-[#701F3D] hover:bg-[#50152D] text-white px-8 h-12 rounded-full text-sm font-semibold tracking-wide uppercase transition-colors">
-            Start a Partnership Conversation
-          </Link>
-        </div>
-      </div>
+      <div className="border-b border-white/[0.07] h-1 w-full bg-[#701F3D]" />
 
       <div className="container-mss py-12 sm:py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
