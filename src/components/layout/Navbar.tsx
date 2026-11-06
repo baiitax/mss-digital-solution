@@ -43,6 +43,17 @@ export function Navbar() {
     return () => { document.body.style.overflow = "" }
   }, [open])
 
+  // Escape closes the mobile drawer (the panel covers the viewport, so there is
+  // no exposed backdrop to tap — the X control and Escape are the exits).
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false)
+    }
+    window.addEventListener("keydown", onKey)
+    return () => window.removeEventListener("keydown", onKey)
+  }, [open])
+
   // Close the mobile drawer whenever the route changes. Deferred with a
   // microtask so it is not a synchronous setState inside the effect body.
   useEffect(() => {
@@ -154,8 +165,12 @@ export function Navbar() {
 
       {open && (
         <div className="fixed inset-0 z-40 lg:hidden">
-          <div className="absolute inset-0 bg-[#1A1F24]/50 backdrop-blur-sm" onClick={() => setOpen(false)} aria-hidden="true" />
-          <div className="absolute inset-x-0 top-0 bottom-0 bg-[#FAF9F7] overflow-y-auto pt-[84px]">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Main menu"
+            className="absolute inset-x-0 top-0 bottom-0 bg-[#FAF9F7] overflow-y-auto pt-[84px]"
+          >
             <nav className="px-5 py-6 space-y-1">
               <p className="text-[11px] tracking-[0.14em] uppercase font-bold text-[#89929B] mb-3">Navigation</p>
               {links.map((l) => {
