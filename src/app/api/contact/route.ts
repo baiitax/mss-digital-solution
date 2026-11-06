@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
   const body = await req.json().catch(() => null)
   if (!body) return NextResponse.json({ error: "Invalid JSON" }, { status: 400 })
 
-  const { full_name, organisation, email, telephone, country, area_of_interest, subject, message } = body
+  const { full_name, organisation, role, email, telephone, country, area_of_interest, subject, message } = body
 
   // Normalise enquiry type — partnership vs general
   const enquiry_type = ALLOWED_TYPES.includes(body.enquiry_type) ? body.enquiry_type : "partnership"
@@ -72,6 +72,8 @@ export async function POST(req: NextRequest) {
   const { error } = await supabase.from("contact_enquiries").insert([{
     full_name: clean(full_name),
     organisation: organisation ? clean(organisation) : null,
+    role: role ? clean(role) : null,
+    enquiry_type,
     email: email.trim().toLowerCase(),
     telephone: telephone ? clean(telephone) : null,
     country: clean(country || "Nigeria"),
