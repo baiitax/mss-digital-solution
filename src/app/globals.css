@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source "../../src/**/*.{js,ts,jsx,tsx,mdx}";
 
 /* ─────────────────────────────────────────────
    MSS ELITE DESIGN SYSTEM — TOKENS
@@ -61,11 +62,9 @@ body {
 
 img, video, svg { max-width: 100%; }
 
-/* Editorial text wrap */
 h1, h2, h3, h4 { text-wrap: balance; overflow-wrap: break-word; }
 p, li { overflow-wrap: break-word; }
 
-/* Scrollbar — restrained */
 * { scrollbar-width: thin; scrollbar-color: var(--healthcare-teal) var(--soft-grey); }
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--soft-grey); }
@@ -74,15 +73,12 @@ p, li { overflow-wrap: break-word; }
 :focus-visible { outline: 2px solid var(--digital-cyan); outline-offset: 3px; }
 ::selection { background: var(--healthcare-teal); color: white; }
 
-/* List reset — prevent double bullets on mobile */
 ul, ol { padding-left: 0; list-style: none; }
 
-/* ── Typography scale (responsive) ── */
 .text-display { font-size: 56px; line-height: 0.95; letter-spacing: -0.03em; font-weight: 700; }
 @media (max-width: 1024px) { .text-display { font-size: 42px; } }
 @media (max-width: 640px) { .text-display { font-size: 34px; line-height: 0.92; } }
 
-/* ── Container ── */
 .container-mss {
   max-width: 1440px;
   margin: 0 auto;
@@ -93,12 +89,10 @@ ul, ol { padding-left: 0; list-style: none; }
 @media (min-width: 1024px) { .container-mss { padding-left: 64px; padding-right: 64px; } }
 @media (min-width: 1440px) { .container-mss { padding-left: 80px; padding-right: 80px; } }
 
-/* Section spacing — 56→72→96 responsive within spec */
 .section-y { padding-top: 56px; padding-bottom: 56px; }
 @media (min-width: 768px) { .section-y { padding-top: 72px; padding-bottom: 72px; } }
 @media (min-width: 1024px) { .section-y { padding-top: 96px; padding-bottom: 96px; } }
 
-/* ── Utilities ── */
 .eyebrow {
   font-size: 11px;
   letter-spacing: 0.16em;
