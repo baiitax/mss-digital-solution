@@ -13,7 +13,7 @@ const caps = [
     desc: "Electronic health information systems, immunisation platforms, logistics visibility and facility-level deployment — built for low-bandwidth, offline-capable frontline use.",
     href: "/capabilities/digital-health-systems",
     features: ["EHR & health information systems", "Immunisation information systems", "Logistics & commodity visibility", "Facility-level tech deployment"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop",
     accent: "bg-[#252B31]",
   },
   {
@@ -23,7 +23,7 @@ const caps = [
     desc: "Settlement & facility mapping, microplanning, catchment analysis and spatial visualisation — turning geography into coverage.",
     href: "/capabilities/geospatial-intelligence",
     features: ["Settlement & facility mapping", "Geospatial microplanning", "Catchment & proximity analysis", "Interactive map demonstration"],
-    image: "https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
     accent: "bg-[#701F3D]",
   },
   {
@@ -43,7 +43,7 @@ const caps = [
     desc: "Design, coordination, field deployment, training, M&E and independent verification — from assessment to verified adoption.",
     href: "/capabilities/programme-management",
     features: ["Programme design & delivery", "Stakeholder coordination", "Training & capacity building", "M&E & verification"],
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
     accent: "bg-[#343D46]",
   },
 ]
