@@ -31,10 +31,11 @@ export function Navbar() {
     return () => { document.body.style.overflow = "" }
   }, [open])
 
+  // Close mobile menu on route change
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    // Close mobile menu on route change without cascading render
-    if (open) setOpen(false)
-  }, [pathname, open])
+    setOpen(false)
+  }, [pathname])
 
   return (
     <>
@@ -108,8 +109,8 @@ export function Navbar() {
 
       {open && (
         <div className="fixed inset-0 z-40 lg:hidden">
-          <div className="absolute inset-0 bg-[#0A1D30]/55 backdrop-blur-sm" onClick={() => setOpen(false)} />
-          <div className="absolute inset-x-0 top-[68px] bottom-0 bg-[#FAFBF9] overflow-y-auto">
+          <div className="absolute inset-0 bg-[#0A1D30]/55 backdrop-blur-sm" onClick={() => setOpen(false)} aria-hidden="true" />
+          <div className="absolute inset-x-0 top-0 bottom-0 bg-[#FAFBF9] overflow-y-auto pt-[84px]">
             <nav className="px-5 py-6 space-y-1">
               <p className="text-[11px] tracking-[0.14em] uppercase font-bold text-[#71808B] mb-3">Navigation</p>
               {links.map(l => (
