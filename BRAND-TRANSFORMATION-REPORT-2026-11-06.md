@@ -219,3 +219,29 @@ These are content models, not a table per static section.
 | 16 | Existing features remain operational | ✅ dropdown, drawer, forms, admin route, geospatial demo |
 | 17 | Production build succeeds | ✅ TypeScript clean, 0 lint errors |
 | 18 | Live deployment verified | ✅ post-deploy sweeps on every commit |
+
+---
+
+## ADDENDUM — post-report fixes (commit `b6cef80`)
+
+**Mobile drawer accessibility defect found while committing the test suite.** The drawer's
+backdrop element was rendered full-screen beneath a panel that also covered the full
+viewport, so no part of the backdrop could ever receive a tap — the "tap outside to dismiss"
+affordance was non-functional. Dismissal now relies on the X control and an `Escape` key
+handler, and the panel carries `role="dialog"`, `aria-modal="true"` and an accessible name
+("Main menu"). Verified in production.
+
+**Test suite committed to the repository.** `tests/site-audit.spec.ts` (8 tests) and
+`tests/drawer-smoke.spec.ts` (1 test) run against production with `npx playwright test`.
+Final run: **12 passed** (the suites parameterise 4 viewports). The pre-restructure
+`mobile-audit.spec.ts` was retired — its route list and backdrop selectors no longer apply.
+
+Coverage: full CSS build carrying Burgundy tokens (86,305 bytes on this deploy) · zero legacy
+navy/teal computed styles · 15 canonical routes 200 with exactly one `h1` · 5 legacy routes
+returning 308 · 4 viewports × 15 routes with no horizontal overflow and no broken images ·
+drawer (capabilities accordion, 44 px touch targets, Escape + X dismissal) · desktop
+capabilities dropdown · contact validation plus `/api/contact` 400/200 contract.
+
+Running the suite requires `npm install` and `npx playwright install --with-deps chromium`
+(sandbox dependencies are not persisted between sessions). The success-path contact test
+writes one row to the production enquiries table, labelled `[AUTOMATED — SAFE TO DELETE]`.
