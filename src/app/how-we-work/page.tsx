@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import Link from "next/link"
 import { ArrowUpRight, Search, Pencil, Rocket, Eye, Check, Users, ShieldCheck, Clock } from "lucide-react"
 
@@ -18,6 +19,7 @@ export default function HowWeWorkPage() {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
           </div>
           <div className="relative container-mss py-14 sm:py-16 lg:py-20">
+            <div className="mb-5"><Breadcrumbs items={[{ label: "How We Work" }]} /></div>
             <div className="max-w-[900px]">
               <div className="inline-flex items-center gap-2 bg-white/[0.06] border border-white/[0.10] rounded-full px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.14em] uppercase text-white/80">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E8A0B8] animate-pulse" /> How We Work • Implementation partner, not vendor

@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import Link from "next/link"
 import { ArrowUpRight, MapPinned, Lightbulb, Target, Heart, Users, Building2, Quote, Compass, Layers, ShieldCheck } from "lucide-react"
 
@@ -30,6 +31,7 @@ export default function AboutPage() {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
           </div>
           <div className="relative container-mss py-12 sm:py-16 lg:py-20">
+            <div className="mb-5"><Breadcrumbs items={[{ label: "About Us" }]} /></div>
             <div className="max-w-[920px]">
               <div className="inline-flex items-center gap-2 bg-white/[0.06] border border-white/[0.10] rounded-full px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.14em] uppercase text-white/80">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E8A0B8] animate-pulse" /> About MSS Digital Solutions Ltd • RC 7341058
@@ -103,7 +105,7 @@ export default function AboutPage() {
                   <div className="flex items-center gap-2 text-[#701F3D] text-[11px] tracking-[0.12em] uppercase font-bold"><Compass className="w-4 h-4" /> Mission</div>
                   <p className="text-[#252B31] leading-relaxed mt-3 font-medium text-[15px]">To develop and implement digital solutions that help healthcare systems <span className="bg-[#F9E9EE] px-1 rounded">identify underserved communities, improve planning, strengthen service delivery and make evidence-based decisions.</span></p>
                   <div className="h-px bg-[#E8EAEC] my-6" />
-                  <div className="flex items-center gap-2 text-[#701F3D] text-[11px] tracking-[0.12em] uppercase font-bold"><Target className="w-4 h-4" /> Vision</div>
+                  <div className="flex items-center gap-2 text-[#701F3D] text-[11px] tracking-[0.12em] uppercase font-bold"><Target className="w-4 h-4" /> Vision <span className="ml-1 px-2 py-0.5 rounded-full bg-[#F0F1F2] text-[#59636D] text-[9.5px] font-bold tracking-[0.08em] normal-case">proposed — awaiting approval</span></div>
                   <p className="text-[#343D46]/80 leading-relaxed mt-3 text-[14px]">A Nigerian health system where every settlement is mapped, every facility is equipped with usable tools, and every decision is informed by timely, trustworthy data — so no community is invisible to care.</p>
                 </div>
 
@@ -130,6 +132,85 @@ export default function AboutPage() {
                       </div>
                     ))}
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Purpose */}
+        <section className="section-y bg-white border-t border-[#E8EAEC]">
+          <div className="container-mss">
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              <div className="lg:col-span-5">
+                <div className="eyebrow">Our Purpose</div>
+                <h2 className="font-bold tracking-[-0.02em] leading-[0.98] text-[#252B31] mt-4" style={{ fontSize: "clamp(24px, 2.6vw, 36px)" }}>
+                  To shorten the distance between<br /><span className="text-[#701F3D]">where services are planned</span><br />and where people live.
+                </h2>
+              </div>
+              <div className="lg:col-span-7 space-y-4 text-[#343D46] leading-relaxed text-[15px]">
+                <p>
+                  Three things have to hold together for a health system to reach the communities it has not yet reached. First, primary healthcare delivery must be planned at the level where services are actually given — the facility and its settlements. Second, geospatial intelligence must establish where those settlements and facilities actually are. Third, health data must arrive in a form that supports a decision before the planning window closes.
+                </p>
+                <p>
+                  When any one of the three is missing, the system defaults to estimates. Plans are built on population figures that assume an even distribution of people across a catchment that does not exist. Sessions are scheduled by radius rather than by settlement. Data arrives after the resource decision has already been made.
+                </p>
+                <p>
+                  MSS exists to hold the three together. Geography tells us where to look; systems capture what happens in the facility; analysis converts it into a decision. That is the sequence we work in, and it is why our capabilities are presented as one practice rather than four separate services.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Company Background + Registration */}
+        <section className="section-y bg-[#FAF9F7] border-y border-[#E8EAEC]">
+          <div className="container-mss">
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              <div className="lg:col-span-7">
+                <div className="eyebrow">Company Background</div>
+                <h2 className="font-bold tracking-tight text-[#252B31] mt-4" style={{ fontSize: "clamp(24px, 2.6vw, 34px)" }}>A young company with a specific mandate.</h2>
+                <div className="mt-5 space-y-4 text-[#343D46] leading-relaxed text-[15px]">
+                  <p>
+                    MSS Digital Solutions Ltd was incorporated in Nigeria in February 2024 and is headquartered in Kano State. The company was established to work on a defined problem set: the gap between health systems that are planned administratively and populations that are distributed geographically.
+                  </p>
+                  <p>
+                    The company operates as an implementation partner. Its work spans digital health systems, geospatial intelligence, data analytics and programme management — but the organising question is consistent across all four: will this be used by the team that delivers the service?
+                  </p>
+                  <p>
+                    That orientation shapes how MSS engages. Rather than supplying software and departing, MSS participates in assessment, co-design, deployment, training and verification. Where a programme requires field coordination, that coordination is part of the engagement rather than an assumption about the client&rsquo;s capacity.
+                  </p>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5">
+                <div className="bg-white border border-[#E8EAEC] rounded-[20px] p-6 shadow-card">
+                  <h3 className="font-bold text-[#252B31] text-[15px] flex items-center gap-2"><Building2 className="w-4 h-4 text-[#701F3D]" /> Corporate Registration Information</h3>
+                  <dl className="mt-5 space-y-3.5">
+                    {[
+                      ["Registered name", "MSS Digital Solutions Ltd."],
+                      ["Registration number", "RC 7341058"],
+                      ["Incorporation date", "9 February 2024"],
+                      ["Registered jurisdiction", "Federal Republic of Nigeria"],
+                      ["Head office", "No. 7 Alexandria Street, Gwale LGA, Kano State, Nigeria"],
+                      ["Sector", "Digital Health Technology & Geospatial Intelligence"],
+                    ].map(([k, v]) => (
+                      <div key={k} className="flex flex-col gap-0.5 pb-3 border-b border-[#F0F1F2] last:border-0 last:pb-0">
+                        <dt className="text-[10.5px] font-bold tracking-[0.1em] uppercase text-[#89929B]">{k}</dt>
+                        <dd className="text-[13px] text-[#252B31] leading-snug">{v}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                  <p className="text-[11px] text-[#89929B] mt-4 leading-relaxed">
+                    Registration details are published as supplied in the MSS company profile. No certifications, accreditations or memberships are claimed on this website beyond those stated.
+                  </p>
+                </div>
+
+                <div className="mt-4 bg-[#252B31] text-white rounded-[20px] p-6">
+                  <h3 className="font-bold text-[15px]">Institutional positioning</h3>
+                  <p className="text-[13px] text-white/70 mt-2 leading-relaxed">
+                    MSS positions itself as an implementation partner rather than a technology vendor: engaged for the outcome — services reaching settlements — not for the delivery of an artefact.
+                  </p>
                 </div>
               </div>
             </div>

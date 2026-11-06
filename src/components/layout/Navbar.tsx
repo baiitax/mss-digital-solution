@@ -43,8 +43,15 @@ export function Navbar() {
     return () => { document.body.style.overflow = "" }
   }, [open])
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => { setOpen(false); setMobileCapOpen(false) }, [pathname])
+  // Close the mobile drawer whenever the route changes. Deferred with a
+  // microtask so it is not a synchronous setState inside the effect body.
+  useEffect(() => {
+    const id = setTimeout(() => {
+      setOpen(false)
+      setMobileCapOpen(false)
+    }, 0)
+    return () => clearTimeout(id)
+  }, [pathname])
 
   const isActive = (href: string) => pathname === href || (href !== "/" && pathname.startsWith(href))
 

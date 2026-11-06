@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import Link from "next/link"
 import { Award, GraduationCap, Building2, BookOpen, ArrowUpRight, Quote, MapPin, Shield } from "lucide-react"
 
@@ -17,6 +18,7 @@ export default function LeadershipPage() {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
           </div>
           <div className="relative container-mss py-12 sm:py-16">
+            <div className="mb-5"><Breadcrumbs items={[{ label: "Leadership" }]} /></div>
             <div className="max-w-[880px]">
               <div className="eyebrow !text-[#E8A0B8] before:!bg-[#E8A0B8]">Leadership • Implementation experience</div>
               <h1 className="font-bold tracking-[-0.03em] leading-[0.95] mt-4 text-white" style={{ fontSize: "clamp(30px, 4vw, 52px)" }}>Led by implementation<br />experience, not slideware.</h1>
