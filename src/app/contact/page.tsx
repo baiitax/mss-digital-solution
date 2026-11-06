@@ -80,24 +80,24 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAFBF9]">
+    <div className="min-h-screen bg-[#FAF9F7]">
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="bg-[#0A1D30] text-white relative overflow-hidden">
+        <section className="bg-[#343D46] text-white relative overflow-hidden">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#087F83]/12 via-transparent to-[#10283F]/60" />
-            <div className="absolute -top-20 -right-20 w-[50%] h-[70%] bg-[#48BFC2]/[0.05] rounded-full blur-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#701F3D]/12 via-transparent to-[#252B31]/60" />
+            <div className="absolute -top-20 -right-20 w-[50%] h-[70%] bg-[#E8A0B8]/[0.05] rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
           </div>
           <div className="relative container-mss py-12 sm:py-14 lg:py-16">
-            <div className="eyebrow !text-[#48BFC2] before:!bg-[#48BFC2]">Contact & Partnership Enquiries</div>
-            <h1 className="font-bold tracking-[-0.03em] leading-[0.95] mt-4 text-white" style={{ fontSize: "clamp(30px, 4vw, 52px)" }}>Let&apos;s discuss <span className="text-[#48BFC2]">your</span> communities.</h1>
+            <div className="eyebrow !text-[#E8A0B8] before:!bg-[#E8A0B8]">Contact & Partnership Enquiries</div>
+            <h1 className="font-bold tracking-[-0.03em] leading-[0.95] mt-4 text-white" style={{ fontSize: "clamp(30px, 4vw, 52px)" }}>Let&apos;s discuss <span className="text-[#E8A0B8]">your</span> communities.</h1>
             <p className="text-white/60 mt-4 max-w-2xl leading-relaxed text-[15px] sm:text-[16px]">Whether you&apos;re a state government, development partner, facility network or investor — start a conversation. All enquiries are tracked via a secure, admin-managed system.</p>
             <div className="mt-5 inline-flex flex-wrap gap-2 text-[11px]">
               <span className="px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.08] text-white/70">Secure enquiry system</span>
               <span className="px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.08] text-white/70">NDPA-aware</span>
-              <span className="px-3 py-1.5 rounded-full bg-[#087F83] text-white font-medium">Response within 2 working days</span>
+              <span className="px-3 py-1.5 rounded-full bg-[#701F3D] text-white font-medium">Response within 2 working days</span>
             </div>
           </div>
         </section>
@@ -107,57 +107,57 @@ export default function ContactPage() {
             <div className="grid lg:grid-cols-12 gap-10">
               {/* Contact info + map */}
               <div className="lg:col-span-4 space-y-6">
-                <div className="bg-[#FAFBF9] border border-[#E6EBED] rounded-[24px] p-6">
-                  <h3 className="font-display font-bold text-[#10283F]">MSS Digital Solutions Ltd</h3>
+                <div className="bg-[#FAF9F7] border border-[#E8EAEC] rounded-[24px] p-6">
+                  <h3 className="font-display font-bold text-[#252B31]">MSS Digital Solutions Ltd</h3>
                   <div className="mt-4 space-y-4 text-sm">
                     <div className="flex gap-3">
-                      <MapPin className="w-5 h-5 text-[#087F83] shrink-0 mt-0.5" />
+                      <MapPin className="w-5 h-5 text-[#701F3D] shrink-0 mt-0.5" />
                       <div>
-                        <div className="font-semibold text-[#10283F]">Head Office</div>
-                        <div className="text-[#273744] leading-relaxed">No. 7 Alexandria Street, Gwale LGA, Kano State, Nigeria.</div>
+                        <div className="font-semibold text-[#252B31]">Head Office</div>
+                        <div className="text-[#343D46] leading-relaxed">No. 7 Alexandria Street, Gwale LGA, Kano State, Nigeria.</div>
                       </div>
                     </div>
                     <div className="flex gap-3">
-                      <Mail className="w-5 h-5 text-[#087F83] shrink-0 mt-0.5" />
+                      <Mail className="w-5 h-5 text-[#701F3D] shrink-0 mt-0.5" />
                       <div>
-                        <div className="font-semibold text-[#10283F]">Email</div>
-                        <div className="text-[#71808B] text-xs leading-relaxed">[verified email placeholder — admin-configurable via Site Settings]</div>
+                        <div className="font-semibold text-[#252B31]">Email</div>
+                        <div className="text-[#89929B] text-xs leading-relaxed">[verified email placeholder — admin-configurable via Site Settings]</div>
                       </div>
                     </div>
                     <div className="flex gap-3">
-                      <Phone className="w-5 h-5 text-[#087F83] shrink-0 mt-0.5" />
+                      <Phone className="w-5 h-5 text-[#701F3D] shrink-0 mt-0.5" />
                       <div>
-                        <div className="font-semibold text-[#10283F]">Telephone</div>
-                        <div className="text-[#71808B] text-xs">[verified number placeholder]</div>
+                        <div className="font-semibold text-[#252B31]">Telephone</div>
+                        <div className="text-[#89929B] text-xs">[verified number placeholder]</div>
                       </div>
                     </div>
                     <div className="flex gap-3">
-                      <Clock className="w-5 h-5 text-[#087F83] shrink-0 mt-0.5" />
+                      <Clock className="w-5 h-5 text-[#701F3D] shrink-0 mt-0.5" />
                       <div>
-                        <div className="font-semibold text-[#10283F]">Hours</div>
-                        <div className="text-[#273744] text-xs">Mon–Fri 09:00–17:00 WAT</div>
-                        <div className="text-[#71808B] text-xs">RC 7341058 • Incorporated 9 Feb 2024</div>
+                        <div className="font-semibold text-[#252B31]">Hours</div>
+                        <div className="text-[#343D46] text-xs">Mon–Fri 09:00–17:00 WAT</div>
+                        <div className="text-[#89929B] text-xs">RC 7341058 • Incorporated 9 Feb 2024</div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="mt-6 bg-white border border-[#E6EBED] rounded-2xl p-4">
-                    <div className="text-xs font-semibold tracking-widest uppercase text-[#087F83]">Regulatory</div>
-                    <p className="text-xs text-[#273744] mt-2 leading-relaxed">The public website does not collect patient health information. All partnership data is handled per applicable Nigerian Data Protection Act (NDPA) obligations.</p>
+                  <div className="mt-6 bg-white border border-[#E8EAEC] rounded-2xl p-4">
+                    <div className="text-xs font-semibold tracking-widest uppercase text-[#701F3D]">Regulatory</div>
+                    <p className="text-xs text-[#343D46] mt-2 leading-relaxed">The public website does not collect patient health information. All partnership data is handled per applicable Nigerian Data Protection Act (NDPA) obligations.</p>
                   </div>
                 </div>
 
                 {/* Map placeholder */}
-                <div className="bg-[#E8EEF5] border border-[#E6EBED] rounded-[24px] overflow-hidden">
-                  <div className="h-64 relative bg-gradient-to-br from-[#10283F] to-[#087F83] flex items-center justify-center">
+                <div className="bg-[#E8EEF5] border border-[#E8EAEC] rounded-[24px] overflow-hidden">
+                  <div className="h-64 relative bg-gradient-to-br from-[#252B31] to-[#701F3D] flex items-center justify-center">
                     <div className="text-center text-white p-6">
                       <MapPin className="w-8 h-8 mx-auto text-white/80" />
                       <div className="font-semibold mt-2">Kano • Gwale LGA</div>
                       <div className="text-white/60 text-xs mt-1">Interactive map loads here when coordinates are configured in Supabase site_settings.</div>
-                      <a href="https://maps.google.com/?q=7+Alexandria+Street+Gwale+Kano+Nigeria" target="_blank" rel="noopener" className="mt-4 inline-flex bg-white text-[#10283F] px-4 py-2 rounded-full text-xs font-semibold">Open in Google Maps</a>
+                      <a href="https://maps.google.com/?q=7+Alexandria+Street+Gwale+Kano+Nigeria" target="_blank" rel="noopener" className="mt-4 inline-flex bg-white text-[#252B31] px-4 py-2 rounded-full text-xs font-semibold">Open in Google Maps</a>
                     </div>
                   </div>
-                  <div className="p-3 text-xs text-center text-[#71808B]">Map placeholder — admin can set lat/lng in Dashboard → Settings</div>
+                  <div className="p-3 text-xs text-center text-[#89929B]">Map placeholder — admin can set lat/lng in Dashboard → Settings</div>
                 </div>
 
                 {!isSupabaseConfigured() && (
@@ -170,16 +170,16 @@ export default function ContactPage() {
 
               {/* Forms */}
               <div className="lg:col-span-8">
-                <div className="bg-white border border-[#E6EBED] rounded-[24px] p-6 lg:p-8 shadow-sm">
+                <div className="bg-white border border-[#E8EAEC] rounded-[24px] p-6 lg:p-8 shadow-sm">
                   <div className="flex items-center justify-between">
-                    <h2 className="font-display font-bold text-xl text-[#10283F]">Partnership Enquiry Form</h2>
+                    <h2 className="font-display font-bold text-xl text-[#252B31]">Partnership Enquiry Form</h2>
                     <Badge variant="teal">Secure • Validated • Logged</Badge>
                   </div>
-                  <p className="text-sm text-[#273744] mt-2 leading-relaxed">All fields are validated client- and server-side, with spam protection, timestamps and status tracking in Supabase. You will receive a confirmation when MSS updates your enquiry status.</p>
+                  <p className="text-sm text-[#343D46] mt-2 leading-relaxed">All fields are validated client- and server-side, with spam protection, timestamps and status tracking in Supabase. You will receive a confirmation when MSS updates your enquiry status.</p>
 
                   {status === "success" && (
-                    <div className="mt-6 bg-[#ECFDF5] border border-[#087F83]/20 rounded-2xl p-4 flex gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#087F83] shrink-0 mt-0.5" />
+                    <div className="mt-6 bg-[#F9E9EE] border border-[#701F3D]/20 rounded-2xl p-4 flex gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-[#701F3D] shrink-0 mt-0.5" />
                       <div>
                         <div className="font-semibold text-[#065F46] text-sm">Enquiry received — thank you.</div>
                         <div className="text-sm text-[#047857] mt-1">Your enquiry has been logged with status <strong>New</strong>. The MSS team will review and respond via the contact you provided. You can track it in Admin → Enquiries (requires verification).</div>
@@ -199,67 +199,67 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="mt-8 space-y-5">
                     <div className="grid md:grid-cols-2 gap-5">
                       <div>
-                        <label className="text-xs font-semibold tracking-widest uppercase text-[#273744]">Full name *</label>
+                        <label className="text-xs font-semibold tracking-widest uppercase text-[#343D46]">Full name *</label>
                         <input
                           value={form.full_name}
                           onChange={e => setForm({ ...form, full_name: e.target.value })}
                           placeholder="e.g. Dr. Aisha Bello"
                           required
-                          className="mt-2 w-full h-11 px-4 bg-white border border-[#E6EBED] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#087F83]/20 focus:border-[#087F83] placeholder:text-[#71808B]"
+                          className="mt-2 w-full h-11 px-4 bg-white border border-[#E8EAEC] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#701F3D]/20 focus:border-[#701F3D] placeholder:text-[#89929B]"
                         />
                       </div>
                       <div>
-                        <label className="text-xs font-semibold tracking-widest uppercase text-[#273744]">Organisation *</label>
+                        <label className="text-xs font-semibold tracking-widest uppercase text-[#343D46]">Organisation *</label>
                         <input
                           value={form.organisation}
                           onChange={e => setForm({ ...form, organisation: e.target.value })}
                           placeholder="e.g. Kano State Ministry of Health"
-                          className="mt-2 w-full h-11 px-4 bg-white border border-[#E6EBED] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#087F83]/20 focus:border-[#087F83] placeholder:text-[#71808B]"
+                          className="mt-2 w-full h-11 px-4 bg-white border border-[#E8EAEC] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#701F3D]/20 focus:border-[#701F3D] placeholder:text-[#89929B]"
                         />
                       </div>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-5">
                       <div>
-                        <label className="text-xs font-semibold tracking-widest uppercase text-[#273744]">Professional email *</label>
+                        <label className="text-xs font-semibold tracking-widest uppercase text-[#343D46]">Professional email *</label>
                         <input
                           type="email"
                           value={form.email}
                           onChange={e => setForm({ ...form, email: e.target.value })}
                           placeholder="you@organisation.ng"
                           required
-                          className="mt-2 w-full h-11 px-4 bg-white border border-[#E6EBED] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#087F83]/20 focus:border-[#087F83] placeholder:text-[#71808B]"
+                          className="mt-2 w-full h-11 px-4 bg-white border border-[#E8EAEC] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#701F3D]/20 focus:border-[#701F3D] placeholder:text-[#89929B]"
                         />
                       </div>
                       <div>
-                        <label className="text-xs font-semibold tracking-widest uppercase text-[#273744]">Telephone number</label>
+                        <label className="text-xs font-semibold tracking-widest uppercase text-[#343D46]">Telephone number</label>
                         <input
                           value={form.telephone}
                           onChange={e => setForm({ ...form, telephone: e.target.value })}
                           placeholder="+234 …"
-                          className="mt-2 w-full h-11 px-4 bg-white border border-[#E6EBED] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#087F83]/20 focus:border-[#087F83] placeholder:text-[#71808B]"
+                          className="mt-2 w-full h-11 px-4 bg-white border border-[#E8EAEC] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#701F3D]/20 focus:border-[#701F3D] placeholder:text-[#89929B]"
                         />
                       </div>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-5">
                       <div>
-                        <label className="text-xs font-semibold tracking-widest uppercase text-[#273744]">Country *</label>
+                        <label className="text-xs font-semibold tracking-widest uppercase text-[#343D46]">Country *</label>
                         <input
                           value={form.country}
                           onChange={e => setForm({ ...form, country: e.target.value })}
                           placeholder="Nigeria"
                           required
-                          className="mt-2 w-full h-11 px-4 bg-white border border-[#E6EBED] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#087F83]/20 focus:border-[#087F83]"
+                          className="mt-2 w-full h-11 px-4 bg-white border border-[#E8EAEC] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#701F3D]/20 focus:border-[#701F3D]"
                         />
                       </div>
                       <div>
-                        <label className="text-xs font-semibold tracking-widest uppercase text-[#273744]">Area of interest *</label>
+                        <label className="text-xs font-semibold tracking-widest uppercase text-[#343D46]">Area of interest *</label>
                         <select
                           value={form.area_of_interest}
                           onChange={e => setForm({ ...form, area_of_interest: e.target.value })}
                           required
-                          className="mt-2 w-full h-11 px-4 bg-white border border-[#E6EBED] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#087F83]/20 focus:border-[#087F83]"
+                          className="mt-2 w-full h-11 px-4 bg-white border border-[#E8EAEC] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#701F3D]/20 focus:border-[#701F3D]"
                         >
                           <option value="">Select…</option>
                           {areas.map(a => (
@@ -270,31 +270,31 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="text-xs font-semibold tracking-widest uppercase text-[#273744]">Enquiry subject</label>
+                      <label className="text-xs font-semibold tracking-widest uppercase text-[#343D46]">Enquiry subject</label>
                       <input
                         value={form.subject}
                         onChange={e => setForm({ ...form, subject: e.target.value })}
                         placeholder="e.g. Geo-ST4R replication assessment in [State]"
-                        className="mt-2 w-full h-11 px-4 bg-white border border-[#E6EBED] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#087F83]/20 focus:border-[#087F83] placeholder:text-[#71808B]"
+                        className="mt-2 w-full h-11 px-4 bg-white border border-[#E8EAEC] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#701F3D]/20 focus:border-[#701F3D] placeholder:text-[#89929B]"
                       />
                     </div>
 
                     <div>
-                      <label className="text-xs font-semibold tracking-widest uppercase text-[#273744]">Detailed message *</label>
+                      <label className="text-xs font-semibold tracking-widest uppercase text-[#343D46]">Detailed message *</label>
                       <textarea
                         value={form.message}
                         onChange={e => setForm({ ...form, message: e.target.value })}
                         placeholder="Tell us about your programme, geography, timeline and what you&apos;d like MSS to assess or deliver…"
                         required
                         rows={6}
-                        className="mt-2 w-full px-4 py-3 bg-white border border-[#E6EBED] rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-[#087F83]/20 focus:border-[#087F83] placeholder:text-[#71808B] resize-none"
+                        className="mt-2 w-full px-4 py-3 bg-white border border-[#E8EAEC] rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-[#701F3D]/20 focus:border-[#701F3D] placeholder:text-[#89929B] resize-none"
                       />
-                      <p className="text-xs text-[#71808B] mt-2">Do not include patient-identifiable health information. This is a partnership enquiry, not a clinical inbox.</p>
+                      <p className="text-xs text-[#89929B] mt-2">Do not include patient-identifiable health information. This is a partnership enquiry, not a clinical inbox.</p>
                     </div>
 
-                    <div className="flex items-start gap-3 bg-[#FAFBF9] border border-[#E6EBED] rounded-2xl p-4">
+                    <div className="flex items-start gap-3 bg-[#FAF9F7] border border-[#E8EAEC] rounded-2xl p-4">
                       <input type="checkbox" required id="consent" className="mt-1" />
-                      <label htmlFor="consent" className="text-xs text-[#273744] leading-relaxed">
+                      <label htmlFor="consent" className="text-xs text-[#343D46] leading-relaxed">
                         I consent to MSS Digital Solutions storing and processing my enquiry per its Privacy Policy and applicable NDPA obligations. I understand replies will be sent to my provided email. *
                       </label>
                     </div>
@@ -302,22 +302,22 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={status === "loading"}
-                      className="w-full h-12 rounded-full bg-[#087F83] hover:bg-[#0A6E72] disabled:opacity-60 text-white font-semibold tracking-wide uppercase text-sm inline-flex items-center justify-center gap-2 transition-colors"
+                      className="w-full h-12 rounded-full bg-[#701F3D] hover:bg-[#50152D] disabled:opacity-60 text-white font-semibold tracking-wide uppercase text-sm inline-flex items-center justify-center gap-2 transition-colors"
                     >
                       {status === "loading" ? "Submitting…" : "Submit Partnership Enquiry"} <Send className="w-4 h-4" />
                     </button>
 
-                    <p className="text-xs text-center text-[#71808B]">Spam-protected • Rate-limited • Logged with timestamp & status • Admin-configurable notification email</p>
+                    <p className="text-xs text-center text-[#89929B]">Spam-protected • Rate-limited • Logged with timestamp & status • Admin-configurable notification email</p>
                   </form>
                 </div>
 
                 {/* Alternative */}
-                <div className="mt-6 bg-[#10283F] rounded-[24px] p-6 text-white flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="mt-6 bg-[#252B31] rounded-[24px] p-6 text-white flex flex-col md:flex-row items-center justify-between gap-4">
                   <div>
                     <h3 className="font-semibold">Prefer direct project consultation?</h3>
                     <p className="text-white/60 text-sm mt-1">Book a scoping call — share geography, programme and timelines; we&apos;ll recommend the right engagement model.</p>
                   </div>
-                  <Link href="/contact" className="shrink-0 bg-white text-[#10283F] px-6 h-11 rounded-full text-sm font-semibold inline-flex items-center gap-2">
+                  <Link href="/contact" className="shrink-0 bg-white text-[#252B31] px-6 h-11 rounded-full text-sm font-semibold inline-flex items-center gap-2">
                     Request Consultation <Send className="w-4 h-4" />
                   </Link>
                 </div>

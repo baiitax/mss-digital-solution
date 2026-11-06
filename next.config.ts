@@ -12,6 +12,19 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react"],
   },
+  async redirects() {
+    return [
+      // Capability aliases — old → new canonical
+      { source: "/capabilities/digital-health", destination: "/capabilities/digital-health-systems", permanent: true },
+      { source: "/capabilities/geospatial", destination: "/capabilities/geospatial-intelligence", permanent: true },
+      { source: "/capabilities/analytics", destination: "/capabilities/data-analytics", permanent: true },
+      // Our Work — legacy project route
+      { source: "/projects/geo-st4r", destination: "/our-work/geo-st4r-kano", permanent: true },
+      { source: "/projects", destination: "/our-work", permanent: true },
+      // Privacy alias
+      { source: "/privacy", destination: "/privacy-policy", permanent: true },
+    ]
+  },
   headers: async () => [
     {
       source: "/(.*)",

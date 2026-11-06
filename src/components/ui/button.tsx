@@ -2,18 +2,19 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "ghost" | "outline" | "navy"
+  variant?: "primary" | "secondary" | "ghost" | "outline" | "storm" | "burgundy"
   size?: "sm" | "md" | "lg"
 }
 
-const base = "inline-flex items-center justify-center gap-2 font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#48BFC2] focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none"
+const base = "inline-flex items-center justify-center gap-2 font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#A34B68] focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none"
 
 const variants = {
-  primary: "bg-[#087F83] text-white hover:bg-[#0A6E72] shadow-sm hover:shadow-md",
-  navy: "bg-[#10283F] text-white hover:bg-[#0A1D30] shadow-sm hover:shadow-md",
-  secondary: "bg-white text-[#10283F] border border-[#E6EBED] hover:bg-[#FAFBF9] hover:border-[#087F83]/30",
-  outline: "border border-[#10283F] text-[#10283F] hover:bg-[#10283F] hover:text-white",
-  ghost: "text-[#10283F] hover:bg-[#087F83]/10",
+  primary: "bg-[#701F3D] text-white hover:bg-[#50152D] shadow-sm hover:shadow-md",
+  burgundy: "bg-[#701F3D] text-white hover:bg-[#50152D] shadow-sm hover:shadow-md",
+  storm: "bg-[#343D46] text-white hover:bg-[#252B31] shadow-sm hover:shadow-md",
+  secondary: "bg-white text-[#343D46] border border-[#E8EAEC] hover:bg-[#FAF9F7] hover:border-[#701F3D]/20",
+  outline: "border border-[#343D46] text-[#343D46] hover:bg-[#343D46] hover:text-white",
+  ghost: "text-[#343D46] hover:bg-[#701F3D]/8",
 }
 
 const sizes = {

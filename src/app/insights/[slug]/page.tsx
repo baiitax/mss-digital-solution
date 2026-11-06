@@ -43,7 +43,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
       <Navbar />
       <main>
         <article className="max-w-3xl mx-auto px-6 lg:px-8 py-12">
-          <Link href="/insights" className="inline-flex items-center gap-2 text-sm text-[#087F83] hover:text-[#10283F] font-medium">
+          <Link href="/insights" className="inline-flex items-center gap-2 text-sm text-[#701F3D] hover:text-[#252B31] font-medium">
             <ArrowLeft className="w-4 h-4" /> Back to Insights
           </Link>
 
@@ -54,35 +54,35 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
             <span className="text-xs px-2 py-1 rounded-full bg-[#FEF3C7] text-[#92400E] font-medium">Editorial placeholder — awaiting MSS approval</span>
           </div>
 
-          <h1 className="font-display text-3xl lg:text-4xl font-bold tracking-tight text-[#10283F] mt-6 leading-tight">{post.title}</h1>
+          <h1 className="font-display text-3xl lg:text-4xl font-bold tracking-tight text-[#252B31] mt-6 leading-tight">{post.title}</h1>
 
           <div className="mt-6 flex items-center justify-between border-y border-[#E6EBED] py-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#10283F] text-white flex items-center justify-center text-sm font-semibold">MSS</div>
+              <div className="w-9 h-9 rounded-full bg-[#343D46] text-white flex items-center justify-center text-sm font-semibold">MSS</div>
               <div>
-                <div className="text-sm font-semibold text-[#10283F] flex items-center gap-1.5"><User className="w-3.5 h-3.5" /> MSS Editorial Team</div>
+                <div className="text-sm font-semibold text-[#252B31] flex items-center gap-1.5"><User className="w-3.5 h-3.5" /> MSS Editorial Team</div>
                 <div className="text-xs text-[#71808B]">MSS Digital Solutions Ltd • Kano</div>
               </div>
             </div>
-            <button className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#087F83] border border-[#E6EBED] rounded-full px-4 h-9 hover:bg-[#FAFBF9]">
+            <button className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#701F3D] border border-[#E6EBED] rounded-full px-4 h-9 hover:bg-[#FAFBF9]">
               <Share2 className="w-3.5 h-3.5" /> Share
             </button>
           </div>
 
-          <div className="mt-8 prose prose-neutral max-w-none prose-p:leading-relaxed prose-p:text-[#273744] prose-headings:text-[#10283F] prose-headings:font-display prose-strong:text-[#10283F]">
+          <div className="mt-8 prose prose-neutral max-w-none prose-p:leading-relaxed prose-p:text-[#273744] prose-headings:text-[#252B31] prose-headings:font-display prose-strong:text-[#252B31]">
             {post.body.map((para, i) => (
               <p key={i}>{para}</p>
             ))}
           </div>
 
           <div className="mt-10 bg-[#FAFBF9] border border-[#E6EBED] rounded-2xl p-6">
-            <h3 className="font-display font-bold text-[#10283F]">About this Knowledge Centre</h3>
+            <h3 className="font-display font-bold text-[#252B31]">About this Knowledge Centre</h3>
             <p className="text-sm text-[#273744] mt-2 leading-relaxed">This extensible insights infrastructure supports article listing, detail pages, category filtering, search, featured flags, related articles, author, reading time, social sharing and SEO metadata — all editable via Admin without code changes.</p>
           </div>
 
           <div className="mt-8 flex items-center justify-between">
-            <Link href="/insights" className="text-sm font-semibold text-[#087F83] hover:text-[#10283F]">← More insights</Link>
-            <Link href="/contact" className="bg-[#10283F] text-white px-5 h-10 rounded-full text-sm font-semibold inline-flex items-center">Discuss this topic with MSS</Link>
+            <Link href="/insights" className="text-sm font-semibold text-[#701F3D] hover:text-[#252B31]">← More insights</Link>
+            <Link href="/contact" className="bg-[#343D46] text-white px-5 h-10 rounded-full text-sm font-semibold inline-flex items-center">Discuss this topic with MSS</Link>
           </div>
         </article>
       </main>

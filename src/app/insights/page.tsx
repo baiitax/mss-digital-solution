@@ -67,44 +67,44 @@ const posts = [
 
 export default function InsightsPage() {
   return (
-    <div className="min-h-screen bg-[#FAFBF9]">
+    <div className="min-h-screen bg-[#FAF9F7]">
       <Navbar />
       <main>
-        <section className="bg-[#0A1D30] text-white relative overflow-hidden">
-          <div className="absolute inset-0"><div className="absolute inset-0 bg-gradient-to-br from-[#087F83]/12 via-transparent to-[#10283F]/55" /><div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" /></div>
+        <section className="bg-[#343D46] text-white relative overflow-hidden">
+          <div className="absolute inset-0"><div className="absolute inset-0 bg-gradient-to-br from-[#701F3D]/12 via-transparent to-[#252B31]/55" /><div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" /></div>
           <div className="relative container-mss py-10 sm:py-12">
-            <div className="eyebrow !text-[#48BFC2] before:!bg-[#48BFC2]">Insights & Knowledge Centre</div>
-            <h1 className="font-bold tracking-[-0.03em] leading-[0.95] mt-4 text-white" style={{ fontSize: "clamp(28px, 3.6vw, 46px)" }}>Evidence, implementation notes and research — <span className="text-[#48BFC2]">curated for decision-makers.</span></h1>
+            <div className="eyebrow !text-[#E8A0B8] before:!bg-[#E8A0B8]">Insights & Knowledge Centre</div>
+            <h1 className="font-bold tracking-[-0.03em] leading-[0.95] mt-4 text-white" style={{ fontSize: "clamp(28px, 3.6vw, 46px)" }}>Evidence, implementation notes and research — <span className="text-[#E8A0B8]">curated for decision-makers.</span></h1>
             <p className="text-white/60 leading-relaxed mt-4 max-w-3xl text-[15px]">Articles are published by authorised administrators via the MSS Admin dashboard. All sample content below is clearly identified as editorial placeholders until verified by MSS.</p>
             
             <div className="mt-8 flex flex-wrap items-center gap-2">
               {categories.map(cat => (
-                <Link key={cat} href={`/insights${cat === "All" ? "" : `?cat=${encodeURIComponent(cat)}`}`} className={`px-4 py-2 rounded-full text-sm font-medium border ${cat === "All" ? "bg-[#10283F] text-white border-[#10283F]" : "bg-white text-[#273744] border-[#E6EBED] hover:border-[#087F83]/30"}`}>
+                <Link key={cat} href={`/insights${cat === "All" ? "" : `?cat=${encodeURIComponent(cat)}`}`} className={`px-4 py-2 rounded-full text-sm font-medium border ${cat === "All" ? "bg-[#252B31] text-white border-[#252B31]" : "bg-white text-[#343D46] border-[#E8EAEC] hover:border-[#701F3D]/30"}`}>
                   {cat}
                 </Link>
               ))}
             </div>
 
             <div className="mt-6 relative max-w-md">
-              <Search className="w-4 h-4 text-[#71808B] absolute left-3.5 top-1/2 -translate-y-1/2" />
-              <input placeholder="Search insights… (client filter, extensible to Supabase full-text)" className="w-full h-11 pl-10 pr-4 bg-[#FAFBF9] border border-[#E6EBED] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#087F83]/20 focus:border-[#087F83]" />
+              <Search className="w-4 h-4 text-[#89929B] absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <input placeholder="Search insights… (client filter, extensible to Supabase full-text)" className="w-full h-11 pl-10 pr-4 bg-[#FAF9F7] border border-[#E8EAEC] rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-[#701F3D]/20 focus:border-[#701F3D]" />
             </div>
           </div>
         </section>
 
-        <section className="section-y bg-[#FAFBF9]">
+        <section className="section-y bg-[#FAF9F7]">
           <div className="container-mss">
             {/* Featured */}
             <div className="grid lg:grid-cols-2 gap-6">
               {posts.filter(p => p.featured).map(p => (
-                <Link key={p.slug} href={`/insights/${p.slug}`} className="group bg-white border border-[#E6EBED] rounded-[24px] overflow-hidden hover:shadow-xl hover:border-[#087F83]/20 transition-all">
-                  <div className="h-48 bg-gradient-to-br from-[#10283F] via-[#0A1D30] to-[#087F83] relative p-6 flex flex-col justify-end">
+                <Link key={p.slug} href={`/insights/${p.slug}`} className="group bg-white border border-[#E8EAEC] rounded-[24px] overflow-hidden hover:shadow-xl hover:border-[#701F3D]/20 transition-all">
+                  <div className="h-48 bg-gradient-to-br from-[#252B31] via-[#343D46] to-[#701F3D] relative p-6 flex flex-col justify-end">
                     <Badge variant="teal" className="absolute top-4 left-4">{p.category}</Badge>
-                    <div className="text-white font-display font-bold text-xl leading-tight group-hover:text-[#48BFC2] transition-colors">{p.title}</div>
+                    <div className="text-white font-display font-bold text-xl leading-tight group-hover:text-[#E8A0B8] transition-colors">{p.title}</div>
                   </div>
                   <div className="p-6">
-                    <p className="text-sm text-[#273744] leading-relaxed line-clamp-2">{p.excerpt}</p>
-                    <div className="mt-4 flex items-center gap-4 text-xs text-[#71808B]">
+                    <p className="text-sm text-[#343D46] leading-relaxed line-clamp-2">{p.excerpt}</p>
+                    <div className="mt-4 flex items-center gap-4 text-xs text-[#89929B]">
                       <span className="flex items-center gap-1.5"><Clock className="w-3.5 h-3.5" /> {p.read}</span>
                       <span>{p.date}</span>
                       <span className="px-2 py-1 rounded-full bg-[#FEF3C7] text-[#92400E] text-xs font-medium">Editorial placeholder</span>
@@ -116,26 +116,26 @@ export default function InsightsPage() {
 
             <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {posts.filter(p => !p.featured).map(p => (
-                <Link key={p.slug} href={`/insights/${p.slug}`} className="group bg-white border border-[#E6EBED] rounded-2xl p-6 hover:shadow-lg hover:border-[#087F83]/20 transition-all">
+                <Link key={p.slug} href={`/insights/${p.slug}`} className="group bg-white border border-[#E8EAEC] rounded-2xl p-6 hover:shadow-lg hover:border-[#701F3D]/20 transition-all">
                   <Badge variant="muted">{p.category}</Badge>
-                  <h3 className="font-display font-semibold text-[#10283F] mt-3 leading-tight group-hover:text-[#087F83] transition-colors line-clamp-2">{p.title}</h3>
-                  <p className="text-sm text-[#273744] mt-2 leading-relaxed line-clamp-2">{p.excerpt}</p>
-                  <div className="mt-4 flex items-center gap-3 text-xs text-[#71808B]">
+                  <h3 className="font-display font-semibold text-[#252B31] mt-3 leading-tight group-hover:text-[#701F3D] transition-colors line-clamp-2">{p.title}</h3>
+                  <p className="text-sm text-[#343D46] mt-2 leading-relaxed line-clamp-2">{p.excerpt}</p>
+                  <div className="mt-4 flex items-center gap-3 text-xs text-[#89929B]">
                     <span>{p.date}</span><span>•</span><span>{p.read}</span>
                   </div>
-                  <div className="mt-4 inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#087F83]">
+                  <div className="mt-4 inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-[#701F3D]">
                     Read article <ArrowUpRight className="w-3.5 h-3.5" />
                   </div>
                 </Link>
               ))}
             </div>
 
-            <div className="mt-10 bg-white border border-[#E6EBED] rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="mt-10 bg-white border border-[#E8EAEC] rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
               <div>
-                <h3 className="font-semibold text-[#10283F]">Publish with MSS Admin</h3>
-                <p className="text-sm text-[#273744] mt-1">All articles support categories, featured flags, SEO metadata, draft/published states, author, reading time, search and related articles — no code changes needed.</p>
+                <h3 className="font-semibold text-[#252B31]">Publish with MSS Admin</h3>
+                <p className="text-sm text-[#343D46] mt-1">All articles support categories, featured flags, SEO metadata, draft/published states, author, reading time, search and related articles — no code changes needed.</p>
               </div>
-              <Link href="/admin" className="shrink-0 bg-[#10283F] text-white px-6 h-11 rounded-full text-sm font-semibold inline-flex items-center gap-2">
+              <Link href="/admin" className="shrink-0 bg-[#252B31] text-white px-6 h-11 rounded-full text-sm font-semibold inline-flex items-center gap-2">
                 Open Admin <ArrowUpRight className="w-4 h-4" />
               </Link>
             </div>

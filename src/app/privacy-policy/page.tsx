@@ -5,12 +5,12 @@ export const metadata = { title: "Privacy Policy — MSS Digital Solutions" }
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-[#FAFBF9]">
+    <div className="min-h-screen bg-[#FAF9F7]">
       <Navbar />
       <main className="max-w-3xl mx-auto px-6 lg:px-8 py-12">
-        <h1 className="font-display text-3xl font-bold tracking-tight text-[#10283F]">Privacy Policy</h1>
-        <p className="text-sm text-[#71808B] mt-2">Last updated: 6 November 2026 • RC 7341058 • Kano, Nigeria</p>
-        <div className="mt-8 prose prose-neutral max-w-none prose-p:leading-relaxed prose-p:text-[#273744] prose-headings:text-[#10283F]">
+        <h1 className="font-display text-3xl font-bold tracking-tight text-[#252B31]">Privacy Policy</h1>
+        <p className="text-sm text-[#89929B] mt-2">Last updated: 6 November 2026 • RC 7341058 • Kano, Nigeria</p>
+        <div className="mt-8 prose prose-neutral max-w-none prose-p:leading-relaxed prose-p:text-[#343D46] prose-headings:text-[#252B31]">
           <p>This Privacy Policy describes how MSS Digital Solutions Ltd (“MSS”, “we”) handles information collected via this corporate website. This site is a <strong>corporate presence only</strong> and does not collect patient health information.</p>
           <h2>Information we collect</h2>
           <p>We collect information you provide via contact and partnership enquiry forms: full name, organisation, professional email, telephone, country, area of interest, subject and message. Submissions are stored in Supabase (or browser localStorage in demo mode) with timestamps and status, and are accessible only to authenticated administrators with appropriate roles.</p>

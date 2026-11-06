@@ -2,34 +2,50 @@
 @source "../../src/**/*.{js,ts,jsx,tsx,mdx}";
 
 /* ─────────────────────────────────────────────
-   MSS ELITE DESIGN SYSTEM — TOKENS
-   Palette: 65% neutrals / 20% dark / 10% navy-teal / 5% accent
+   MSS DIGITAL SOLUTIONS — BURGUNDY & STORM GREY
+   Brand Identity System v2.0 — Premium Corporate
+   Primary: Burgundy  #701F3D — authority, distinction
+   Secondary: Storm Grey #59636D — precision, maturity
+   Neutrals: Warm White, Soft Grey, Charcoal, Graphite
    ───────────────────────────────────────────── */
 :root {
-  /* Brand */
-  --midnight-navy: #10283F;
-  --deep-navy: #0A1D30;
-  --healthcare-teal: #087F83;
-  --digital-cyan: #48BFC2;
-  --warm-white: #FAFBF9;
-  --soft-grey: #F0F3F4;
-  --charcoal: #273744;
-  --muted-grey: #71808B;
-  --white: #FFFFFF;
-  --border: #E6EBED;
+  /* ── Brand — Burgundy ── */
+  --burgundy: #701F3D;
+  --burgundy-deep: #50152D;
+  --burgundy-light: #A34B68;
+  --burgundy-soft: #F9E9EE;
+  --burgundy-muted: #8C2F4A;
 
-  /* Semantic */
+  /* ── Brand — Storm Grey ── */
+  --storm: #59636D;
+  --storm-deep: #343D46;
+  --storm-light: #89929B;
+  --storm-pale: #E8EAEC;
+  --storm-soft: #F0F1F2;
+
+  /* ── Neutrals ── */
+  --warm-white: #FAF9F7;
+  --soft-grey: #F0F1F2;
+  --light-grey: #E8EAEC;
+  --muted-silver: #C8CDD1;
+  --charcoal: #252B31;
+  --graphite: #1A1F24;
+  --white: #FFFFFF;
+  --border: #E8EAEC;
+  --border-strong: #D4D8DB;
+
+  /* ── Semantic ── */
   --background: var(--warm-white);
   --foreground: var(--charcoal);
-  --nav-bg: rgba(255,255,255,0.92);
-  --nav-border: rgba(16,40,63,0.06);
+  --nav-bg: rgba(255,255,255,0.94);
+  --nav-border: rgba(52,61,70,0.08);
 
-  /* Spacing tokens — spec: desktop 88-120, mobile 52-76 */
+  /* ── Section spacing — editorial rhythm ── */
   --section-y-desktop: 96px;
   --section-y-tablet: 72px;
   --section-y-mobile: 56px;
 
-  /* Radius */
+  /* ── Radius ── */
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
@@ -37,10 +53,11 @@
   --radius-2xl: 24px;
   --radius-pill: 999px;
 
-  /* Shadows */
-  --shadow-card: 0 8px 32px rgba(16,40,63,0.06);
-  --shadow-card-hover: 0 16px 48px rgba(16,40,63,0.10);
-  --shadow-nav: 0 4px 24px rgba(16,40,63,0.06);
+  /* ── Shadows — Burgundy/Storm tinted ── */
+  --shadow-card: 0 8px 32px rgba(52,61,70,0.07);
+  --shadow-card-hover: 0 16px 48px rgba(112,31,61,0.10);
+  --shadow-nav: 0 4px 24px rgba(52,61,70,0.06);
+  --shadow-hero: 0 20px 60px rgba(52,61,70,0.12);
 }
 
 /* ── Base ── */
@@ -65,13 +82,13 @@ img, video, svg { max-width: 100%; }
 h1, h2, h3, h4 { text-wrap: balance; overflow-wrap: break-word; }
 p, li { overflow-wrap: break-word; }
 
-* { scrollbar-width: thin; scrollbar-color: var(--healthcare-teal) var(--soft-grey); }
+* { scrollbar-width: thin; scrollbar-color: var(--burgundy) var(--soft-grey); }
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--soft-grey); }
-::-webkit-scrollbar-thumb { background: var(--healthcare-teal); border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: var(--burgundy); border-radius: 4px; }
 
-:focus-visible { outline: 2px solid var(--digital-cyan); outline-offset: 3px; }
-::selection { background: var(--healthcare-teal); color: white; }
+:focus-visible { outline: 2px solid var(--burgundy-light); outline-offset: 3px; }
+::selection { background: var(--burgundy); color: white; }
 
 ul, ol { padding-left: 0; list-style: none; }
 
@@ -93,12 +110,13 @@ ul, ol { padding-left: 0; list-style: none; }
 @media (min-width: 768px) { .section-y { padding-top: 72px; padding-bottom: 72px; } }
 @media (min-width: 1024px) { .section-y { padding-top: 96px; padding-bottom: 96px; } }
 
+/* Eyebrow — Burgundy accent */
 .eyebrow {
   font-size: 11px;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   font-weight: 700;
-  color: var(--healthcare-teal);
+  color: var(--burgundy);
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -107,6 +125,13 @@ ul, ol { padding-left: 0; list-style: none; }
   content: "";
   width: 28px;
   height: 1px;
-  background: var(--healthcare-teal);
+  background: var(--burgundy);
   display: inline-block;
+}
+/* Light variant for dark backgrounds */
+.eyebrow-light {
+  color: #E8A0B8;
+}
+.eyebrow-light::before {
+  background: #E8A0B8;
 }
