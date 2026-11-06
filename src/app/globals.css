@@ -4,11 +4,8 @@
   --background: #FDFCF7;
   --foreground: #0B1930;
   --midnight: #0B1930;
-  --midnight-2: #0F2540;
   --teal: #0E7C7B;
-  --teal-light: #E6F3F3;
   --cyan: #06B6D4;
-  --muted: #64748B;
   --border: #E2E8F0;
 }
 
@@ -21,16 +18,34 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-  line-height: 1.6;
+  line-height: 1.65;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
+/* Prevent horizontal overflow on mobile */
+img, video, svg {
+  max-width: 100%;
+}
+
+/* Smooth text wrapping */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+p, li {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -43,11 +58,6 @@ body {
   border-radius: 4px;
 }
 
-.leaflet-container {
-  font-family: var(--font-inter) !important;
-  z-index: 1;
-}
-
 :focus-visible {
   outline: 2px solid #06B6D4;
   outline-offset: 2px;
@@ -56,4 +66,9 @@ body {
 ::selection {
   background: #0E7C7B;
   color: white;
+}
+
+/* Ensure lists don't cause horizontal overflow on mobile */
+ul, ol {
+  padding-left: 0;
 }
