@@ -6,7 +6,7 @@ import { ArrowUpRight, MapPinned, Lightbulb, Target, Heart, Users, Building2, Qu
 
 export const metadata = {
   title: "About MSS Digital Solutions — Who We Are",
-  description: "Learn about MSS Digital Solutions Ltd, a Kano-based digital health and geospatial intelligence company.",
+  description: "About MSS Digital Solutions Ltd — a Kano-based digital health and geospatial intelligence company: our purpose, company background, team and executive leadership.",
 }
 
 const principles = [
@@ -262,6 +262,99 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+
+        {/* Our Team */}
+        <section className="section-y bg-white border-t border-[#E8EAEC]">
+          <div className="container-mss">
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              <div className="lg:col-span-5">
+                <div className="eyebrow">Our Team</div>
+                <h2 className="font-bold tracking-[-0.02em] leading-[0.98] text-[#252B31] mt-4" style={{ fontSize: "clamp(24px, 2.6vw, 36px)" }}>
+                  One practice,<br /><span className="text-[#701F3D]">four disciplines</span><br />working in sequence.
+                </h2>
+                <p className="text-[#343D46] leading-relaxed text-[15px] mt-5">
+                  MSS is deliberately organised by practice area rather than by department. A single engagement usually draws on all four — because a map without a system does not change a session plan, and a system without a map routes outreach to the wrong settlements.
+                </p>
+                <p className="text-[#343D46]/70 leading-relaxed text-[14px] mt-4">
+                  The company is headquartered in Kano State and works with field teams in the states where programmes are implemented.
+                </p>
+                <Link href="/how-we-work" className="mt-7 inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.06em] uppercase text-[#701F3D] hover:gap-3 transition-all">
+                  See How We Work <ArrowUpRight className="w-4 h-4" />
+                </Link>
+              </div>
+
+              <div className="lg:col-span-7">
+                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
+                  {[
+                    { icon: Layers, title: "Health Information Systems", desc: "Engineers who build and maintain facility-level systems — offline-capable, low-bandwidth, and aligned to existing government workflows." },
+                    { icon: MapPinned, title: "Geospatial Intelligence", desc: "GIS and geospatial analysts who establish where facilities and settlements actually are, and translate that into planning geography." },
+                    { icon: Target, title: "Data Analytics", desc: "Analysts who turn routine service data into dashboards, data-quality checks and decision support within the planning window." },
+                    { icon: Compass, title: "Programme Management", desc: "Coordinators who run assessment, training, field verification and stakeholder engagement alongside state programme teams." },
+                  ].map((t) => (
+                    <div key={t.title} className="group bg-[#FAF9F7] border border-[#E8EAEC] rounded-[18px] p-5 sm:p-6 hover:border-[#A34B68]/40 hover:bg-white transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-[#F9E9EE] flex items-center justify-center mb-4 group-hover:bg-[#701F3D] transition-colors">
+                        <t.icon className="w-5 h-5 text-[#701F3D] group-hover:text-white transition-colors" />
+                      </div>
+                      <h3 className="font-bold text-[#252B31] text-[14.5px] leading-snug">{t.title}</h3>
+                      <p className="text-[13px] text-[#343D46]/70 leading-relaxed mt-2">{t.desc}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-4 bg-[#343D46] rounded-[18px] p-5 sm:p-6 text-white flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+                    <Users className="w-5 h-5 text-[#E8A0B8]" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-bold text-[14.5px]">Individual team profiles</h3>
+                    <p className="text-[13px] text-white/65 leading-relaxed mt-1.5">
+                      Named profiles are published only with each person&rsquo;s consent and after their details are verified. Additional profiles are being compiled and will appear here: <span className="text-[#E8A0B8]">[verified team profiles — admin-configurable]</span>. Until then, this site lists only the Executive Director.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Leadership */}
+        <section className="section-y bg-[#F0F1F2] border-y border-[#E8EAEC]">
+          <div className="container-mss">
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+              <div className="lg:col-span-5">
+                <div className="relative bg-white border border-[#E8EAEC] rounded-[24px] sm:rounded-[28px] overflow-hidden p-6 sm:p-7 lg:p-8">
+                  <div className="relative flex items-start gap-5">
+                    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-[18px] sm:rounded-[20px] bg-[#343D46] overflow-hidden border-4 border-white shadow-lg shrink-0">
+                      <img src="/images/leadership/jamil-aliu-galadanci.jpg" alt="Jamil Aliyu Galadanci — Executive Director" className="w-full h-full object-cover object-top" />
+                    </div>
+                    <div className="min-w-0 pt-1">
+                      <h3 className="font-bold text-[#252B31] leading-tight" style={{ fontSize: "clamp(16px, 1.6vw, 18px)" }}>Jamil Aliyu<br />Galadanci</h3>
+                      <p className="text-xs font-semibold text-[#701F3D] mt-1.5">Executive Director</p>
+                      <p className="text-[11px] tracking-wide uppercase font-semibold text-[#59636D] mt-1 leading-snug">COREN-registered Software Engineer</p>
+                    </div>
+                  </div>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    <span className="px-3 py-1.5 rounded-full bg-white border border-[#E8EAEC] text-xs font-medium text-[#343D46]">LoMIS Suite</span>
+                    <span className="px-3 py-1.5 rounded-full bg-white border border-[#E8EAEC] text-xs font-medium text-[#343D46]">Global Health</span>
+                    <span className="px-3 py-1.5 rounded-full bg-[#701F3D] text-white text-xs font-medium">PRINCE2 • ISTQB</span>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-7 min-w-0">
+                <div className="eyebrow">Leadership</div>
+                <h2 className="font-bold tracking-tight text-[#252B31] mt-4" style={{ fontSize: "clamp(24px, 2.8vw, 32px)" }}>Leadership Grounded in Technology and Public Health.</h2>
+                <p className="text-[#343D46]/70 leading-relaxed mt-4 text-[15px]">
+                  Jamil Aliyu Galadanci is a COREN-registered Software Engineer and Public Health Informatics specialist. As Executive Director, he brings experience from senior technology and global health roles — including Rednoxx Ltd and eHealth Africa — to lead MSS at the intersection of engineering, geospatial intelligence and frontline implementation.
+                </p>
+                <Link href="/leadership" className="mt-6 inline-flex items-center gap-2 bg-[#343D46] text-white px-6 h-11 rounded-full text-sm font-semibold tracking-wide uppercase hover:bg-[#252B31] transition-colors">
+                  Meet Our Executive Director <ArrowUpRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
 
         {/* Partners & CTA */}
         <section className="section-y bg-white">

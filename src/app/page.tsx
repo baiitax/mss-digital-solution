@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import Link from "next/link"
-import { ArrowUpRight, Database, MapPinned, LineChart, UsersRound, Check } from "lucide-react"
+import { ArrowUpRight, Database, MapPinned, LineChart, UsersRound } from "lucide-react"
 
 /* ──────────────────────────────────────────
    HOME — 7-section concise corporate gateway
@@ -231,44 +231,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* 6 — LEADERSHIP */}
-        <section className="section-y bg-white border-t border-[#E8EAEC]">
-          <div className="container-mss">
-            <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-              <div className="lg:col-span-5">
-                <div className="relative bg-[#F0F1F2] rounded-[24px] sm:rounded-[28px] overflow-hidden p-6 sm:p-7 lg:p-8">
-                  <div className="relative flex items-start gap-5">
-                    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-[18px] sm:rounded-[20px] bg-[#343D46] overflow-hidden border-4 border-white shadow-lg shrink-0">
-                      <img src="/images/leadership/jamil-aliu-galadanci.jpg" alt="Jamil Aliyu Galadanci — Executive Director" className="w-full h-full object-cover object-top" />
-                    </div>
-                    <div className="min-w-0 pt-1">
-                      <h3 className="font-bold text-[#252B31] leading-tight" style={{ fontSize: "clamp(16px, 1.6vw, 18px)" }}>Jamil Aliyu<br />Galadanci</h3>
-                      <p className="text-xs font-semibold text-[#701F3D] mt-1.5">Executive Director</p>
-                      <p className="text-[11px] tracking-wide uppercase font-semibold text-[#59636D] mt-1 leading-snug">COREN-registered Software Engineer</p>
-                    </div>
-                  </div>
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    <span className="px-3 py-1.5 rounded-full bg-white border border-[#E8EAEC] text-xs font-medium text-[#343D46]">LoMIS Suite</span>
-                    <span className="px-3 py-1.5 rounded-full bg-white border border-[#E8EAEC] text-xs font-medium text-[#343D46]">Global Health</span>
-                    <span className="px-3 py-1.5 rounded-full bg-[#701F3D] text-white text-xs font-medium">PRINCE2 • ISTQB</span>
-                  </div>
-                </div>
-              </div>
-              <div className="lg:col-span-7 min-w-0">
-                <div className="eyebrow">Leadership</div>
-                <h2 className="font-bold tracking-tight text-[#252B31] mt-4" style={{ fontSize: "clamp(24px, 2.8vw, 32px)" }}>Leadership Grounded in Technology and Public Health.</h2>
-                <p className="text-[#343D46]/70 leading-relaxed mt-4 text-[15px]">
-                  Jamil Aliyu Galadanci is a COREN-registered Software Engineer and Public Health Informatics specialist. As Executive Director, he brings experience from senior technology and global health roles — including Rednoxx Ltd and eHealth Africa — to lead MSS at the intersection of engineering, geospatial intelligence and frontline implementation.
-                </p>
-                <Link href="/leadership" className="mt-6 inline-flex items-center gap-2 bg-[#343D46] text-white px-6 h-11 rounded-full text-sm font-semibold tracking-wide uppercase hover:bg-[#252B31] transition-colors">
-                  Meet Our Executive Director <ArrowUpRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 7 — FINAL CTA */}
+        {/* 6 — FINAL CTA */}
         <section className="py-10 sm:py-16 bg-[#FAF9F7] border-t border-[#E8EAEC]">
           <div className="container-mss">
             <div className="bg-[#701F3D] rounded-[24px] sm:rounded-[32px] p-6 sm:p-8 lg:p-12 relative overflow-hidden">

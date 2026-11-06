@@ -245,3 +245,79 @@ capabilities dropdown · contact validation plus `/api/contact` 400/200 contract
 Running the suite requires `npm install` and `npx playwright install --with-deps chromium`
 (sandbox dependencies are not persisted between sessions). The success-path contact test
 writes one row to the production enquiries table, labelled `[AUTOMATED — SAFE TO DELETE]`.
+
+---
+
+## ADDENDUM 2 — navigation, information architecture and preloader
+
+Three changes requested after the transformation shipped.
+
+### 1. Navigation is now fixed, and the mobile experience was rebuilt
+
+The header was `sticky` and its behaviour on small screens had not been designed
+independently of desktop. It is now a `fixed top-0` header with:
+
+- **A measured spacer.** The header renders its own sibling spacer (`h-16` mobile,
+  `h-[112px]` from `lg` up — the 28 px institutional strip plus the 84 px main bar), so no
+  page needs bespoke top padding. Verified: the first `main` child starts at y = 112 on
+  desktop and y = 64 below `lg`, matching the header's own bottom edge to the pixel at
+  1440 / 768 / 390.
+- **Three independently designed states.** Mobile (< 640 px): mark tile, two-line wordmark,
+  44 px menu button. Tablet (640–1023 px): wordmark plus the *Partner With Us* button and
+  the menu button. Desktop (≥ 1024 px): the full link set, with the institutional strip
+  (RC 7341058 · incorporation date · partners) appearing at `lg` and above.
+- **Condensed-on-scroll.** The header shrinks 84 → 68 px on desktop and 64 → 60 px on
+  mobile once scrolled, adding a white backdrop blur and a hairline border.
+- **Drawer.** Full-height panel offset to the true header height, `role="dialog"`,
+  `aria-modal`, `aria-controls="mobile-menu"`, Escape to dismiss, focus returned to the
+  toggle, capabilities as an in-place accordion, every row ≥ 44 px.
+- **No overflow anywhere.** `scrollWidth − innerWidth = 0` at 320/375/390/430/768/1024/1280/1440.
+
+### 2. Leadership moved Home → About; About gained an "Our Team" section
+
+The homepage is now six sections (hero, introduction, capabilities, featured work,
+approach, closing CTA) — a gateway, not an information repository. The Leadership block
+was removed from `/` verbatim and re-set on `/about` in a light section between *Our Team*
+and the partners card.
+
+The new **Our Team** section on `/about` describes the four practice areas the company is
+organised around (health information systems, geospatial intelligence, data analytics,
+programme management) — the same four capabilities already published, described as
+disciplines rather than as new services. It does **not** name anyone.
+
+> Named profiles are published only with each person's consent and after their details are
+> verified. Additional profiles are being compiled and will appear here: `[verified team
+> profiles — admin-configurable]`. Until then, this site lists only the Executive Director.
+
+That sentence is the constraint made visible: no invented team members, and an explicit,
+admin-configurable slot where real profiles go once supplied.
+
+All other content stayed in its owning route — no duplication was introduced.
+
+### 3. Site-wide preloader with the animated mark
+
+`src/components/layout/Preloader.tsx`, mounted in the root layout and rendered in the server
+HTML, so it covers the first paint rather than appearing after hydration.
+
+- Burgundy radial curtain (`#7C2544 → #50152D → #3B0F21`) with a masked 56 px planning grid,
+  a white mark tile whose "MSS" letters settle in, a light sweep across the tile, the
+  wordmark, the "Digital Health · Geospatial Intelligence" line and an indeterminate rule.
+- Holds at least ~900 ms so the animation reads as deliberate, then fades out over 520 ms.
+- Releases `body` scroll on exit; removed from the DOM ~60 ms after the fade.
+- **Hard 3.5 s ceiling** — a stalled image can never trap a visitor.
+- Runs on full page loads only; client-side route changes do not re-trigger it.
+- `prefers-reduced-motion`: all animation off, hold cut to 350 ms, 200 ms linear fade.
+- No layout shift (fixed, `inset: 0`) and nothing gates the LCP element — the curtain is the
+  first paint and it is removed as soon as the page is interactive.
+
+### Verification
+
+Build: clean (23 routes). ESLint: 0 errors, 18 pre-existing warnings (`<img>` usage and two
+unused imports). Playwright against the local production build: **18 passed** — the original
+12 plus 6 new tests in `tests/nav-preloader.spec.ts` covering fixed-header pinning at three
+viewports, zero overflow at six widths, drawer tap targets/accordion/Escape, preloader
+presence-then-removal with scroll release, no reappearance on client-side navigation, and
+the About/Home information-architecture assertions.
+
+Screenshots: `screenshots/v2/` — preloader (1440 composed, 1440, 390), headers at
+768/1024/1280, drawer at 390/768, and the Our Team and Leadership sections at 1440/768/390.

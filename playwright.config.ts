@@ -2,5 +2,5 @@ import { defineConfig } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests",
   timeout: 30000,
-  use: { baseURL: "https://mss-digital.vercel.app" },
+  use: { baseURL: process.env.BASE_URL ?? "https://mss-digital.vercel.app" },
 });
