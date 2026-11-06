@@ -34,10 +34,10 @@ export default function LeadershipPage() {
               <div className="lg:col-span-4">
                 <div className="bg-[#FAFBF9] border border-[#E6EBED] rounded-[20px] p-5 sm:p-6 lg:sticky lg:top-[88px]">
                   <div className="aspect-[4/5] rounded-[16px] overflow-hidden bg-[#10283F] relative shadow-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop" alt="Jamil Aliyu Galadanci — Executive Director, MSS Digital Solutions Ltd." className="w-full h-full object-cover" />
+                    <img src="/images/leadership/jamil-aliu-galadanci.jpg" alt="Jamil Aliyu Galadanci — Executive Director, MSS Digital Solutions Ltd" className="w-full h-full object-cover object-top" />
                     <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#0A1D30] via-[#0A1D30]/60 to-transparent p-5">
                       <p className="text-white font-semibold text-[13px]">Executive Director</p>
-                      <p className="text-white/60 text-[11px]">Portrait placeholder — approved photo pending</p>
+                      <p className="text-white/60 text-[11px]">MSS Digital Solutions Ltd • Kano</p>
                     </div>
                   </div>
                   <h2 className="font-bold text-[22px] tracking-tight text-[#10283F] mt-5">Jamil Aliyu Galadanci</h2>

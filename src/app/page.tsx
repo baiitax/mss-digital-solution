@@ -108,7 +108,7 @@ export default function HomePage() {
                   <div className="absolute top-0 right-0 w-40 h-40 bg-[#087F83]/10 rounded-full blur-2xl" />
                   <div className="relative">
                     <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-[20px] sm:rounded-[24px] bg-[#10283F] overflow-hidden border-4 border-white shadow-xl">
-                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop" alt="Jamil Aliyu Galadanci portrait placeholder" className="w-full h-full object-cover opacity-90" />
+                      <img src="/images/leadership/jamil-aliu-galadanci.jpg" alt="Jamil Aliyu Galadanci — Executive Director" className="w-full h-full object-cover object-top" />
                     </div>
                     <div className="mt-6">
                       <h3 className="font-display font-bold text-lg sm:text-xl text-[#10283F]">Jamil Aliyu Galadanci</h3>
