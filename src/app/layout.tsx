@@ -58,11 +58,13 @@ export const metadata: Metadata = {
   creator: SITE_NAME,
   publisher: SITE_NAME,
   category: "technology",
-  alternates: { canonical: "./" },
+  // Absolute, not "./": on the index route the relative form resolved to
+  // "/index" in production. Child routes override this with their own path.
+  alternates: { canonical: SITE_URL },
   openGraph: {
     type: "website",
     locale: "en_NG",
-    url: "./",
+    url: SITE_URL,
     siteName: SITE_NAME,
     title: SITE_TITLE,
     description: SHARE_DESCRIPTION,
