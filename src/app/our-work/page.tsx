@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import Link from "next/link"
+import { Figure } from "@/components/ui/Figure"
 import { ArrowUpRight, MapPinned, Clock, Users, ShieldCheck } from "lucide-react"
 
 export const metadata = { title: "Our Work — Documented Projects | MSS Digital Solutions" }
@@ -48,9 +49,15 @@ export default function OurWorkPage() {
 
             <div className="mt-6 bg-white border border-[#E8EAEC] rounded-[24px] overflow-hidden shadow-[0_16px_48px_rgba(52,61,70,0.08)] hover:shadow-[0_20px_60px_rgba(112,31,61,0.10)] transition-shadow">
               <div className="grid lg:grid-cols-12 gap-0">
-                <div className="lg:col-span-5 relative h-[320px] lg:h-auto lg:min-h-[420px] overflow-hidden bg-[#343D46]">
-                  <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop" alt="Geo-ST4R Kano — field microplanning, illustrative" className="absolute inset-0 w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F24]/80 via-[#1A1F24]/20 to-transparent" />
+                <div className="lg:col-span-5 relative min-h-[320px] lg:min-h-[420px] overflow-hidden bg-[#343D46]">
+                  <Figure
+                    name="geo-st4r-kano-landscape"
+                    rounded="rounded-none"
+                    sizes="(max-width: 1024px) 100vw, 520px"
+                    className="h-full [&>div]:h-full"
+                    imgClassName="h-full"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1A1F24]/85 via-[#1A1F24]/25 to-transparent" />
                   <div className="absolute top-5 left-5 right-5 flex items-center justify-between">
                     <span className="px-3 py-1.5 rounded-full bg-white/95 backdrop-blur text-xs font-bold tracking-wide uppercase text-[#701F3D]">Flagship • Kano State</span>
                     <span className="px-3 py-1.5 rounded-full bg-[#701F3D] text-white text-xs font-semibold">Geospatial Microplanning</span>

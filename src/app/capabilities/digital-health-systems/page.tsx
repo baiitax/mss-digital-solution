@@ -60,6 +60,11 @@ export default function Page() {
             { label: "Geo-ST4R Case Study", href: "/our-work/geo-st4r-kano" },
           ]}
           ctaLabel="Discuss a Digital Health System"
+          heroImage="dhs-facility-environment"
+          gallery={[
+            { image: "dhs-tablet-workflow", title: "Data capture where the service happens", text: "Facility teams record service delivery on the device in front of them — not in a district office at the end of the month." },
+            { image: "dhs-workforce-portrait", title: "Adoption is a workforce question", text: "A system is only deployed when the nurse, midwife or records officer using it can complete their task faster than before." },
+          ]}
         />
       </main>
       <Footer />

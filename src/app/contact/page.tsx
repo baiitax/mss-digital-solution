@@ -4,6 +4,7 @@ import { useState } from "react"
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import Link from "next/link"
+import { Figure } from "@/components/ui/Figure"
 import { MapPin, Mail, Phone, Clock, Send, CheckCircle2, AlertCircle, Building2, Handshake, MessageSquare } from "lucide-react"
 
 const partnershipAreas = [
@@ -201,6 +202,13 @@ export default function ContactPage() {
                     Read the privacy policy
                   </Link>
                 </div>
+                <Figure
+                  name="contact-institutional-dialogue"
+                  sizes="(max-width: 1024px) 92vw, 360px"
+                  rounded="rounded-[24px]"
+                  caption
+                  className="hidden lg:block"
+                />
               </div>
 
               {/* Enquiry forms */}

@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
+import Image from "next/image"
 import Link from "next/link"
 import { Award, GraduationCap, Building2, BookOpen, ArrowUpRight, Quote, MapPin, Shield } from "lucide-react"
 
@@ -36,7 +37,7 @@ export default function LeadershipPage() {
               <div className="lg:col-span-4">
                 <div className="bg-[#FAF9F7] border border-[#E8EAEC] rounded-[20px] p-5 sm:p-6 lg:sticky lg:top-[88px]">
                   <div className="aspect-[4/5] rounded-[16px] overflow-hidden bg-[#252B31] relative shadow-card">
-                    <img src="/images/leadership/jamil-aliu-galadanci.jpg" alt="Jamil Aliyu Galadanci — Executive Director, MSS Digital Solutions Ltd" className="w-full h-full object-cover object-top" />
+                    <Image src="/images/leadership/jamil-aliu-galadanci.jpg" alt="Jamil Aliyu Galadanci — Executive Director, MSS Digital Solutions Ltd" width={640} height={800} sizes="(max-width: 1024px) 40vw, 240px" className="w-full h-full object-cover object-top" />
                     <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#343D46] via-[#343D46]/60 to-transparent p-5">
                       <p className="text-white font-semibold text-[13px]">Executive Director</p>
                       <p className="text-white/60 text-[11px]">MSS Digital Solutions Ltd • Kano</p>

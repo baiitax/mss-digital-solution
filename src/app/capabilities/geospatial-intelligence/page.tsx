@@ -53,6 +53,11 @@ export default function Page() {
             { label: "Geo-ST4R Case Study", href: "/our-work/geo-st4r-kano" },
           ]}
           ctaLabel="Discuss Geospatial Work"
+          heroImage="geo-cartography-desk"
+          gallery={[
+            { image: "geo-aerial-settlement-pattern", title: "From catchment to settlement", text: "Administrative catchments assume even distribution. Settlement-level geography shows where people actually live." },
+            { image: "cap-geospatial-intelligence", title: "Mapping as an operational tool", text: "Maps are only useful when a facility team can read them, plan a session from them and update them." },
+          ]}
         >
           {/* Interactive demonstration */}
           <section className="section-y bg-[#F0F1F2]">

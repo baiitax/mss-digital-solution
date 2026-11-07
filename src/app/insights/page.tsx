@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import Link from "next/link"
+import { Figure } from "@/components/ui/Figure"
 import { ArrowUpRight, BookOpen, Bell, Mail, FileText } from "lucide-react"
 
 export const metadata = { title: "Insights — Knowledge & Publications | MSS Digital Solutions" }
@@ -81,6 +82,19 @@ export default function InsightsPage() {
         </section>
 
         {/* Topic taxonomy */}
+        {/* Editorial band */}
+        <section className="bg-white">
+          <div className="container-mss pb-4">
+            <Figure
+              name="analytics-team-working"
+              sizes="(max-width: 1024px) 100vw, 1200px"
+              rounded="rounded-[20px] sm:rounded-[28px]"
+              caption
+              captionText="Notes from implementation work — representative image."
+            />
+          </div>
+        </section>
+
         <section className="section-y bg-[#F0F1F2]">
           <div className="container-mss">
             <div className="max-w-2xl">

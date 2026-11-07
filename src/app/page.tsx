@@ -1,7 +1,10 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowUpRight, Database, MapPinned, LineChart, UsersRound } from "lucide-react"
+import { Figure } from "@/components/ui/Figure"
+import { images } from "@/content/images"
 
 /* ──────────────────────────────────────────
    HOME — 7-section concise corporate gateway
@@ -50,13 +53,18 @@ export default function HomePage() {
 
               <div className="lg:col-span-6 min-w-0">
                 <div className="relative bg-white rounded-[20px] lg:rounded-[28px] overflow-hidden shadow-[0_20px_60px_rgba(52,61,70,0.10)] border border-[#E8EAEC] p-3">
-                  <div className="relative aspect-[4/3.1] overflow-hidden rounded-[14px] lg:rounded-[20px] bg-[#343D46]">
-                    <img
-                      src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1400&auto=format&fit=crop"
-                      alt="Community health delivery and technology — illustrative"
-                      className="absolute inset-0 w-full h-full object-cover"
+                  <div className="relative overflow-hidden rounded-[14px] lg:rounded-[20px] bg-[#343D46]">
+                    <Figure
+                      name="home-hero-community-health"
+                      priority
+                      sizes="(max-width: 1024px) 92vw, 560px"
+                      rounded="rounded-[14px] lg:rounded-[20px]"
+                      imgClassName="object-[62%_45%]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#252B31]/70 via-transparent to-transparent" />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#252B31]/78 via-[#252B31]/10 to-transparent" />
+                    <div className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-[#252B31]/75 backdrop-blur rounded-full px-2.5 py-1 text-[9.5px] font-semibold tracking-[0.08em] uppercase text-white/80">
+                      Representative image
+                    </div>
                     {/* Top label */}
                     <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/95 backdrop-blur rounded-xl px-3.5 py-2.5 shadow-lg">
                       <div className="text-[10px] tracking-[0.12em] uppercase font-bold text-[#59636D]">Featured</div>
@@ -97,7 +105,8 @@ export default function HomePage() {
         {/* 2 — SHORT CORPORATE INTRODUCTION */}
         <section className="section-y bg-white border-y border-[#E8EAEC]">
           <div className="container-mss">
-            <div className="max-w-[760px]">
+            <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-7 min-w-0">
               <div className="eyebrow">Who We Are</div>
               <h2 className="font-bold tracking-[-0.02em] leading-[0.98] text-[#252B31] mt-4" style={{ fontSize: "clamp(28px, 3.2vw, 42px)" }}>
                 Technology. Geography.<br />
@@ -109,6 +118,15 @@ export default function HomePage() {
               <Link href="/about" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold tracking-wide uppercase text-[#701F3D] hover:gap-3 transition-all">
                 Discover MSS <ArrowUpRight className="w-4 h-4" />
               </Link>
+            </div>
+            <div className="lg:col-span-5 min-w-0">
+              <Figure
+                name="home-intro-collaboration"
+                sizes="(max-width: 1024px) 92vw, 460px"
+                rounded="rounded-[20px]"
+                caption
+              />
+            </div>
             </div>
           </div>
         </section>
@@ -129,19 +147,30 @@ export default function HomePage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
               {[
-                { icon: Database, title: "Digital Health Systems", desc: "Health information systems, immunisation platforms and logistics visibility — built for offline frontline use.", href: "/capabilities/digital-health-systems" },
-                { icon: MapPinned, title: "Geospatial Intelligence", desc: "Settlement & facility mapping, catchment analysis and geospatial microplanning.", href: "/capabilities/geospatial-intelligence" },
-                { icon: LineChart, title: "Data Analytics", desc: "Routine & survey analysis, data quality assessment and programme dashboards.", href: "/capabilities/data-analytics" },
-                { icon: UsersRound, title: "Programme & Project Management", desc: "Stakeholder coordination, field deployment, training and independent verification.", href: "/capabilities/programme-management" },
+                { icon: Database, image: "cap-digital-health-systems", title: "Digital Health Systems", desc: "Health information systems, immunisation platforms and logistics visibility — built for offline frontline use.", href: "/capabilities/digital-health-systems" },
+                { icon: MapPinned, image: "cap-geospatial-intelligence", title: "Geospatial Intelligence", desc: "Settlement & facility mapping, catchment analysis and geospatial microplanning.", href: "/capabilities/geospatial-intelligence" },
+                { icon: LineChart, image: "cap-data-analytics", title: "Data Analytics", desc: "Routine & survey analysis, data quality assessment and programme dashboards.", href: "/capabilities/data-analytics" },
+                { icon: UsersRound, image: "cap-programme-management", title: "Programme & Project Management", desc: "Stakeholder coordination, field deployment, training and independent verification.", href: "/capabilities/programme-management" },
               ].map((c) => (
-                <Link key={c.title} href={c.href} className="group bg-white rounded-[20px] border border-[#E8EAEC] p-6 hover:shadow-[0_16px_48px_rgba(52,61,70,0.08)] hover:border-[#701F3D]/12 hover:-translate-y-0.5 transition-all flex flex-col">
-                  <div className="w-11 h-11 rounded-xl bg-[#F9E9EE] group-hover:bg-[#701F3D] flex items-center justify-center text-[#701F3D] group-hover:text-white transition-colors">
-                    <c.icon className="w-5 h-5" />
+                <Link key={c.title} href={c.href} className="group bg-white rounded-[20px] border border-[#E8EAEC] overflow-hidden hover:shadow-[0_16px_48px_rgba(52,61,70,0.08)] hover:border-[#701F3D]/12 hover:-translate-y-0.5 transition-all flex flex-col">
+                  <div className="relative">
+                    <Figure
+                      name={c.image as "cap-digital-health-systems"}
+                      sizes="(max-width: 768px) 92vw, (max-width: 1024px) 46vw, 24vw"
+                      rounded="rounded-none"
+                      imgClassName="transition-transform duration-700 group-hover:scale-[1.04]"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1A1F24]/40 via-transparent to-transparent" />
+                    <div className="absolute top-3 left-3 w-9 h-9 rounded-lg bg-white/95 backdrop-blur flex items-center justify-center text-[#701F3D] shadow-sm">
+                      <c.icon className="w-[18px] h-[18px]" />
+                    </div>
                   </div>
-                  <h3 className="font-bold text-[15px] text-[#252B31] mt-5 leading-tight group-hover:text-[#701F3D] transition-colors">{c.title}</h3>
-                  <p className="text-[13px] leading-relaxed text-[#59636D] mt-2 flex-1">{c.desc}</p>
-                  <div className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-[#701F3D]">
-                    Explore <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  <div className="p-5 flex flex-col flex-1">
+                    <h3 className="font-bold text-[15px] text-[#252B31] leading-tight group-hover:text-[#701F3D] transition-colors">{c.title}</h3>
+                    <p className="text-[13px] leading-relaxed text-[#59636D] mt-2 flex-1">{c.desc}</p>
+                    <div className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-[#701F3D]">
+                      Explore <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                    </div>
                   </div>
                 </Link>
               ))}
@@ -169,9 +198,13 @@ export default function HomePage() {
               <div className="lg:col-span-7">
                 <div className="bg-[#FAF9F7] border border-[#E8EAEC] rounded-[24px] p-4 sm:p-5">
                   <div className="grid sm:grid-cols-2 gap-4">
-                    <div className="rounded-2xl overflow-hidden bg-[#343D46] relative aspect-[4/3]">
-                      <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=600&auto=format&fit=crop" alt="Health facility microplanning — illustrative" className="w-full h-full object-cover opacity-90" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#1A1F24]/70 to-transparent" />
+                    <div className="rounded-2xl overflow-hidden bg-[#343D46] relative">
+                      <Figure
+                        name="geo-st4r-kano-landscape"
+                        sizes="(max-width: 640px) 92vw, 300px"
+                        rounded="rounded-2xl"
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1A1F24]/80 via-[#1A1F24]/10 to-transparent" />
                       <div className="absolute bottom-3 left-3 right-3">
                         <div className="bg-white/95 backdrop-blur rounded-xl px-3 py-2">
                           <div className="text-[11px] font-bold tracking-wide uppercase text-[#701F3D]">GMT at facility level</div>
@@ -213,15 +246,25 @@ export default function HomePage() {
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
               {[
-                { n: "01", t: "Assess & Measure", d: "Understand actual geography, facilities, coverage gaps and data quality." },
-                { n: "02", t: "Co-design & Build", d: "Develop practical solutions alongside ministries and frontline teams." },
-                { n: "03", t: "Deploy & Strengthen", d: "Implement systems, train teams and support adoption in the field." },
-                { n: "04", t: "Monitor & Verify", d: "Measure implementation, close gaps and feed evidence to decisions." },
+                { n: "01", t: "Assess & Measure", d: "Understand actual geography, facilities, coverage gaps and data quality.", img: "stage-assess-community" },
+                { n: "02", t: "Co-design & Build", d: "Develop practical solutions alongside ministries and frontline teams.", img: "stage-co-design-workshop" },
+                { n: "03", t: "Deploy & Strengthen", d: "Implement systems, train teams and support adoption in the field.", img: "stage-deploy-service-delivery" },
+                { n: "04", t: "Monitor & Verify", d: "Measure implementation, close gaps and feed evidence to decisions.", img: "stage-verify-analysis" },
               ].map((s) => (
-                <div key={s.n} className="bg-white/[0.06] backdrop-blur border border-white/10 rounded-2xl p-6">
-                  <div className="w-9 h-9 rounded-xl bg-[#701F3D] flex items-center justify-center text-white font-mono text-sm font-bold">{s.n}</div>
-                  <h3 className="font-semibold text-white mt-4 text-[15px]">{s.t}</h3>
-                  <p className="text-sm leading-relaxed text-white/55 mt-2">{s.d}</p>
+                <div key={s.n} className="bg-white/[0.06] backdrop-blur border border-white/10 rounded-2xl overflow-hidden">
+                  <Figure
+                    name={s.img as "stage-assess-community"}
+                    sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 23vw"
+                    rounded="rounded-none"
+                    imgClassName="opacity-90"
+                  />
+                  <div className="p-5">
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-lg bg-[#701F3D] flex items-center justify-center text-white font-mono text-[12px] font-bold">{s.n}</div>
+                      <h3 className="font-semibold text-white text-[15px]">{s.t}</h3>
+                    </div>
+                    <p className="text-sm leading-relaxed text-white/55 mt-2.5">{s.d}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -235,6 +278,16 @@ export default function HomePage() {
         <section className="py-10 sm:py-16 bg-[#FAF9F7] border-t border-[#E8EAEC]">
           <div className="container-mss">
             <div className="bg-[#701F3D] rounded-[24px] sm:rounded-[32px] p-6 sm:p-8 lg:p-12 relative overflow-hidden">
+              <div className="absolute inset-0" aria-hidden="true">
+                <Image
+                  src={images["about-team-institutional"].src}
+                  alt=""
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 1100px"
+                  className="object-cover object-center opacity-[0.16]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#701F3D]/95 via-[#701F3D]/88 to-[#50152D]/95" />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.06] to-transparent" />
               <div className="absolute -top-16 -right-16 w-[50%] h-[80%] bg-[#A34B68]/15 rounded-full blur-3xl" />
               <div className="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-8">

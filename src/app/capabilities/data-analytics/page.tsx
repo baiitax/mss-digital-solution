@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { CapabilityTemplate } from "@/components/sections/CapabilityTemplate"
+import { CoverageDashboard } from "@/components/visuals/SyntheticVisuals"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 
@@ -52,6 +53,11 @@ export default function Page() {
             { label: "How We Work", href: "/how-we-work" },
           ]}
           ctaLabel="Discuss an Analytics Need"
+          heroImage="analytics-review-session"
+          gallery={[
+            { image: "analytics-team-working", title: "Analysis is a working session", text: "Routine data is reviewed with the team that owns the decision — not delivered as a report after the window closes." },
+            { image: "cap-data-analytics", title: "Dashboards that survive contact", text: "Indicators are chosen for the decision they support, then tested against the data quality behind them." },
+          ]}
         >
           {/* Illustrative dashboard */}
           <section className="section-y bg-white">
@@ -107,6 +113,23 @@ export default function Page() {
                     </Link>
                   </div>
                 </div>
+              </div>
+            </div>
+          </section>
+          {/* Dashboard anatomy — original visualisation, synthetic data */}
+          <section className="section-y bg-[#F0F1F2] border-t border-[#E8EAEC]">
+            <div className="container-mss">
+              <div className="max-w-2xl">
+                <div className="eyebrow">Dashboard Anatomy</div>
+                <h2 className="font-bold tracking-tight text-[#252B31] mt-4" style={{ fontSize: "clamp(24px, 2.8vw, 34px)" }}>What a coverage review actually has to answer.</h2>
+                <p className="text-[#59636D] mt-3 leading-relaxed text-[15px]">
+                  A dashboard is only useful if it ends in a decision. This is the anatomy we build towards —
+                  indicators chosen for the question they answer, with data-quality caveats shown alongside them.
+                  The values below are deliberately blank or synthetic.
+                </p>
+              </div>
+              <div className="mt-6">
+                <CoverageDashboard />
               </div>
             </div>
           </section>

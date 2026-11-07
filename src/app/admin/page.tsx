@@ -3,11 +3,10 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { supabase, isSupabaseConfigured } from "@/lib/supabase/client"
-import { Badge } from "@/components/ui/badge"
 import {
-  LayoutDashboard, FileText, Layers, Building2, Users, Image as ImageIcon,
-  Mail, Settings, Shield, LogOut, Search, Filter, Eye, Check, X, Trash2,
-  BarChart3, MapPinned, Database, TrendingUp, ArrowUpRight, Clock
+  LayoutDashboard, FileText, Layers, Users, Image as ImageIcon,
+  Mail, Settings, Shield, LogOut, Search, Filter, Eye, Check, Trash2,
+  BarChart3, MapPinned, TrendingUp, ArrowUpRight, Clock
 } from "lucide-react"
 
 type Enquiry = {

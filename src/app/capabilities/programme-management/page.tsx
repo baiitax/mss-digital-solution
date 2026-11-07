@@ -50,6 +50,11 @@ export default function Page() {
             { label: "Our Work", href: "/our-work" },
           ]}
           ctaLabel="Discuss Managed Delivery"
+          heroImage="programme-stakeholder-table"
+          gallery={[
+            { image: "stage-co-design-workshop", title: "Coordination before deployment", text: "Field deployment is planned with state teams, facility leads and partners in the same room." },
+            { image: "stage-assess-community", title: "Presence at the point of delivery", text: "Programme management includes being where the service is given, not only where the schedule is agreed." },
+          ]}
         />
       </main>
       <Footer />

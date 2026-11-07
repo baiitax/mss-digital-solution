@@ -1,8 +1,10 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
+import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight, MapPinned, Lightbulb, Target, Heart, Users, Building2, Quote, Compass, Layers, ShieldCheck } from "lucide-react"
+import { Figure } from "@/components/ui/Figure"
 
 export const metadata = {
   title: "About MSS Digital Solutions — Who We Are",
@@ -77,12 +79,16 @@ export default function AboutPage() {
                   <p className="font-medium italic leading-snug text-[#252B31] text-[15px]">&ldquo;Digital health systems, geospatial intelligence and data analytics — built to reach the communities that services have not yet reached.&rdquo;</p>
                   <p className="text-[11px] tracking-[0.08em] uppercase text-[#89929B] mt-3">Brand positioning statement</p>
                 </div>
-                {/* Documentary image */}
-                <div className="mt-6 rounded-2xl overflow-hidden border border-[#E8EAEC] shadow-card hidden lg:block">
-                  <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop" alt="Kano field coordination" className="w-full h-[260px] object-cover" loading="lazy" />
-                  <div className="px-4 py-3 flex items-center justify-between bg-white">
-                    <span className="text-[11px] tracking-[0.08em] uppercase font-semibold text-[#89929B]">Kano • Field coordination</span>
-                    <span className="w-2 h-2 rounded-full bg-[#701F3D]" />
+                {/* Supporting photograph */}
+                <div className="mt-6 rounded-2xl overflow-hidden border border-[#E8EAEC] shadow-card">
+                  <Figure
+                    name="about-community-care"
+                    sizes="(max-width: 1024px) 92vw, 380px"
+                    rounded="rounded-none"
+                  />
+                  <div className="px-4 py-3 flex items-center justify-between bg-white gap-3">
+                    <span className="text-[11px] tracking-[0.08em] uppercase font-semibold text-[#89929B]">Community-level service delivery</span>
+                    <span className="shrink-0 text-[9.5px] font-semibold tracking-[0.08em] uppercase text-[#59636D] border border-[#E8EAEC] rounded-full px-2 py-0.5">Representative</span>
                   </div>
                 </div>
               </div>
@@ -135,6 +141,19 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Editorial photograph */}
+        <section className="bg-white border-b border-[#E8EAEC]">
+          <div className="container-mss py-8 sm:py-10">
+            <Figure
+              name="about-team-institutional"
+              sizes="(max-width: 1024px) 100vw, 1200px"
+              rounded="rounded-[20px] sm:rounded-[28px]"
+              caption
+              imgClassName="object-center"
+            />
           </div>
         </section>
 
@@ -238,8 +257,13 @@ export default function AboutPage() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-6 rounded-2xl overflow-hidden border border-[#E8EAEC] hidden lg:block">
-                  <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop" alt="Settlement outreach" className="w-full h-[220px] object-cover" loading="lazy" />
+                <div className="mt-6">
+                  <Figure
+                    name="about-digital-record"
+                    sizes="(max-width: 1024px) 92vw, 320px"
+                    rounded="rounded-2xl"
+                    caption
+                  />
                 </div>
               </div>
               <div className="lg:col-span-7">
@@ -326,7 +350,7 @@ export default function AboutPage() {
                 <div className="relative bg-white border border-[#E8EAEC] rounded-[24px] sm:rounded-[28px] overflow-hidden p-6 sm:p-7 lg:p-8">
                   <div className="relative flex items-start gap-5">
                     <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-[18px] sm:rounded-[20px] bg-[#343D46] overflow-hidden border-4 border-white shadow-lg shrink-0">
-                      <img src="/images/leadership/jamil-aliu-galadanci.jpg" alt="Jamil Aliyu Galadanci — Executive Director" className="w-full h-full object-cover object-top" />
+                      <Image src="/images/leadership/jamil-aliu-galadanci.jpg" alt="Jamil Aliyu Galadanci — Executive Director" width={640} height={800} sizes="(max-width: 1024px) 40vw, 240px" className="w-full h-full object-cover object-top" />
                     </div>
                     <div className="min-w-0 pt-1">
                       <h3 className="font-bold text-[#252B31] leading-tight" style={{ fontSize: "clamp(16px, 1.6vw, 18px)" }}>Jamil Aliyu<br />Galadanci</h3>

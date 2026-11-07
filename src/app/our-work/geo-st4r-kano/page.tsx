@@ -2,6 +2,8 @@ import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { GeospatialDemo } from "@/components/maps/GeospatialDemo"
 import Link from "next/link"
+import { Figure } from "@/components/ui/Figure"
+import { MicroplanningWorkflow, SettlementCatchmentMap } from "@/components/visuals/SyntheticVisuals"
 import { ArrowUpRight, MapPinned, AlertTriangle, Check } from "lucide-react"
 
 export const metadata = {
@@ -138,6 +140,10 @@ export default function GeoST4RCaseStudy() {
                       </div>
                     ))}
                   </div>
+                  <div className="mt-6 grid sm:grid-cols-2 gap-4">
+                    <Figure name="kano-urban-sprawl" sizes="(max-width: 640px) 92vw, 460px" rounded="rounded-2xl" caption />
+                    <Figure name="kano-street-mobility" sizes="(max-width: 640px) 92vw, 460px" rounded="rounded-2xl" caption />
+                  </div>
                 </div>
 
                 {/* 03 */}
@@ -171,6 +177,9 @@ export default function GeoST4RCaseStudy() {
                         ))}
                       </ul>
                     </div>
+                  </div>
+                  <div className="mt-6">
+                    <Figure name="immunisation-service-point" sizes="(max-width: 640px) 92vw, 900px" rounded="rounded-2xl" caption captionText="Reference visual — vaccine preparation at a routine immunisation service point." />
                   </div>
                 </div>
 
@@ -220,6 +229,12 @@ export default function GeoST4RCaseStudy() {
                         <MapPinned className="w-4 h-4 text-[#701F3D] shrink-0 mt-0.5" />{x}
                       </div>
                     ))}
+                  </div>
+                  <div className="mt-6">
+                    <SettlementCatchmentMap />
+                  </div>
+                  <div className="mt-4">
+                    <Figure name="cap-geospatial-intelligence" sizes="(max-width: 640px) 92vw, 900px" rounded="rounded-2xl" caption captionText="Reference visual — settlement pins on a printed planning map." />
                   </div>
                 </div>
 
@@ -312,6 +327,9 @@ export default function GeoST4RCaseStudy() {
                         </div>
                       </div>
                     ))}
+                  </div>
+                  <div className="mt-6">
+                    <MicroplanningWorkflow />
                   </div>
                 </div>
 

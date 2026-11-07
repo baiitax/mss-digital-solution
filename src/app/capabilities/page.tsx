@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import Link from "next/link"
 import { ArrowUpRight, Database, MapPinned, LineChart, UsersRound } from "lucide-react"
+import { Figure } from "@/components/ui/Figure"
 
 export const metadata = { title: "Capabilities — MSS Digital Solutions" }
 
@@ -13,7 +14,7 @@ const caps = [
     desc: "Electronic health information systems, immunisation platforms, logistics visibility and facility-level deployment — built for low-bandwidth, offline-capable frontline use.",
     href: "/capabilities/digital-health-systems",
     features: ["EHR & health information systems", "Immunisation information systems", "Logistics & commodity visibility", "Facility-level tech deployment"],
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop",
+    image: "cap-digital-health-systems" as const,
     accent: "bg-[#252B31]",
   },
   {
@@ -23,7 +24,7 @@ const caps = [
     desc: "Settlement & facility mapping, microplanning, catchment analysis and spatial visualisation — turning geography into coverage.",
     href: "/capabilities/geospatial-intelligence",
     features: ["Settlement & facility mapping", "Geospatial microplanning", "Catchment & proximity analysis", "Interactive map demonstration"],
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+    image: "cap-geospatial-intelligence" as const,
     accent: "bg-[#701F3D]",
   },
   {
@@ -33,7 +34,7 @@ const caps = [
     desc: "Transform routine & survey data into dashboards, coverage gap detection and decision-support evidence.",
     href: "/capabilities/data-analytics",
     features: ["Routine & survey analysis", "Data quality assessment", "Programme dashboards", "Evidence-based decision support"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+    image: "cap-data-analytics" as const,
     accent: "bg-[#E8A0B8]",
   },
   {
@@ -43,7 +44,7 @@ const caps = [
     desc: "Design, coordination, field deployment, training, M&E and independent verification — from assessment to verified adoption.",
     href: "/capabilities/programme-management",
     features: ["Programme design & delivery", "Stakeholder coordination", "Training & capacity building", "M&E & verification"],
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop",
+    image: "cap-programme-management" as const,
     accent: "bg-[#343D46]",
   },
 ]
@@ -84,9 +85,15 @@ export default function CapabilitiesLanding() {
             <div className="grid md:grid-cols-2 gap-6 lg:gap-6">
               {caps.map(c => (
                 <Link key={c.title} href={c.href} className="group bg-white rounded-[20px] border border-[#E8EAEC] overflow-hidden hover:shadow-[0_16px_40px_rgba(16,40,63,0.10)] hover:-translate-y-1 transition-all flex flex-col">
-                  <div className="relative h-[200px] sm:h-[220px] overflow-hidden">
-                    <img src={c.image} alt="" className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-700" loading="lazy" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#343D46]/65 via-[#343D46]/10 to-transparent" />
+                  <div className="relative overflow-hidden">
+                    <Figure
+                      name={c.image}
+                      rounded="rounded-none"
+                      sizes="(max-width: 768px) 92vw, 560px"
+                      imgClassName="group-hover:scale-[1.03] transition-transform duration-700"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#343D46]/70 via-[#343D46]/15 to-transparent" />
+                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur rounded-full px-2.5 py-1 text-[9.5px] font-semibold tracking-[0.08em] uppercase text-[#59636D]">Representative</div>
                     <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
                       <span className="text-[11px] font-bold tracking-[0.14em] uppercase text-white/90 bg-black/20 backdrop-blur-md border border-white/15 rounded-full px-3 py-1">{c.num}</span>
                       <span className={`w-9 h-9 rounded-xl ${c.accent} flex items-center justify-center text-white shadow-md`}><c.icon className="w-4 h-4" /></span>

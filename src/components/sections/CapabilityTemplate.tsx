@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { ArrowUpRight, Check, AlertTriangle } from "lucide-react"
+import { Figure } from "@/components/ui/Figure"
+import type { ImageKey } from "@/content/images"
 
 export type CapabilityArea = { title: string; desc: string }
 
@@ -19,12 +21,17 @@ export type CapabilityTemplateProps = {
   practice?: { title: string; desc: string }[]
   related: { label: string; href: string }[]
   ctaLabel: string
+  /** Manifest key for the hero photograph in the right column. */
+  heroImage?: ImageKey
+  /** Two-image editorial band rendered after the scope section. */
+  gallery?: { image: ImageKey; title: string; text: string }[]
   children?: React.ReactNode
 }
 
 export function CapabilityTemplate({
   num, name, heroTitle, heroHighlight, heroDescription = "", heroChips,
-  challenge, areasHeading, areasIntro, areas, documented, practice, related, ctaLabel, children,
+  challenge, areasHeading, areasIntro, areas, documented, practice, related, ctaLabel,
+  heroImage, gallery, children,
 }: Omit<CapabilityTemplateProps, "heroDescription"> & { heroDescription?: string }) {
   return (
     <>
@@ -66,6 +73,16 @@ export function CapabilityTemplate({
                 <div className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#701F3D]">Our approach</div>
                 <p className="text-[13px] text-[#343D46] mt-2.5 leading-relaxed">{challenge.approach}</p>
               </div>
+              {heroImage && (
+                <div className="mt-4">
+                  <Figure
+                    name={heroImage}
+                    sizes="(max-width: 1024px) 92vw, 380px"
+                    rounded="rounded-[20px]"
+                    caption
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -91,6 +108,32 @@ export function CapabilityTemplate({
           </div>
         </div>
       </section>
+
+      {gallery && gallery.length > 0 && (
+        <section className="bg-white pb-14 sm:pb-16">
+          <div className="container-mss">
+            <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+              {gallery.map((g) => (
+                <div key={g.image} className="min-w-0">
+                  <Figure
+                    name={g.image}
+                    sizes="(max-width: 640px) 92vw, 520px"
+                    rounded="rounded-[20px]"
+                  />
+                  <div className="mt-4 flex items-start gap-3">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#701F3D] shrink-0" />
+                    <div>
+                      <h3 className="font-bold text-[15px] text-[#252B31] leading-snug">{g.title}</h3>
+                      <p className="text-[13.5px] text-[#59636D] mt-1.5 leading-relaxed">{g.text}</p>
+                    </div>
+                  </div>
+                  <p className="mt-2.5 ml-[18px] text-[10px] font-semibold tracking-[0.08em] uppercase text-[#89929B]">Representative image</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {children}
 

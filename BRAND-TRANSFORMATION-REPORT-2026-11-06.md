@@ -321,3 +321,11 @@ the About/Home information-architecture assertions.
 
 Screenshots: `screenshots/v2/` — preloader (1440 composed, 1440, 390), headers at
 768/1024/1280, drawer at 390/768, and the Our Team and Leadership sections at 1440/768/390.
+
+---
+
+## Addendum 3 — Image transcription (visual implementation)
+
+The full image brief — audit, sourcing, licence verification, manifest, `next/image` configuration, truthfulness labelling, QA sweep and asset→section map — is documented in **`VISUAL-IMPLEMENTATION-REPORT-2026-11-06.md`**.
+
+Headline: 27 photographic assets self-hosted from Pexels (all licence-verified, all credited in `src/content/images.ts`), 3 original labelled SVG visualisations, 26 retired/replaced legacy stock images, 39-page QA sweep at 390/768/1440 with 0 problems, 17 automated image-system tests passing, homepage image weight 84 KB mobile / 139 KB desktop.

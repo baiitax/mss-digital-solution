@@ -46,3 +46,8 @@ audit-screenshots/
 /test-results/
 /playwright-report/
 /blob-report/
+
+# QA artefacts
+screenshots/
+qa-visual.json
+test-results/

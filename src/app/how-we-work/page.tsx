@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import Link from "next/link"
+import { Figure } from "@/components/ui/Figure"
 import { ArrowUpRight, Search, Pencil, Rocket, Eye, Check, Users, ShieldCheck, Clock } from "lucide-react"
 
 export const metadata = { title: "How We Work — Implementation Methodology | MSS Digital Solutions" }
@@ -53,6 +54,7 @@ export default function HowWeWorkPage() {
                 {
                   n: "01",
                   icon: Search,
+                  image: "stage-assess-community" as const,
                   title: "Assess & Measure",
                   q: "What is actually happening on the ground?",
                   items: ["Catchment & settlement geography mapping", "Facility readiness & workforce audit", "Coverage gap & data quality diagnostics", "PHC register / paper flow review"],
@@ -61,6 +63,7 @@ export default function HowWeWorkPage() {
                 {
                   n: "02",
                   icon: Pencil,
+                  image: "stage-co-design-workshop" as const,
                   title: "Co-design & Build",
                   q: "What will teams actually use — and how?",
                   items: ["Human-centred sprints with nurses, recorders, LGA teams", "Offline-first prototyping & workflow alignment", "Geospatial Toolkit (GMT) configuration", "Pilot in real facilities with feedback loops"],
@@ -69,6 +72,7 @@ export default function HowWeWorkPage() {
                 {
                   n: "03",
                   icon: Rocket,
+                  image: "stage-deploy-service-delivery" as const,
                   title: "Deploy & Strengthen",
                   q: "How do we make adoption stick?",
                   items: ["Facility-level rollout & supportive supervision", "Role-based training & mentorship", "Partner & LGA coordination cadence", "Issue logs → rapid iteration"],
@@ -77,13 +81,23 @@ export default function HowWeWorkPage() {
                 {
                   n: "04",
                   icon: Eye,
+                  image: "stage-verify-analysis" as const,
                   title: "Monitor & Verify",
                   q: "Is it working — for real, in the field?",
                   items: ["Implementation & coverage monitoring", "Independent verification of fidelity", "Evidence syntheses for decision forums", "Recommendations → next cycle improvements"],
                   deliverable: "Verified outcomes & learning",
                 },
               ].map((s) => (
-                <div key={s.n} className="bg-[#FAF9F7] border border-[#E8EAEC] rounded-[20px] p-6 flex flex-col">
+                <div key={s.n} className="bg-[#FAF9F7] border border-[#E8EAEC] rounded-[20px] overflow-hidden flex flex-col">
+                  <div className="relative">
+                    <Figure
+                      name={s.image}
+                      rounded="rounded-none"
+                      sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 24vw"
+                    />
+                    <div className="absolute top-2.5 right-2.5 rounded-full bg-white/90 backdrop-blur px-2 py-0.5 text-[8.5px] font-semibold tracking-[0.08em] uppercase text-[#59636D]">Representative</div>
+                  </div>
+                  <div className="p-6 flex flex-col flex-1">
                   <div className="w-10 h-10 rounded-xl bg-[#701F3D] flex items-center justify-center text-white">
                     <s.icon className="w-5 h-5" />
                   </div>
@@ -98,6 +112,7 @@ export default function HowWeWorkPage() {
                   <div className="mt-5 bg-white border border-[#E8EAEC] rounded-xl px-4 py-3">
                     <div className="text-[10px] tracking-[0.12em] uppercase font-bold text-[#89929B]">Deliverable</div>
                     <div className="text-xs font-semibold text-[#252B31] mt-1">{s.deliverable}</div>
+                  </div>
                   </div>
                 </div>
               ))}

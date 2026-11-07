@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Badge } from "@/components/ui/badge"
 import { Layers, MapPin, Users, Crosshair, Eye, EyeOff } from "lucide-react"
 
@@ -46,7 +46,7 @@ export function GeospatialDemo({ compact = false }: { compact?: boolean }) {
   const [showCatchments, setShowCatchments] = useState(true)
   const [hovered, setHovered] = useState<Settlement | Facility | null>(null)
 
-  const [settlements, setSettlements] = useState<Settlement[]>(settlementsStatic)
+  const [settlements] = useState<Settlement[]>(settlementsStatic)
   const reachedCount = settlements.filter(s => s.reached).length
   const unreachedCount = settlements.filter(s => !s.reached).length
   const facilityCount = facilities.length
@@ -54,7 +54,7 @@ export function GeospatialDemo({ compact = false }: { compact?: boolean }) {
   // Keep deterministic on both server/client; no effect needed — seed ensures same output
 
   return (
-    <div className="bg-white rounded-2xl sm:rounded-[24px] border border-[#E8EAEC] overflow-hidden shadow-[0_8px_40px_rgba(11,25,48,0.06)]">
+    <div className="bg-white rounded-2xl sm:rounded-[24px] border border-[#E8EAEC] overflow-hidden shadow-[0_8px_40px_rgba(52,61,70,0.06)]">
       {/* Header - stack on mobile */}
       <div className="px-4 sm:px-6 lg:px-8 py-4 sm:py-6 border-b border-[#E8EAEC] flex flex-col gap-4">
         <div className="flex items-start gap-3 min-w-0">
@@ -73,7 +73,7 @@ export function GeospatialDemo({ compact = false }: { compact?: boolean }) {
           <button onClick={() => setShowFacilities(!showFacilities)} className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-medium border transition-colors ${showFacilities ? "bg-[#701F3D] text-white border-[#701F3D]" : "bg-white text-[#89929B] border-[#E8EAEC]"}`}>
             <MapPin className="w-3.5 h-3.5 shrink-0" /> Facilities
           </button>
-          <button onClick={() => setShowUnreached(!showUnreached)} className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-medium border transition-colors ${showUnreached ? "bg-[#DC2626] text-white border-[#DC2626]" : "bg-white text-[#89929B] border-[#E8EAEC]"}`}>
+          <button onClick={() => setShowUnreached(!showUnreached)} className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-medium border transition-colors ${showUnreached ? "bg-[#50152D] text-white border-[#50152D]" : "bg-white text-[#89929B] border-[#E8EAEC]"}`}>
             <Users className="w-3.5 h-3.5 shrink-0" /> Unreached
           </button>
           <button onClick={() => setShowReached(!showReached)} className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-full text-xs font-medium border transition-colors ${showReached ? "bg-[#701F3D] text-white border-[#701F3D]" : "bg-white text-[#89929B] border-[#E8EAEC]"}`}>
@@ -85,13 +85,13 @@ export function GeospatialDemo({ compact = false }: { compact?: boolean }) {
       <div className="grid lg:grid-cols-[1fr_320px] gap-0">
         {/* Map */}
         <div className={`relative bg-[#FAF9F7] p-3 sm:p-4 lg:p-6 ${compact ? "min-h-[360px]" : "min-h-[380px] sm:min-h-[420px]"}`}>
-          <div className="relative w-full h-full min-h-[320px] sm:min-h-[360px] bg-[#E8EEF5] rounded-xl sm:rounded-2xl overflow-hidden border border-[#E8EAEC]">
+          <div className="relative w-full h-full min-h-[320px] sm:min-h-[360px] bg-[#F0F1F2] rounded-xl sm:rounded-2xl overflow-hidden border border-[#E8EAEC]">
             {/* Grid */}
             <div className="absolute inset-0 opacity-30" style={{
-              backgroundImage: `linear-gradient(#CBD5E1 1px, transparent 1px), linear-gradient(90deg, #CBD5E1 1px, transparent 1px)`,
+              backgroundImage: `linear-gradient(#DCDEE1 1px, transparent 1px), linear-gradient(90deg, #DCDEE1 1px, transparent 1px)`,
               backgroundSize: "24px 24px"
             }} />
-            <div className="absolute inset-0 bg-gradient-to-br from-[#F0F1F2]/60 via-transparent to-[#F0FDF4]/40" />
+            <div className="absolute inset-0 bg-gradient-to-br from-white/50 via-transparent to-[#F9E9EE]/50" />
 
             <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
               <path d="M 20 15 L 55 10 L 85 25 L 80 80 L 30 85 L 12 55 Z" fill="none" stroke="#89929B" strokeWidth="0.4" strokeDasharray="2 1.5" opacity="0.5" />
@@ -122,7 +122,7 @@ export function GeospatialDemo({ compact = false }: { compact?: boolean }) {
                   onMouseEnter={() => setHovered(s)}
                   onMouseLeave={() => setHovered(null)}
                   onTouchStart={() => setHovered(s)}
-                  className={`absolute w-2.5 h-2.5 rounded-full border-2 border-white shadow-sm hover:scale-150 transition-transform cursor-pointer ${s.reached ? "bg-[#701F3D]" : "bg-[#DC2626] animate-pulse"}`}
+                  className={`absolute w-2.5 h-2.5 rounded-full border-2 border-white shadow-sm hover:scale-150 transition-transform cursor-pointer ${s.reached ? "bg-[#701F3D]" : "bg-[#50152D] animate-pulse"}`}
                   style={{ left: `${s.x}%`, top: `${s.y}%`, transform: "translate(-50%, -50%)" }}
                   aria-label={s.name}
                 />
@@ -170,10 +170,10 @@ export function GeospatialDemo({ compact = false }: { compact?: boolean }) {
               <div className="font-display text-lg sm:text-xl font-bold text-[#701F3D] leading-none mt-1">{reachedCount}</div>
               <div className="text-[10px] sm:text-[11px] text-[#701F3D]/70 leading-tight">settlements</div>
             </div>
-            <div className="bg-[#FEF2F2] rounded-xl border border-[#DC2626]/20 p-2.5 sm:p-3 text-center">
-              <div className="text-[9px] sm:text-[11px] tracking-widest uppercase font-semibold text-[#DC2626] leading-tight">Unreached</div>
-              <div className="font-display text-lg sm:text-xl font-bold text-[#DC2626] leading-none mt-1">{unreachedCount}</div>
-              <div className="text-[10px] sm:text-[11px] text-[#DC2626]/70 leading-tight">priority</div>
+            <div className="bg-[#F9E9EE] rounded-xl border border-[#50152D]/25 p-2.5 sm:p-3 text-center">
+              <div className="text-[9px] sm:text-[11px] tracking-widest uppercase font-semibold text-[#50152D] leading-tight">Unreached</div>
+              <div className="font-display text-lg sm:text-xl font-bold text-[#50152D] leading-none mt-1">{unreachedCount}</div>
+              <div className="text-[10px] sm:text-[11px] text-[#50152D]/70 leading-tight">priority</div>
             </div>
           </div>
         </div>
@@ -199,7 +199,7 @@ export function GeospatialDemo({ compact = false }: { compact?: boolean }) {
                 <span className="text-[#343D46] leading-snug"><strong>Reached</strong> — has scheduled outreach</span>
               </div>
               <div className="flex items-start gap-3">
-                <span className="w-3 h-3 rounded-full bg-[#DC2626] border-2 border-white shadow-sm animate-pulse shrink-0 mt-0.5" />
+                <span className="w-3 h-3 rounded-full bg-[#50152D] border-2 border-white shadow-sm animate-pulse shrink-0 mt-0.5" />
                 <span className="text-[#343D46] leading-snug"><strong>Unreached</strong> — gap, prioritise microplan</span>
               </div>
               <div className="flex items-start gap-3">
