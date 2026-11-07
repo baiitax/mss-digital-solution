@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import Link from "next/link"
 import { Figure } from "@/components/ui/Figure"
 import { ArrowUpRight, BookOpen, Bell, Mail, FileText } from "lucide-react"
+import { getPublishedInsights } from "@/lib/cms/content"
 
 export const metadata = { title: "Insights — Knowledge & Publications | MSS Digital Solutions" }
 
@@ -18,7 +19,11 @@ const categories = [
   { name: "Research and Policy", desc: "Evidence synthesis, investment cases and policy translation." },
 ]
 
-export default function InsightsPage() {
+export const revalidate = 60
+
+export default async function InsightsPage() {
+  const articles = await getPublishedInsights()
+
   return (
     <div className="min-h-screen bg-[#FAF9F7]">
       <Navbar />
@@ -98,6 +103,34 @@ export default function InsightsPage() {
         <section className="section-y bg-[#F0F1F2]">
           <div className="container-mss">
             <div className="max-w-2xl">
+              {articles.length > 0 && (
+                <div className="mb-14">
+                  <div className="eyebrow">Published Articles</div>
+                  <h2 className="font-bold tracking-tight text-[#252B31] mt-3 mb-6" style={{ fontSize: "clamp(22px, 2.6vw, 32px)" }}>
+                    Notes from the field and technical perspectives.
+                  </h2>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {articles.map((article) => (
+                      <Link
+                        key={article.slug}
+                        href={`/insights/${article.slug}`}
+                        className="group rounded-2xl border border-[#E8EAEC] bg-white p-5 hover:border-[#701F3D]/35 transition-colors"
+                      >
+                        <div className="text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[#701F3D]">
+                          {article.category.replace(/-/g, " ")}
+                        </div>
+                        <h3 className="mt-2 font-semibold text-[#252B31] leading-snug group-hover:text-[#701F3D]">{article.title}</h3>
+                        {article.excerpt && <p className="mt-2 text-[13px] leading-relaxed text-[#59636D] line-clamp-3">{article.excerpt}</p>}
+                        <div className="mt-3 flex items-center gap-2 text-[11.5px] text-[#89929B]">
+                          <span>{article.author}</span>
+                          {article.read_minutes ? <><span>·</span><span>{article.read_minutes} min read</span></> : null}
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="eyebrow">Topic Areas</div>
               <h2 className="font-bold tracking-tight text-[#252B31] mt-4" style={{ fontSize: "clamp(24px, 2.8vw, 34px)" }}>What we write about.</h2>
               <p className="text-[#59636D] mt-3 leading-relaxed">Eight editorial categories covering the technical and programmatic questions our partners bring to us.</p>

@@ -4,10 +4,15 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import Link from "next/link"
 import { Figure } from "@/components/ui/Figure"
 import { ArrowUpRight, MapPinned, Clock, Users, ShieldCheck } from "lucide-react"
+import { getPublishedProjects } from "@/lib/cms/content"
 
 export const metadata = { title: "Our Work — Documented Projects | MSS Digital Solutions" }
 
-export default function OurWorkPage() {
+export const revalidate = 60
+
+export default async function OurWorkPage() {
+  const projects = await getPublishedProjects()
+
   return (
     <div className="min-h-screen bg-[#FAF9F7]">
       <Navbar />
@@ -38,6 +43,41 @@ export default function OurWorkPage() {
             </div>
           </div>
         </section>
+
+        {/* Published portfolio — rendered from the CMS */}
+        {projects.length > 0 && (
+          <section className="py-12 sm:py-16 bg-[#FAF9F7]">
+            <div className="container-mss">
+              <div className="eyebrow">Published Programmes</div>
+              <h2 className="font-bold tracking-tight text-[#252B31] mt-3 mb-6" style={{ fontSize: "clamp(22px, 2.6vw, 32px)" }}>
+                Documented, approved and available to read.
+              </h2>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                {projects.map((project) => (
+                  <Link
+                    key={project.slug}
+                    href={`/our-work/${project.slug}`}
+                    className="group rounded-2xl border border-[#E8EAEC] bg-white p-5 hover:border-[#701F3D]/35 transition-colors"
+                  >
+                    <div className="flex items-center gap-2 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[#701F3D]">
+                      {project.category || "Programme"}
+                      {project.verification_level && (
+                        <span className="rounded-full bg-[#F0F1F2] px-2 py-0.5 text-[9.5px] tracking-[0.08em] text-[#59636D]">
+                          {project.verification_level.replace(/_/g, " ")}
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="mt-2 font-semibold text-[#252B31] leading-snug group-hover:text-[#701F3D]">{project.title}</h3>
+                    {project.summary && <p className="mt-2 text-[13px] leading-relaxed text-[#59636D] line-clamp-3">{project.summary}</p>}
+                    <div className="mt-3 text-[11.5px] text-[#89929B]">
+                      {[project.state, project.country, project.period].filter(Boolean).join(" · ")}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Portfolio grid — single featured project, scalable */}
         <section className="section-y bg-white">

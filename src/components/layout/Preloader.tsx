@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { usePathname } from "next/navigation"
 
 /**
  * Site preloader — a Burgundy curtain with the animated MSS mark.
@@ -13,12 +14,17 @@ import { useEffect, useState } from "react"
  * - Body scroll is locked while visible and released on exit.
  * - `prefers-reduced-motion` shortens the hold and the animation.
  * - Only runs on a full page load; client-side route changes do not re-trigger it.
+ * - Never shown inside the administration portal: operators need the screen
+ *   immediately, and a marketing curtain on every admin load is an obstacle.
  */
 export function Preloader() {
+  const pathname = usePathname()
+  const isAdmin = pathname?.startsWith("/admin") ?? false
   const [leaving, setLeaving] = useState(false)
   const [done, setDone] = useState(false)
 
   useEffect(() => {
+    if (isAdmin) return
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     const minHold = reduce ? 350 : 900
     const fade = reduce ? 200 : 520
@@ -55,9 +61,9 @@ export function Preloader() {
       clearTimeout(ceiling)
       document.body.style.overflow = ""
     }
-  }, [])
+  }, [isAdmin])
 
-  if (done) return null
+  if (done || isAdmin) return null
 
   return (
     <div

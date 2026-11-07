@@ -1,7 +1,9 @@
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  cacheComponents: true,
+  // Cache Components is disabled: the portal renders per-request under RLS and the
+  // public site uses route-level ISR revalidation instead.
+  cacheComponents: false,
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "**.supabase.co" },

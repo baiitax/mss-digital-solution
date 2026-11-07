@@ -51,3 +51,12 @@ audit-screenshots/
 screenshots/
 qa-visual.json
 test-results/
+.qa-credentials
+
+# Playwright artefacts (regenerate with the scripts; not source)
+qa-admin.json
+qa-permissions.json
+qa-config.json
+qa-matrix.json
+qa-matrix.md
+e2e-asset.png

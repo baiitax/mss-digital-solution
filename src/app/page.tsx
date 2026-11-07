@@ -5,13 +5,35 @@ import Image from "next/image"
 import { ArrowUpRight, Database, MapPinned, LineChart, UsersRound } from "lucide-react"
 import { Figure } from "@/components/ui/Figure"
 import { images } from "@/content/images"
+import { getHomepageSections } from "@/lib/cms/content"
 
 /* ──────────────────────────────────────────
    HOME — 7-section concise corporate gateway
    Brand: Burgundy #701F3D + Storm Grey #343D46
    ────────────────────────────────────────── */
 
-export default function HomePage() {
+export const revalidate = 60
+
+export default async function HomePage() {
+  const sections = await getHomepageSections()
+  const hero = sections.hero
+  const cta = sections.cta
+
+  const heroEyebrow = hero?.eyebrow || "MSS DIGITAL SOLUTIONS • RC 7341058"
+  const heroTitleRaw = hero?.title || "Building Health\nSystems That Reach\nEvery Community."
+  const heroTitleLines = heroTitleRaw.split("\n").filter(Boolean)
+  const heroSubtitle =
+    hero?.subtitle ||
+    "We combine digital health systems, geospatial intelligence and data analytics to help healthcare institutions identify gaps, strengthen service delivery and reach underserved communities."
+  const heroPrimary = { label: hero?.cta_label || "Explore Our Capabilities", href: hero?.cta_href || "/capabilities" }
+  const heroSecondary = { label: hero?.secondary_cta_label || "Partner With Us", href: hero?.secondary_cta_href || "/contact" }
+  const ctaTitle = cta?.title || "Let’s Build Health Systems That Reach Everyone."
+  const ctaBody =
+    cta?.body ||
+    "Whether you are a government institution, development partner or healthcare organisation, MSS is ready to explore meaningful collaboration."
+  const ctaLabel = cta?.cta_label || "Start a Partnership Conversation"
+  const ctaHref = cta?.cta_href || "/contact"
+
   return (
     <div className="min-h-screen bg-[#FAF9F7]">
       <Navbar />
@@ -26,22 +48,24 @@ export default function HomePage() {
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 py-10 sm:py-14 lg:py-16 items-center">
               <div className="lg:col-span-6 min-w-0">
                 <div className="inline-flex items-center gap-2 bg-white border border-[#E8EAEC] rounded-full px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.12em] uppercase text-[#59636D]">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#701F3D] animate-pulse" /> MSS DIGITAL SOLUTIONS • RC 7341058
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#701F3D] animate-pulse" /> {heroEyebrow}
                 </div>
                 <h1 className="font-bold tracking-[-0.03em] leading-[0.94] text-[#252B31] mt-6" style={{ fontSize: "clamp(34px, 4.8vw, 54px)" }}>
-                  Building Health<br />
-                  Systems That Reach<br />
-                  <span className="text-[#701F3D]">Every Community.</span>
+                  {heroTitleLines.map((line, index) => (
+                    <span key={line} className="block">
+                      {index === heroTitleLines.length - 1 ? <span className="text-[#701F3D]">{line}</span> : line}
+                    </span>
+                  ))}
                 </h1>
                 <p className="text-[#343D46]/70 leading-relaxed mt-6 max-w-[540px] text-[15px] sm:text-[16px]">
-                  We combine digital health systems, geospatial intelligence and data analytics to help healthcare institutions identify gaps, strengthen service delivery and reach underserved communities.
+                  {heroSubtitle}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 mt-8">
-                  <Link href="/capabilities" className="inline-flex items-center justify-center gap-2 bg-[#701F3D] hover:bg-[#50152D] text-white px-7 h-12 rounded-full text-[13px] font-semibold tracking-[0.06em] uppercase transition-colors">
-                    Explore Our Capabilities <ArrowUpRight className="w-4 h-4" />
+                  <Link href={heroPrimary.href} className="inline-flex items-center justify-center gap-2 bg-[#701F3D] hover:bg-[#50152D] text-white px-7 h-12 rounded-full text-[13px] font-semibold tracking-[0.06em] uppercase transition-colors">
+                    {heroPrimary.label} <ArrowUpRight className="w-4 h-4" />
                   </Link>
-                  <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#FAF9F7] text-[#343D46] border border-[#E8EAEC] hover:border-[#701F3D]/15 px-7 h-12 rounded-full text-[13px] font-semibold tracking-[0.06em] uppercase transition-colors">
-                    Partner With Us
+                  <Link href={heroSecondary.href} className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#FAF9F7] text-[#343D46] border border-[#E8EAEC] hover:border-[#701F3D]/15 px-7 h-12 rounded-full text-[13px] font-semibold tracking-[0.06em] uppercase transition-colors">
+                    {heroSecondary.label}
                   </Link>
                 </div>
                 <div className="mt-8 flex items-center gap-6 text-xs text-[#59636D]">
@@ -292,11 +316,11 @@ export default function HomePage() {
               <div className="absolute -top-16 -right-16 w-[50%] h-[80%] bg-[#A34B68]/15 rounded-full blur-3xl" />
               <div className="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 sm:gap-8">
                 <div className="max-w-2xl min-w-0">
-                  <h2 className="font-bold tracking-tight text-white" style={{ fontSize: "clamp(22px, 2.6vw, 32px)" }}>Let’s Build Health Systems That Reach Everyone.</h2>
-                  <p className="text-white/65 mt-4 leading-relaxed text-sm sm:text-[15px]">Whether you are a government institution, development partner or healthcare organisation, MSS is ready to explore meaningful collaboration.</p>
+                  <h2 className="font-bold tracking-tight text-white" style={{ fontSize: "clamp(22px, 2.6vw, 32px)" }}>{ctaTitle}</h2>
+                  <p className="text-white/65 mt-4 leading-relaxed text-sm sm:text-[15px]">{ctaBody}</p>
                 </div>
-                <Link href="/contact" className="shrink-0 inline-flex items-center justify-center gap-2 bg-white hover:bg-[#FAF9F7] text-[#701F3D] px-8 h-12 rounded-full font-semibold tracking-wide uppercase text-sm transition-colors w-full sm:w-auto text-center">
-                  Start a Partnership Conversation <ArrowUpRight className="w-4 h-4 shrink-0" />
+                <Link href={ctaHref} className="shrink-0 inline-flex items-center justify-center gap-2 bg-white hover:bg-[#FAF9F7] text-[#701F3D] px-8 h-12 rounded-full font-semibold tracking-wide uppercase text-sm transition-colors w-full sm:w-auto text-center">
+                  {ctaLabel} <ArrowUpRight className="w-4 h-4 shrink-0" />
                 </Link>
               </div>
               <div className="relative mt-8 pt-6 border-t border-white/12 flex flex-wrap gap-2 sm:gap-3 text-xs text-white/50">

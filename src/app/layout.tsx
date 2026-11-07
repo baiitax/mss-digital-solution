@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Preloader } from "@/components/layout/Preloader";
+import { MaintenanceBar } from "@/components/layout/MaintenanceBar";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -59,10 +60,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+
   return (
     <html lang="en" className={`${manrope.variable} ${inter.variable} ${mono.variable}`}>
       <body className="min-h-screen bg-[#FAF9F7] text-[#252B31] flex flex-col antialiased">
         <Preloader />
+        <MaintenanceBar />
         {children}
       </body>
     </html>
