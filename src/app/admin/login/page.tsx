@@ -5,7 +5,7 @@ import { LoginForm } from "./LoginForm"
 import { Logo } from "@/components/brand/Logo"
 
 export const metadata: Metadata = {
-  title: "Administrator sign in — MSS Digital Solutions",
+  title: "Administrator sign in",
   robots: { index: false, follow: false },
 }
 

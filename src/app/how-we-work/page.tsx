@@ -4,8 +4,16 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import Link from "next/link"
 import { Figure } from "@/components/ui/Figure"
 import { ArrowUpRight, Search, Pencil, Rocket, Eye, Check, Users, ShieldCheck, Clock } from "lucide-react"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata = { title: "How We Work — Implementation Methodology | MSS Digital Solutions" }
+export const metadata = pageMetadata({
+  title: "How We Work — Implementation Methodology",
+  path: "/how-we-work",
+  description:
+    "The MSS implementation methodology: co-design with frontline teams, geography-first planning, facility-level deployment, training, verification and evidence that reaches decision-makers.",
+  shareDescription:
+    "How MSS Digital Solutions implements: co-design with the teams who will use the system, geography-first planning, facility-level deployment and training, then independent verification — so reports reflect field reality.",
+})
 
 export default function HowWeWorkPage() {
   return (

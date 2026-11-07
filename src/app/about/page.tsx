@@ -5,11 +5,16 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight, MapPinned, Lightbulb, Target, Heart, Users, Building2, Quote, Compass, Layers, ShieldCheck } from "lucide-react"
 import { Figure } from "@/components/ui/Figure"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata = {
-  title: "About MSS Digital Solutions — Who We Are",
-  description: "About MSS Digital Solutions Ltd — a Kano-based digital health and geospatial intelligence company: our purpose, company background, team and executive leadership.",
-}
+export const metadata = pageMetadata({
+  title: "About Us — Who We Are, Purpose & Leadership",
+  path: "/about",
+  description:
+    "MSS Digital Solutions is a Kano-based digital health and geospatial intelligence company: our purpose, company background, registered details, team and executive leadership.",
+  shareDescription:
+    "A Kano-based health technology company working at the intersection of digital health systems, geospatial intelligence and data analytics — our purpose, how the company was founded, and the executive leadership behind it.",
+})
 
 const principles = [
   { title: "Co-design, not handover", desc: "We build alongside the teams that will use our systems — from facility nurses to state programme managers." },

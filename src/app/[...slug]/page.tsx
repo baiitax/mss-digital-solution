@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer"
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import { BlockRenderer } from "@/components/cms/BlockRenderer"
 import { getPublishedPageBySlug } from "@/lib/cms/content"
+import { pageMetadata } from "@/lib/seo"
 
 export const revalidate = 60
 
@@ -21,11 +22,17 @@ type Params = { slug?: string[] }
 const toPath = (params: Params) => `/${(params.slug ?? []).join("/")}`.replace(/\/+$/, "") || "/"
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
-  const page = await getPublishedPageBySlug(toPath(await params))
-  if (!page) return { title: "Page not found | MSS Digital Solutions", robots: { index: false, follow: false } }
+  const resolved = await params
+  const path = toPath(resolved)
+  const page = await getPublishedPageBySlug(path)
+  if (!page) return { title: "Page not found", robots: { index: false, follow: false } }
+
   return {
-    title: page.seo_title ?? `${page.title} | MSS Digital Solutions`,
-    description: page.seo_description ?? page.summary ?? undefined,
+    ...pageMetadata({
+      title: page.seo_title ?? page.title,
+      description: page.seo_description ?? page.summary ?? undefined,
+      path,
+    }),
     robots: { index: true, follow: true },
   }
 }

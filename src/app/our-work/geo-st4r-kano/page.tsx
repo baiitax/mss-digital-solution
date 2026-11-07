@@ -5,12 +5,16 @@ import Link from "next/link"
 import { Figure } from "@/components/ui/Figure"
 import { MicroplanningWorkflow, SettlementCatchmentMap } from "@/components/visuals/SyntheticVisuals"
 import { ArrowUpRight, MapPinned, AlertTriangle, Check } from "lucide-react"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata = {
-  title: "Geo-ST4R — Geospatial Microplanning in Kano State | MSS Case Study",
+export const metadata = pageMetadata({
+  title: "Geo-ST4R — Geospatial Microplanning in Kano State",
+  path: "/our-work/geo-st4r-kano",
   description:
     "A facility-level case study of the Geospatial Microplanning Toolkit (GMT) in Kano State — settlement-level mapping, health worker training and microplanning for routine immunisation reach.",
-}
+  shareDescription:
+    "Case study: the Geospatial Microplanning Toolkit in Kano State — settlement-level mapping, facility and health worker data, training and microplans built to extend routine immunisation reach to zero-dose communities.",
+})
 
 const sections = [
   { id: "introduction", n: "01", label: "Project Introduction" },

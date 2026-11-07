@@ -5,8 +5,16 @@ import Link from "next/link"
 import { Figure } from "@/components/ui/Figure"
 import { ArrowUpRight, BookOpen, Bell, Mail, FileText } from "lucide-react"
 import { getPublishedInsights } from "@/lib/cms/content"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata = { title: "Insights — Knowledge & Publications | MSS Digital Solutions" }
+export const metadata = pageMetadata({
+  title: "Insights — Knowledge & Publications",
+  path: "/insights",
+  description:
+    "Articles and publications from MSS Digital Solutions on digital health, geospatial intelligence, primary healthcare, immunisation, public health data and health technology.",
+  shareDescription:
+    "Knowledge and publications from MSS Digital Solutions on digital health systems, geospatial intelligence, primary healthcare, immunisation and public health data.",
+})
 
 const categories = [
   { name: "Digital Health", desc: "Health information systems, EHR integration and frontline digital workflows." },

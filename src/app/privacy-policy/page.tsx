@@ -1,7 +1,13 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata = { title: "Privacy Policy — MSS Digital Solutions" }
+export const metadata = pageMetadata({
+  title: "Privacy Policy",
+  path: "/privacy-policy",
+  description:
+    "How MSS Digital Solutions handles information collected through this corporate website. The site is a corporate presence only and does not collect patient health information.",
+})
 
 export default function PrivacyPage() {
   return (

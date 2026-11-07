@@ -3,8 +3,16 @@ import { Footer } from "@/components/layout/Footer"
 import Link from "next/link"
 import { ArrowUpRight, Database, MapPinned, LineChart, UsersRound } from "lucide-react"
 import { Figure } from "@/components/ui/Figure"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata = { title: "Capabilities — MSS Digital Solutions" }
+export const metadata = pageMetadata({
+  title: "Capabilities — Digital Health, Geospatial, Analytics & Programmes",
+  path: "/capabilities",
+  description:
+    "Four capabilities, one implementation model: digital health systems, geospatial intelligence, data analytics, and programme & project management for health programmes in Nigeria.",
+  shareDescription:
+    "Digital health systems, geospatial intelligence, data analytics and programme management — delivered as one implementation practice for governments, development partners and healthcare institutions.",
+})
 
 const caps = [
   {

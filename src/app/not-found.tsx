@@ -1,8 +1,16 @@
 import Link from "next/link"
 import { ArrowUpRight, MapPinned } from "lucide-react"
 import { Logo } from "@/components/brand/Logo"
+import type { Metadata } from "next"
 
-export const metadata = { title: "Page not found — MSS Digital Solutions" }
+export const metadata: Metadata = {
+  // A 404 gets no share card and no canonical: it must never be indexed, and it
+  // must never inherit the homepage's canonical or open-graph URL.
+  title: "Page not found",
+  description:
+    "The page you are looking for is not on the MSS Digital Solutions website. Use the navigation or return to the homepage.",
+  robots: { index: false, follow: true },
+}
 
 export default function NotFound() {
   return (

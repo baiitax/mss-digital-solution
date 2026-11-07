@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { Badge } from "@/components/ui/badge"
@@ -6,6 +7,7 @@ import { notFound } from "next/navigation"
 import { ArrowLeft, Clock, Calendar, User } from "lucide-react"
 import { getInsightBySlug } from "@/lib/cms/content"
 import { LogoMark } from "@/components/brand/Logo"
+import { pageMetadata, SITE_DESCRIPTION } from "@/lib/seo"
 
 /**
  * Insight article template.
@@ -39,28 +41,37 @@ export const dynamic = "force-dynamic"
 // (Cache Components requires a non-empty result, so it is enabled with the
 // first published article rather than before.)
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
+  const path = `/insights/${slug}`
+
   const cms = await getInsightBySlug(slug)
   if (cms) {
+    const meta = pageMetadata({
+      title: cms.seo_title ?? cms.title,
+      description: cms.seo_description ?? cms.excerpt ?? SITE_DESCRIPTION,
+      path,
+    })
     return {
-      title: cms.seo_title ?? `${cms.title} | MSS Insights`,
-      description: cms.seo_description ?? cms.excerpt ?? undefined,
-      openGraph: { title: cms.title, type: "article", publishedTime: cms.published_at ?? undefined },
+      ...meta,
+      openGraph: { ...meta.openGraph, type: "article", publishedTime: cms.published_at ?? undefined },
       robots: { index: true, follow: true },
     }
   }
+
   const post = postsBySlug[slug]
   if (!post) {
     // Not a published article: render the branded not-found state and make
     // sure search engines do not index the URL.
-    return { title: "Insight not found — MSS Digital Solutions", robots: { index: false, follow: false } }
+    return { title: "Insight not found", robots: { index: false, follow: false } }
   }
-  return {
-    title: `${post.title} | MSS Insights`,
+
+  const meta = pageMetadata({
+    title: post.title,
     description: post.body[0]?.slice(0, 155),
-    openGraph: { title: post.title, type: "article", publishedTime: post.date },
-  }
+    path,
+  })
+  return { ...meta, openGraph: { ...meta.openGraph, type: "article", publishedTime: post.date } }
 }
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {

@@ -5,8 +5,16 @@ import Link from "next/link"
 import { Figure } from "@/components/ui/Figure"
 import { ArrowUpRight, MapPinned, Clock, Users, ShieldCheck } from "lucide-react"
 import { getPublishedProjects } from "@/lib/cms/content"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata = { title: "Our Work — Documented Projects | MSS Digital Solutions" }
+export const metadata = pageMetadata({
+  title: "Our Work — Documented Projects",
+  path: "/our-work",
+  description:
+    "Documented MSS Digital Solutions projects, led by the Geo-ST4R geospatial microplanning programme: settlement mapping, health worker training and routine immunisation reach in Kano State.",
+  shareDescription:
+    "Documented work from MSS Digital Solutions, led by Geo-ST4R — settlement-level mapping, health worker training and geospatial microplanning for routine immunisation reach in Kano State.",
+})
 
 export const revalidate = 60
 

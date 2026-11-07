@@ -4,12 +4,16 @@ import { CapabilityTemplate } from "@/components/sections/CapabilityTemplate"
 import { GeospatialDemo } from "@/components/maps/GeospatialDemo"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata = {
-  title: "Geospatial Intelligence — MSS Digital Solutions",
+export const metadata = pageMetadata({
+  title: "Geospatial Intelligence",
+  path: "/capabilities/geospatial-intelligence",
   description:
     "Settlement mapping, health facility mapping, geospatial microplanning, catchment analysis and coverage gap identification — the technical core of the Geo-ST4R programme.",
-}
+  shareDescription:
+    "Settlement and health facility mapping, geospatial microplanning, catchment analysis and coverage gap identification — the technical core of MSS Digital Solutions' Geo-ST4R programme in Kano State.",
+})
 
 export default function Page() {
   return (

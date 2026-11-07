@@ -5,7 +5,7 @@ import { createSupabaseServerClient } from "@/lib/supabase/server"
 import { AdminShell } from "@/components/admin/AdminShell"
 
 export const metadata: Metadata = {
-  title: "Administration — MSS Digital Solutions",
+  title: "Administration",
   robots: { index: false, follow: false },
 }
 

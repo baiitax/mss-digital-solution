@@ -1,12 +1,16 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { CapabilityTemplate } from "@/components/sections/CapabilityTemplate"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata = {
-  title: "Programme & Project Management — MSS Digital Solutions",
+export const metadata = pageMetadata({
+  title: "Programme & Project Management",
+  path: "/capabilities/programme-management",
   description:
-    "Programme coordination, stakeholder engagement, partner management, field deployment, training, implementation oversight, monitoring and evaluation, independent verification and project reporting.",
-}
+    "Programme coordination, stakeholder engagement, field deployment, training, implementation oversight, monitoring and independent verification — implementation as a discipline.",
+  shareDescription:
+    "Programme coordination, partner and stakeholder management, field deployment, training, implementation oversight and independent verification — MSS treats implementation as a discipline, not an afterthought to development.",
+})
 
 export default function Page() {
   return (

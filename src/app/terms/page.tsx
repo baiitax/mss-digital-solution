@@ -1,7 +1,13 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata = { title: "Terms of Use — MSS Digital Solutions" }
+export const metadata = pageMetadata({
+  title: "Terms of Use",
+  path: "/terms",
+  description:
+    "Terms governing use of the MSS Digital Solutions website, including content ownership, acceptable use and limitations.",
+})
 
 export default function TermsPage() {
   return (

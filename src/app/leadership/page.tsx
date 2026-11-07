@@ -4,8 +4,16 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs"
 import Image from "next/image"
 import Link from "next/link"
 import { Award, GraduationCap, Building2, BookOpen, ArrowUpRight, Quote, MapPin, Shield } from "lucide-react"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata = { title: "Leadership — Jamil Aliyu Galadanci | MSS Digital Solutions" }
+export const metadata = pageMetadata({
+  title: "Leadership — Jamil Aliyu Galadanci, Executive Director",
+  path: "/leadership",
+  description:
+    "The executive leadership of MSS Digital Solutions, led by Jamil Aliyu Galadanci — a COREN-registered software engineer specialising in public health informatics.",
+  shareDescription:
+    "Leadership at MSS Digital Solutions: Jamil Aliyu Galadanci, Executive Director — a COREN-registered software engineer specialising in public health informatics, with experience across health technology and global health programmes.",
+})
 
 export default function LeadershipPage() {
   return (

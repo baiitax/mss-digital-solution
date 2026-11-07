@@ -1,12 +1,16 @@
 import { Navbar } from "@/components/layout/Navbar"
 import { Footer } from "@/components/layout/Footer"
 import { CapabilityTemplate } from "@/components/sections/CapabilityTemplate"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata = {
-  title: "Digital Health Systems — MSS Digital Solutions",
+export const metadata = pageMetadata({
+  title: "Digital Health Systems",
+  path: "/capabilities/digital-health-systems",
   description:
-    "Digital healthcare delivery systems, health information systems, EHR integration, reporting and recording, immunisation information systems and logistics visibility — designed for facility-level deployment.",
-}
+    "Health information systems, immunisation information systems, logistics visibility and facility-level deployment — built for low-bandwidth, offline-capable frontline use.",
+  shareDescription:
+    "MSS builds and deploys health information systems, immunisation platforms and logistics visibility tools designed for the facility a health worker actually works in — offline-capable, low-bandwidth and workflow-aligned.",
+})
 
 export default function Page() {
   return (

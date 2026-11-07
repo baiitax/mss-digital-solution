@@ -4,12 +4,16 @@ import { CapabilityTemplate } from "@/components/sections/CapabilityTemplate"
 import { CoverageDashboard } from "@/components/visuals/SyntheticVisuals"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
+import { pageMetadata } from "@/lib/seo"
 
-export const metadata = {
-  title: "Data Analytics — MSS Digital Solutions",
+export const metadata = pageMetadata({
+  title: "Data Analytics",
+  path: "/capabilities/data-analytics",
   description:
     "Routine health data analysis, survey analysis, data quality assessment, performance dashboards, programme monitoring and investment intelligence — evidence built for decisions.",
-}
+  shareDescription:
+    "Routine health data analysis, survey analysis, data quality assessment, performance dashboards and investment intelligence — MSS turns programme data into evidence that changes a decision.",
+})
 
 export default function Page() {
   return (
