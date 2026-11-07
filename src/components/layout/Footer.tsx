@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { MapPin, Mail, Building2 } from "lucide-react"
+import { Logo } from "@/components/brand/Logo"
 
 export function Footer() {
   return (
@@ -9,12 +10,9 @@ export function Footer() {
       <div className="container-mss py-12 sm:py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-[#701F3D] font-extrabold text-sm">MSS</div>
-              <div>
-                <div className="font-bold text-[14px] tracking-tight">MSS DIGITAL SOLUTIONS LTD</div>
-                <div className="text-[11px] tracking-[0.16em] uppercase text-[#E8A0B8] font-semibold">RC 7341058 • Kano, Nigeria</div>
-              </div>
+            <div>
+              <Logo tone="dark" height={48} className="h-[44px] sm:h-[48px] w-auto" />
+              <div className="mt-3 text-[11px] tracking-[0.16em] uppercase text-[#E8A0B8] font-semibold">RC 7341058 • Kano, Nigeria</div>
             </div>
             <p className="mt-5 text-sm leading-relaxed text-white/55 max-w-md">
               A Kano-based health technology company at the intersection of clinical service delivery, geospatial intelligence and actionable health data.

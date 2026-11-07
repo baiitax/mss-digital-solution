@@ -5,6 +5,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft, Clock, Calendar, User } from "lucide-react"
 import { getInsightBySlug } from "@/lib/cms/content"
+import { LogoMark } from "@/components/brand/Logo"
 
 /**
  * Insight article template.
@@ -96,7 +97,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
             <div className="mt-6 flex items-center border-y border-[#E8EAEC] py-4">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-[#343D46] text-white flex items-center justify-center text-sm font-semibold">MSS</div>
+                <div className="w-9 h-9 rounded-full border border-[#E8EAEC] bg-white flex items-center justify-center">
+                  <LogoMark size={22} className="h-[22px] w-auto" />
+                </div>
                 <div>
                   <div className="text-sm font-semibold text-[#252B31] flex items-center gap-1.5"><User className="w-3.5 h-3.5" /> {cms.author}</div>
                   <div className="text-xs text-[#89929B]">MSS Digital Solutions Ltd</div>
@@ -148,7 +151,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
           <div className="mt-6 flex items-center border-y border-[#E8EAEC] py-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-full bg-[#343D46] text-white flex items-center justify-center text-sm font-semibold">MSS</div>
+              <div className="w-9 h-9 rounded-full border border-[#E8EAEC] bg-white flex items-center justify-center">
+                  <LogoMark size={22} className="h-[22px] w-auto" />
+                </div>
               <div>
                 <div className="text-sm font-semibold text-[#252B31] flex items-center gap-1.5"><User className="w-3.5 h-3.5" /> {post.author}</div>
                 <div className="text-xs text-[#89929B]">MSS Digital Solutions Ltd • Kano</div>

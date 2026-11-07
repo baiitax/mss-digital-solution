@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
+import { LogoMark } from "@/components/brand/Logo"
 
 /**
  * Site preloader — a Burgundy curtain with the animated MSS mark.
@@ -78,7 +79,7 @@ export function Preloader() {
       <div className="mss-preloader__grid" aria-hidden="true" />
       <div className="mss-preloader__inner">
         <div className="mss-preloader__mark" aria-hidden="true">
-          <span>MSS</span>
+          <LogoMark priority size={54} className="mss-preloader__logo" />
         </div>
         <div className="mss-preloader__word">MSS Digital Solutions</div>
         <div className="mss-preloader__sub">Digital Health · Geospatial Intelligence</div>

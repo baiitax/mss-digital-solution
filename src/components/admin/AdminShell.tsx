@@ -12,6 +12,7 @@ import {
 import type { IconKey } from "@/lib/admin/nav"
 import type { NavSection } from "@/lib/admin/nav"
 import { signOutAction } from "@/app/admin/actions/auth"
+import { LogoMark } from "@/components/brand/Logo"
 
 const ICONS: Record<IconKey, React.ComponentType<{ className?: string }>> = {
   dashboard: LayoutDashboard, activity: Activity, bell: Bell, home: Home, pages: FileText,
@@ -93,7 +94,9 @@ export function AdminShell({
         }`}
       >
         <div className="flex h-14 items-center gap-2.5 border-b border-white/10 px-3">
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-white text-[11px] font-bold text-[#50152D]">MSS</div>
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-white p-[3px]">
+            <LogoMark size={26} className="h-full w-auto" />
+          </div>
           {!collapsed && (
             <div className="min-w-0">
               <p className="truncate text-[13px] font-semibold leading-none text-white">Administration</p>
@@ -120,7 +123,9 @@ export function AdminShell({
           <aside className="absolute inset-y-0 left-0 flex w-[264px] flex-col bg-[#343D46]">
             <div className="flex h-14 items-center justify-between border-b border-white/10 px-3">
               <div className="flex items-center gap-2.5">
-                <div className="flex h-8 w-8 items-center justify-center rounded-md bg-white text-[11px] font-bold text-[#50152D]">MSS</div>
+                <div className="flex h-8 w-8 items-center justify-center rounded-md bg-white p-[3px]">
+                  <LogoMark size={26} className="h-full w-auto" />
+                </div>
                 <span className="text-[13px] font-semibold text-white">Administration</span>
               </div>
               <button onClick={() => setMobileOpen(false)} aria-label="Close menu" className="rounded-md p-1.5 text-white/70 hover:bg-white/10">

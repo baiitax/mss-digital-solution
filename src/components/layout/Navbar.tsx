@@ -5,6 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X, ArrowUpRight, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { Logo } from "@/components/brand/Logo"
 
 const links = [
   { href: "/", label: "Home" },
@@ -137,14 +138,14 @@ export function Navbar() {
               scrolled ? "h-[60px] lg:h-[68px]" : "h-16 lg:h-[84px]"
             )}
           >
-            <Link href="/" className="flex items-center gap-2.5 sm:gap-3 shrink-0 group" aria-label="MSS Digital Solutions — home">
-              <span className="w-9 h-9 lg:w-10 lg:h-10 rounded-[10px] bg-[#701F3D] flex items-center justify-center text-white font-extrabold text-[12px] lg:text-[13px] tracking-tight group-hover:bg-[#50152D] transition-colors">
-                MSS
-              </span>
-              <span className="block leading-none">
-                <span className="block font-bold text-[12px] sm:text-[13px] lg:text-[14px] tracking-tight text-[#252B31] whitespace-nowrap">MSS DIGITAL</span>
-                <span className="block font-medium text-[9px] sm:text-[10px] lg:text-[11px] tracking-[0.14em] sm:tracking-[0.16em] lg:tracking-[0.18em] uppercase text-[#701F3D] whitespace-nowrap">Solutions Ltd</span>
-              </span>
+            <Link
+              href="/"
+              className="flex items-center shrink-0 group transition-opacity hover:opacity-90"
+              aria-label="MSS Digital Solutions — home"
+            >
+              {/* The supplied master logo. Height steps down on small screens so the
+                  lockup always clears the navigation and the menu button. */}
+              <Logo priority height={40} className="h-[38px] sm:h-[42px] lg:h-[48px] w-auto" />
             </Link>
 
             <nav className="hidden lg:flex items-center gap-0.5" aria-label="Primary">

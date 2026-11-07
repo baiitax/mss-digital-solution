@@ -368,7 +368,9 @@ export default function GeoST4RCaseStudy() {
                       { name: "Pathfinder International", role: "Public health & programme expertise" },
                     ].map((p) => (
                       <div key={p.name} className="bg-white border border-[#E8EAEC] rounded-2xl p-5">
-                        <div className="w-8 h-8 rounded-lg bg-[#701F3D] flex items-center justify-center text-white text-xs font-bold">MSS</div>
+                        <div className="w-8 h-8 rounded-lg bg-[#343D46] flex items-center justify-center text-white text-xs font-bold">
+                          {p.name.charAt(0)}
+                        </div>
                         <div className="font-semibold text-[#252B31] text-[14px] mt-3">{p.name}</div>
                         <div className="text-xs text-[#59636D] mt-1 leading-relaxed">{p.role}</div>
                       </div>

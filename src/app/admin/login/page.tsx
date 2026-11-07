@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { redirect } from "next/navigation"
 import { getAdminSession } from "@/lib/auth/session"
 import { LoginForm } from "./LoginForm"
+import { Logo } from "@/components/brand/Logo"
 
 export const metadata: Metadata = {
   title: "Administrator sign in — MSS Digital Solutions",
@@ -20,12 +21,9 @@ export default async function AdminLoginPage({
   return (
     <main className="min-h-screen bg-[#343D46] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-[420px]">
-        <div className="flex items-center gap-3">
-          <div className="h-11 w-11 rounded-xl bg-white flex items-center justify-center font-bold text-[#50152D] tracking-tight">MSS</div>
-          <div>
-            <p className="text-white font-semibold leading-tight">Administration Portal</p>
-            <p className="text-[11px] uppercase tracking-[0.18em] text-white/50">MSS Digital Solutions Ltd</p>
-          </div>
+        <div>
+          <Logo tone="dark" height={44} priority className="h-11 w-auto" />
+          <p className="mt-3 text-[11px] uppercase tracking-[0.18em] text-white/50">Administration Portal</p>
         </div>
 
         <div className="mt-6 rounded-2xl bg-white p-7 shadow-[0_24px_80px_rgba(0,0,0,0.28)]">

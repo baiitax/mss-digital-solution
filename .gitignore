@@ -39,7 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-*.png
 audit-screenshots/
 
 # playwright
@@ -60,3 +59,10 @@ qa-config.json
 qa-matrix.json
 qa-matrix.md
 e2e-asset.png
+
+# Brand assets must ship with the build (logo, app icons, PWA icons).
+# Previously a blanket `*.png` rule here silently excluded them from deploys.
+!public/brand/*.png
+!public/images/**/*.png
+!src/app/icon.png
+!src/app/apple-icon.png

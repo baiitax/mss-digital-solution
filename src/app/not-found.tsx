@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ArrowUpRight, MapPinned } from "lucide-react"
+import { Logo } from "@/components/brand/Logo"
 
 export const metadata = { title: "Page not found — MSS Digital Solutions" }
 
@@ -8,12 +9,8 @@ export default function NotFound() {
     <div className="min-h-screen bg-[#FAF9F7] flex flex-col">
       <div className="bg-[#343D46] text-white">
         <div className="container-mss h-[84px] flex items-center">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-[10px] bg-[#701F3D] flex items-center justify-center text-white font-extrabold text-[13px]">MSS</div>
-            <div className="leading-none">
-              <div className="font-bold text-[14px] tracking-tight">MSS DIGITAL</div>
-              <div className="font-medium text-[11px] tracking-[0.18em] uppercase text-[#E8A0B8]">Solutions Ltd</div>
-            </div>
+          <Link href="/" className="flex items-center" aria-label="MSS Digital Solutions — home">
+            <Logo tone="dark" height={38} priority className="h-[34px] sm:h-[38px] w-auto" />
           </Link>
         </div>
       </div>
