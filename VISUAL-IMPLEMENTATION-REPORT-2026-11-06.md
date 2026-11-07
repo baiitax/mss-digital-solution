@@ -238,4 +238,21 @@ src/components/ui/SafeImage.tsx            DELETED — superseded by Figure
 next.config.ts                             MODIFIED — remotePatterns no longer permits remote stock
 ```
 
-Deployment note: the live site remains at the previous commit until this batch is pushed to `main` and Vercel rebuilds.
+### Deployment
+
+Pushed to `main` as **`ed06494`** and deployed to production by Vercel (`dpl_8u1VjbNgoeopBJ51n4xV1ALYWX7P`, state READY, promoted to `mss-digital.vercel.app`).
+
+Post-deploy verification against https://mss-digital.vercel.app:
+
+| Check | Result |
+|---|---|
+| 8 sampled routes | all `200` |
+| Self-hosted image files | `200` (hero 282 KB source JPEG, served as AVIF 90 KB) |
+| AVIF negotiation on production | `content-type: image/avif`, 90,903 bytes at `w=1920` |
+| Remote stock references (unsplash) | `0` on `/`, `/about`, `/capabilities`, `/our-work/geo-st4r-kano` |
+| Provenance labels live | "Representative image" ×6 on `/` · "Illustrative · synthetic data" · "Synthetic demonstration" · "Schematic only … synthetic" footnote |
+| Exactly one `<h1>` | confirmed on 8 routes |
+| Hero priority | `fetchPriority="high"` present on the hero `img`, no `loading="lazy"` |
+| Legacy red `#DC2626` (interactive demo) | `0` occurrences — brand recolour live |
+
+The complete 35-test Playwright suite was run against the identical local production build before push: **35/35 passing** (18 site/nav/a11y + 17 image-system).
