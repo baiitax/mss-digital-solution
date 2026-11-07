@@ -8,6 +8,10 @@
  * `kind` is a truthfulness label, not a style hint:
  *   authentic    — supplied by MSS (company asset). Currently only the
  *                  Executive Director portrait.
+ *   documentation — supplied by MSS and showing an actual MSS deliverable:
+ *                  a printed GMT map, the GMT interface, a planning session.
+ *                  This IS project documentation — captions must say exactly
+ *                  what it shows and must not be widened beyond that.
  *   contextual   — licensed stock photography used to illustrate the
  *                  subject. NOT documentation of an MSS project.
  *   illustrative — original diagrammatic / synthetic visualisation.
@@ -17,7 +21,7 @@
  * recorded anyway and published in the visual implementation report.
  */
 
-export type ImageKind = "authentic" | "contextual" | "illustrative"
+export type ImageKind = "authentic" | "documentation" | "contextual" | "illustrative"
 
 export type SiteImage = {
   src: string
@@ -144,6 +148,61 @@ export const images = {
     licence: "Pexels License",
     sourceUrl: "https://www.pexels.com/photo/40620781/",
   },
+  /* ── Geo-ST4R programme evidence ───────────────────────────────
+   * Supplied by MSS from programme work. These replaced licensed stock where
+   * the case study previously showed a generic "reference visual". Each
+   * caption states exactly what the asset is — and the ward map is a Lagos
+   * ward, so it is never described as a Kano ward.
+   */
+  "gmt-ward-map-print": {
+    src: "/images/projects/geo-st4r/gmt-ward-map-print.jpg",
+    width: 1056,
+    height: 792,
+    alt: "Printed GMT ward map for Ijegun Ward, Alimosho LGA, Lagos State, showing settlements, schools, health facilities, catchment boundaries, roads and waterbodies with a legend and scale bar",
+    kind: "documentation",
+    purpose: "Case study — the ward-level map a facility team actually plans from, printed.",
+    caption:
+      "GMT ward map output (printed) — Ijegun Ward, Alimosho LGA, Lagos State. Settlements, schools, places of worship, health facilities, catchments and ward boundaries on a single planning sheet.",
+    credit: "MSS Digital Solutions",
+    licence: "MSS project documentation",
+  },
+  "gmt-progress-dashboard": {
+    src: "/images/projects/geo-st4r/gmt-progress-dashboard.jpg",
+    width: 952,
+    height: 812,
+    alt: "GMT microplan progress dashboard showing a map of Nigeria's states with a legend for microplan and field data collection status",
+    kind: "documentation",
+    purpose: "Case study — how microplan and field-data status are surfaced per planning unit.",
+    caption:
+      "GMT microplan progress dashboard (test build). Every state reads “Not started” — this is user-acceptance testing, not operational programme data.",
+    credit: "MSS Digital Solutions",
+    licence: "MSS project documentation",
+  },
+  "gmt-tablet-ward-tree": {
+    src: "/images/projects/geo-st4r/gmt-tablet-ward-tree.jpg",
+    width: 1210,
+    height: 1030,
+    alt: "GMT running in a tablet browser, showing microplan status filters, a search box and a state, LGA and ward selection tree for Nigeria",
+    kind: "documentation",
+    purpose: "Case study — the tool is legible on a tablet and organised by state / LGA / ward.",
+    caption:
+      "GMT in a tablet browser (test build): status filters, the state / LGA / ward tree and the map panel on one screen — no GIS training required to read it.",
+    credit: "MSS Digital Solutions",
+    licence: "MSS project documentation",
+  },
+  "field-planning-session": {
+    src: "/images/projects/geo-st4r/field-planning-session.jpg",
+    width: 1008,
+    height: 756,
+    alt: "Health workers seated in a row at a planning session, reviewing a tablet together",
+    kind: "documentation",
+    purpose: "Case study — planning happens seated together, around one device, not in a dashboard alone.",
+    caption:
+      "Facility and ward teams reviewing a planning site together during a session — the setting in which microplans are actually drafted.",
+    credit: "MSS Digital Solutions",
+    licence: "MSS project documentation",
+  },
+
   "immunisation-service-point": {
     src: "/images/projects/geo-st4r/immunisation-service-point.jpg",
     width: 1400,
@@ -364,6 +423,7 @@ export function getImage(key: ImageKey): SiteImage {
 
 /** Default caption label for non-authentic imagery, used by <Figure>. */
 export function provenanceLabel(kind: ImageKind): string | null {
+  if (kind === "documentation") return "MSS documentation"
   if (kind === "contextual") return "Representative image"
   if (kind === "illustrative") return "Illustrative — synthetic data"
   return null

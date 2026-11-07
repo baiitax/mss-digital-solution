@@ -238,7 +238,12 @@ export default function GeoST4RCaseStudy() {
                     <SettlementCatchmentMap />
                   </div>
                   <div className="mt-4">
-                    <Figure name="cap-geospatial-intelligence" sizes="(max-width: 640px) 92vw, 900px" rounded="rounded-2xl" caption captionText="Reference visual — settlement pins on a printed planning map." />
+                    <Figure name="gmt-ward-map-print" sizes="(max-width: 640px) 92vw, 900px" rounded="rounded-2xl" caption />
+                    <p className="mt-3 text-[12px] leading-relaxed text-[#89929B]">
+                      This sheet is a real GMT output, not an illustration: it is the ward map a facility
+                      team plans from. The ward shown is in Lagos State — it is here to show what the
+                      output <em>is</em>, not which wards the Kano deployment covers.
+                    </p>
                   </div>
                 </div>
 
@@ -267,6 +272,20 @@ export default function GeoST4RCaseStudy() {
                         <div className="text-xs text-[#59636D] mt-1.5 leading-relaxed">{i.d}</div>
                       </div>
                     ))}
+                  </div>
+                  <div className="mt-6 grid sm:grid-cols-2 gap-4">
+                    <Figure name="gmt-tablet-ward-tree" sizes="(max-width: 640px) 92vw, 430px" rounded="rounded-2xl" caption />
+                    <Figure name="gmt-progress-dashboard" sizes="(max-width: 640px) 92vw, 430px" rounded="rounded-2xl" caption />
+                  </div>
+                  <div className="mt-4 flex gap-3 bg-[#FFF7ED] border border-[#F59E0B]/25 rounded-xl p-4">
+                    <span className="text-[#B45309] shrink-0 mt-0.5 font-bold text-sm">i</span>
+                    <p className="text-[12.5px] leading-relaxed text-[#7C2D12]">
+                      <strong>About these screens:</strong> both are captures of the GMT test build used for
+                      user-acceptance testing. They show how the tool organises planning units and reports
+                      status; what appears in them is <strong>not operational programme data</strong>, and
+                      the ward list is the tool&rsquo;s national state / LGA / ward hierarchy rather than the
+                      Kano wards themselves.
+                    </p>
                   </div>
                 </div>
 
@@ -306,6 +325,9 @@ export default function GeoST4RCaseStudy() {
                         <Check className="w-3.5 h-3.5 text-[#701F3D] shrink-0 mt-0.5" />{x}
                       </div>
                     ))}
+                  </div>
+                  <div className="mt-6">
+                    <Figure name="field-planning-session" sizes="(max-width: 640px) 92vw, 760px" rounded="rounded-2xl" caption />
                   </div>
                 </div>
 
